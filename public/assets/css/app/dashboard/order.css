@@ -1,0 +1,352 @@
+.content-area{
+	/*background: #fff;*/
+	/*border: 1px solid #000;*/
+}
+.contents{
+	display: flex;
+}
+.list-area{
+	box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2);
+}
+.titleArea{
+	padding: 15px;
+	font-size: 18px;
+	font-family: 'Roboto', sans-serif;
+	font-weight: 500;
+}
+.order-item{
+	width: 935px;
+}
+.order-area{
+	background: #fff;
+	margin-bottom: 20px;
+	box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2);
+}
+/*=================================================================================*/
+                               /* order header */
+/*=================================================================================*/
+.order-numbers, .order-name, .order-item-price, .sell-by, .order-deli, .progressBar ul li p{
+	font-family: 'Roboto', sans-serif;
+}
+.sell-by, .order-deli{
+	padding: 5px 0;
+}
+.order-numbers{
+	padding: 15px;
+	font-size: 16px;
+	background: #fff;
+	overflow: hidden;
+	font-weight: 500;
+	cursor: pointer;
+}
+.order-id a, .detail-view a{
+	color: #878787;
+}
+.order-id{
+	float: left;
+}
+
+/*=================================================================================*/
+                               /* order-detail-area */
+/*=================================================================================*/
+.order-detail-area{
+	width: 100%;
+}
+.order-details{
+	background: #fff;
+	display: flex;
+	border-top: 1px solid #ccc;
+}
+.order-info-holder{
+	display: flex;
+	padding: 7px;
+}
+.itemImg{
+	width: 150px;
+	overflow: hidden;
+}
+.thumbnail {
+	height: 135px;
+	display: flex;
+	border: none;
+	margin: 0 auto;
+	padding: 5px;
+	vertical-align: middle;
+	align-items: center;
+	text-align: center;
+	background: transparent;
+}
+.thumbnail img{
+	height: 90px;
+	margin: 0 auto;
+	border-radius: 0;
+}
+.order-item-info{
+	width: 260px;
+	overflow: hidden;
+}
+.order-name{
+	font-size: 16px;
+	max-width: 300px;
+    display: inline-block;
+    /* width: calc(100% - 80px); */
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.order-name a{
+	color: #000;
+}
+.order-item-price{
+	display: flex;
+	font-size: 18px;
+}
+.old-price{
+	margin-left: 10px;
+	color: #fc6603;
+	text-decoration: line-through;
+	font-size: 16px;
+}
+.order-qty, .order-pay{
+	width: 96px;
+    text-align: center;
+    margin-right: 15px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+}
+.order-qty h6, .order-pay h6{
+	margin-top: 10px;
+}
+.conditions{
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 500;
+	margin-bottom: 9px;
+}
+.footer{
+	border-top: 1px solid #ccc;
+	overflow: hidden;
+	padding: 10px 15px;
+}
+.view-order span, .order-total-price span{
+	color: #878787;
+}
+.view-order{
+	float: left;
+}
+.order-total-price, .detail-view{
+	float: right;
+}
+.empty-msg{
+	width: 100%;
+	background: #fff;
+	text-align: center;
+	padding: 15px;
+	box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2);
+	font-size: 16px;
+	font-weight: 500;
+}
+/*=================================================================================*/
+                               /* Common css */
+/*=================================================================================*/
+.view-order, .order-total-price, .status{
+	font-family: 'Ubuntu', sans-serif;	
+}
+.empty-msg, .areaTitle, .detail-title, .name, .address, .number, .email, .odrId, .pay-method, .delivery{
+	font-family: 'Roboto', sans-serif;
+}
+.userAndOrder-detail{
+	display: flex;
+}
+/*=================================================================================*/
+                               /* order Details page */
+/*=================================================================================*/
+.content-holder{
+	max-width: 1250px;
+	min-width: 1250px;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 0;
+	border-radius: 5px;
+}
+.areaTitle, .status-title{
+	padding: 10px;
+	font-size: 20px;
+	color: #878787;
+	font-weight: 500;
+}
+.userAndOrder-detail{
+	background: #fff;
+	margin-bottom: 20px;
+	box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2);
+}
+.user-data, .order-data{
+	width: 100%;
+	padding: 15px 30px;
+}
+.user-data{
+	border-right: 1px solid #ccc;
+}
+.name{
+	color: #000;
+	font-weight: 500;
+}
+.detail-title{
+	font-size: 15px;
+	font-weight: 500;
+}
+.detail-title, .name, .address, .number, .email, .odrId, .pay-method, .delivery{
+	padding: 3px 0;
+}
+.order-status{
+	background: #fff;
+	box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2);
+	margin-bottom: 20px;
+	overflow: hidden;
+}
+.status-title{
+	text-align: center;
+}
+.all-status{
+	display: flex;
+	width: 700px;
+	margin: 0 auto;
+}
+.status{
+	width: 150px;
+	margin: 0 10px;
+}
+.steps{
+	text-align: center;
+}
+.step{
+	background: #388e3c;
+}
+.step2{
+	background: #a6a6a6;	
+}
+
+.arrow{
+	margin-top: 12px;
+}
+
+.step, .step2{
+	width: 15px;
+	height: 15px;
+	border-radius: 50%;
+	margin: 10px auto;
+	transition: 0.2s all ease;
+}
+.step:hover, .step2:hover{
+	transition: 0.2s all ease;
+	transform: scale(1.1);
+	cursor: pointer;
+	box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, .5);
+}
+.subtotal-prc, .unit-prc, .detail-pay, .quantity{
+	width: 150px;
+    text-align: center;
+    margin-right: 20px;
+    font-family: 'Ubuntu', sans-serif;
+    font-weight: 500;
+}
+.subtotal-prc h6, .unit-prc h6{
+	margin-top: 10px;
+}
+.large-area{
+	width: 400px;
+}
+
+/*==================================================================================================*/
+                               			/* Progress Bar Css */
+/*==================================================================================================*/
+.progressBar ul{
+	text-align: center;
+	padding: 0;
+}
+.progressBar ul li p{
+	color: #01ab97;
+	margin-top: 15px;
+	font-weight: 500;
+}
+.progressBar ul li .done{
+	color: #000;
+}
+.progressBar ul li .not-done{
+	color: #ccc;
+}
+.progressBar ul li{
+	display: inline-block;
+	width: 200px;
+	position: relative;
+}
+/*if Not active*/
+.progressBar ul li .not-active, .progressBar ul li .active{
+	background: #ccc;
+	border-radius: 50%;
+	padding: 4px;
+	text-align: center;
+	font-size: 6px;
+	cursor: pointer;
+}
+.progressBar ul li .not-active::after{
+	background: #8d948d;
+}
+.progressBar ul li .active::after{
+	background: #00e613;
+}
+.progressBar ul li .not-active::after, .progressBar ul li .active::after{
+	content: '';
+	height: 4px;
+	width: 205px;
+	display: block;
+	position: absolute;
+	left: 0;
+	top: 14px;
+	/*z-index: -1;*/
+}
+.progressBar ul li .not-active{
+	color: #8d948d;
+	background: #8d948d;
+}
+.progressBar ul li .active{
+	color: #00e613;
+	background: #00e613;
+	border: 0.3px solid #00960c;
+	animation: circle 3s infinite;
+}
+.progressBar ul li:first-child .not-active::after, .progressBar ul li:first-child .active::after{
+	width: 105px;
+	left: 100px;
+}
+.progressBar ul li:last-child .not-active::after{
+	width: 105px;
+	right: 100px;
+}
+.progressBar ul li:last-child .active::after{
+	width: 105px;
+	right: 100px;
+}
+
+@keyframes circle {
+	  0%{box-shadow: 0px 0px 0px 0px rgba(19, 209, 29, 0.25);}
+	 10%{box-shadow: 0px 0px 0px 1px rgba(19, 209, 29, 0.25);}
+	 15%{box-shadow: 0px 0px 0px 1.5px rgba(19, 209, 29, 0.25);}
+	 20%{box-shadow: 0px 0px 0px 2px rgba(19, 209, 29, 0.25);}
+	 25%{box-shadow: 0px 0px 0px 2.5px rgba(19, 209, 29, 0.25);}
+	 30%{box-shadow: 0px 0px 0px 3px rgba(19, 209, 29, 0.25);}
+	 35%{box-shadow: 0px 0px 0px 3.5px rgba(19, 209, 29, 0.25);}
+	 40%{box-shadow: 0px 0px 0px 4px rgba(19, 209, 29, 0.25);}
+	 45%{box-shadow: 0px 0px 0px 4.5px rgba(19, 209, 29, 0.25);}
+	 50%{box-shadow: 0px 0px 0px 5px rgba(19, 209, 29, 0.25);}
+	 55%{box-shadow: 0px 0px 0px 5.5px rgba(19, 209, 29, 0.25);}
+	 60%{box-shadow: 0px 0px 0px 6px rgba(19, 209, 29, 0.25);}
+	 65%{box-shadow: 0px 0px 0px 6.5px rgba(19, 209, 29, 0.25);}
+	 70%{box-shadow: 0px 0px 0px 7px rgba(19, 209, 29, 0.25);}
+	 75%{box-shadow: 0px 0px 0px 7.5px rgba(19, 209, 29, 0.25);}
+	 80%{box-shadow: 0px 0px 0px 8px rgba(19, 209, 29, 0.25);}
+	 85%{box-shadow: 0px 0px 0px 8.5px rgba(19, 209, 29, 0.25);}
+	 90%{box-shadow: 0px 0px 0px 9px rgba(19, 209, 29, 0.25);}
+	 95%{box-shadow: 0px 0px 0px 9.5px rgba(19, 209, 29, 0.25);}
+	100%{box-shadow: 0px 0px 0px 10px rgba(19, 209, 29, 0.25);}
+
+}

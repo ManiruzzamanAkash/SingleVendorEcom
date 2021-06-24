@@ -1,0 +1,26 @@
+.login, .forget-text, .reginter{
+	text-align: center;
+}
+.forget-text{
+	margin-top: 5px;
+	margin-bottom: 15px;
+	font-size: 15px;
+	letter-spacing: 0.5px;
+	line-height: 2;
+}
+.login, .reginter{
+	margin: 20px 0;
+}
+.reset-btn{
+	background: #fff;
+	cursor: pointer;
+}
+.login a, .reginter a{
+	color: #0099ff;
+}
+.confirm-notify{
+	height: 20px;
+	overflow: hidden;
+	text-align: center;
+	color: #48a700;
+}

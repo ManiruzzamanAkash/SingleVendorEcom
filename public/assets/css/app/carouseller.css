@@ -1,0 +1,84 @@
+/*carouseller.js 0.32b https://github.com/shrue348/responsive.carouseller Open source under the MIT License. Copyright © 2015-2017 Aleksander Alekseev All rights reserved.*/
+.carouseller:before, .carouseller:after {  content: " ";  display: table;}
+.carouseller:after { clear: both;}
+.carouseller { position: relative;}
+
+.carouseller [class*="car__"]{
+	display: inline-block; 
+	position: relative;
+    margin-left: 0.2564102564102564% !important;
+    *margin-left: 0.25109110747408616% !important;
+    float: left;
+    -webkit-box-sizing: border-box;
+       -moz-box-sizing: border-box;
+            box-sizing: border-box;
+}
+.carouseller [class*="car__"]:first-child  { margin-left: 0 !important;}
+.carouseller [class*="car__"]:nth-child(n+7) { display: none;}
+
+.carouseller .car__by5 { width: 1.793789743589745%;}
+.carouseller .car__12 { width: 10%;}
+.carouseller .car__6 { width: 4.8837948717948715%;}
+.carouseller .car__4 { width: 3.1703931623931625%;}
+.carouseller .car__3 { width: 2.3136923076923077%;}
+.carouseller .car__2 { width: 1.452991452991453%;}
+.carouseller .car__1 { width: 0.5982905982905983%;}
+
+.carouseller .carouseller__list { position: relative; width: 997.4358974358974%;}
+.carouseller .carouseller__wrap { overflow: hidden; position: relative; margin: 0 35px}
+
+.carouseller .carouseller__left, 
+.carouseller .carouseller__right {
+	position: absolute; 
+	margin: 0; 
+	bottom: 25px;
+    background: none repeat scroll 0 0 transparent;
+    font-size: 80px;
+    opacity: 0.5;
+    text-align: center;
+	color: #000;
+	text-decoration: none;
+}
+.carouseller .carouseller__left { left: 0;}
+.carouseller .carouseller__right { right: 0;}
+.carouseller .carouseller__left:hover, .carouseller .carouseller__:hover { opacity: 0.8;}
+
+
+/*------Responsive-----------*/
+/* Portrait tablet to landscape and desktop */
+@media (min-width: 768px) and (max-width: 979px) { 
+	.carouseller .car__by5,
+	.carouseller .car__12,
+	.carouseller .car__6,
+	.carouseller .car__4,
+	.carouseller .car__3,
+	.carouseller .car__2,
+	.carouseller .car__1 { width: 3.1623931623931625%;}
+}
+/* Landscape phone to portrait tablet */
+@media (max-width: 767px) {
+	.carouseller .car__by5,
+	.carouseller .car__12,
+	.carouseller .car__6,
+	.carouseller .car__4,
+	.carouseller .car__3,
+	.carouseller .car__2,
+	.carouseller .car__1 { width: 4.8717948717948715%;}
+}
+/* Landscape phones and down */
+@media (max-width: 480px) {
+	.carouseller .car__by5,
+	.carouseller .car__12,
+	.carouseller .car__6,
+	.carouseller .car__4,
+	.carouseller .car__3,
+	.carouseller .car__2,
+	.carouseller .car__1 { width: 10%;}
+}
+
+
+
+/* This can be deleted */
+[class*="car__"] { text-align: center; font-size: 30px; font-weight: bold; background-color: #e5e5e5;}
+h1 {font-size: 40px; margin-bottom: 30px;}
+.carouseller { margin-bottom: 20px;}

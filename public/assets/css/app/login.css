@@ -1,0 +1,99 @@
+body{
+	background: #fbfbfb;
+}
+.titleArea, .login-btn, .register{
+	font-family: 'Roboto', sans-serif;
+}
+.field label, .forget a, .hidden-msg{
+	font-family: 'Ubuntu', sans-serif;
+}
+.header, .subheader, footer{
+	display: none;
+}
+.forget, .titleArea, .login-btn, .register{
+	text-align: center;
+}
+.content-holder{
+	max-width: 1250px;
+	min-width: 1250px;
+	overflow: hidden;
+	margin-top: 20px;
+	padding: 20px;
+	border-radius: 5px;
+}
+.login-area, .forget-area{
+	background: #fff;
+	max-width: 400px;
+	margin: 0 auto;
+	padding: 15px;
+	border-radius: 10px;
+	box-shadow: 0 1px 5px 0 rgba(0,0,0,.15);
+}
+.logo, .forget-logo{
+	width: 100px;
+	padding: 5px;
+	overflow: hidden;
+	margin: 5px auto;
+}
+.login-logo img{
+	width: 80px;
+}
+.titleArea{
+	font-size: 22px;
+	padding: 5px;
+	font-weight: 500;
+}
+.form-area{
+	margin: 15px 0;
+	padding: 10px;
+	
+}
+.field{
+	overflow: hidden;
+	margin: 7px 0;
+}
+.field label{
+	color: #6d6e71;
+}
+.forget{
+	padding: 5px;
+}
+.forget a{
+	color: red;
+	display: block;
+}
+.login-btn, .register{
+	width: 100%;
+	font-size: 16px;
+	color: #fff;
+	font-weight: 500;
+	border-radius: 5px;
+}
+.login-btn{
+	background: #f58509;
+	padding: 7px;
+	border: none;
+	cursor: pointer;
+}
+.login-btn:hover{
+	background: #ff8600;
+}
+.notice{
+	padding: 10px 0;
+	color: #444;
+	font-weight: 500;
+}
+.register a{
+
+	display: block;
+	padding: 10px;
+	color: #0099ff;
+	border-radius: 5px;
+	border: 1px solid #0099ff;
+}
+.hidden-msg{
+	height: 23px;
+	overflow: hidden;
+	text-align: center;
+	color: #e60000;
+}

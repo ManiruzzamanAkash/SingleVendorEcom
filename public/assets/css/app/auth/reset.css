@@ -1,0 +1,70 @@
+.register-form-area{
+	background: #fff;
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 15px;
+	border-radius: 10px;
+	box-shadow: 0 1px 5px 0 rgba(0,0,0,.15);
+}
+.logo{
+	width: 100px;
+	padding: 5px;
+	overflow: hidden;
+	margin: 5px auto;
+}
+.logo img{
+	width: 80px;
+}
+.titleArea{
+	font-size: 22px;
+	padding: 5px;
+	font-weight: 500;
+}
+.register-footer{
+	width: 100%;
+	margin: 15px;
+	padding: 5px;
+	border-top: 1px dotted #ccc;
+}
+.register-footer-content{
+	width: 100%;
+	overflow: hidden;
+}
+.Stuffs{
+	float: left;
+}
+.createAccount{
+	float: right;
+}
+.btn-register{
+	width: 180px;
+	background: #fff;
+	cursor: pointer;
+}
+.already-account, .already-account-login{
+	width: 180px;
+}
+.already-account-login, .span{
+	text-align: center;
+}
+.already-account-login a{
+	background: #f58509;
+	border-radius: 5px;
+	display: block;
+	padding: 10px;
+	border: none;
+	cursor: pointer;
+	color: #fff;
+}
+.span{
+	margin-bottom: 5px;
+	text-align: left;
+}
+.termsNcondition{
+	width: 100%;
+	padding: 7px 0;
+}
+.termsNcondition a{
+	color: #0099ff;
+}
+

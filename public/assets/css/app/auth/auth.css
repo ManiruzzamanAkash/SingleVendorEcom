@@ -1,0 +1,163 @@
+body{
+	background: #fbfbfb;
+}
+.titleArea, .login-btn, .register, .required-icon, .service-name{
+	font-family: 'Roboto', sans-serif;
+}
+.field label, .forget a, .hidden-msg, .login, .thanksNote, .forget-text, .reginter, .col-form-label, .span, .termsNcondition, .startNote{
+	font-family: 'Ubuntu', sans-serif;
+}
+.header, .subheader, footer{
+	display: none;
+}
+.forget, .titleArea, .login-btn, .register, .reset-btn{
+	text-align: center;
+}
+.content-holder{
+	max-width: 1250px;
+	min-width: 1250px;
+	overflow: hidden;
+	padding: 20px;
+	border-radius: 5px;
+}
+.login-area, .forget-area{
+	background: #fff;
+	max-width: 400px;
+	margin: 0 auto;
+	padding: 15px;
+	border-radius: 10px;
+	box-shadow: 0 1px 5px 0 rgba(0,0,0,.15);
+}
+.logo{
+	width: 100px;
+	padding: 5px;
+	overflow: hidden;
+	margin: 5px auto;
+}
+.logo img{
+	width: 80px;
+}
+.titleArea{
+	font-size: 22px;
+	padding: 5px;
+	font-weight: 500;
+}
+.form-area{
+	margin: 15px 0;
+	padding: 10px;
+
+}
+.field{
+	overflow: hidden;
+	margin: 7px 0;
+}
+.field label, .span, .termsNcondition{
+	color: #6d6e71;
+}
+.forget{
+	padding: 5px;
+}
+.forget a{
+	color: red;
+	display: block;
+}
+.login-btn, .register, .reset-btn{
+	width: 100%;
+	font-size: 16px;
+	color: #fff;
+	font-weight: 500;
+	border-radius: 5px;
+}
+.login-btn{
+	background: #f58509;
+	padding: 7px;
+	border: none;
+	cursor: pointer;
+	color: #fff;
+}
+.login-btn:hover{
+	background: #ff8600;
+}
+.notice{
+	padding: 10px 0;
+	color: #444;
+	font-weight: 500;
+}
+.register a, .reset-btn, .btn-register{
+	display: block;
+	padding: 10px;
+	color: #0099ff;
+	border-radius: 5px;
+	border: 1px solid #0099ff;
+}
+.hidden-msg{
+	height: 23px;
+	overflow: hidden;
+	text-align: center;
+	color: #e60000;
+}
+.startNote, .information{
+	text-align: center;
+	font-size: 15px;
+}
+.information, .startNote{
+	margin-top: 20px;
+}
+.goToMail{
+	display: flex;
+	margin-top: 20px;
+}
+.mailServices{
+	width: 150px;
+	text-align: center;
+	margin: 0 auto;
+	border-radius: 5px;
+}
+.mailServices:hover{
+	box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2);
+}
+.mailServices a{
+	padding: 7px;
+	display: block;
+}
+.icons{
+	color: #6d6e71;
+	font-weight: 500;
+	font-size: 22px;
+}
+.service-name{
+	font-size: 18px;
+	color: #000;
+}
+/*Footer Bottom*/
+
+.bottomArea{
+	background: linear-gradient(to bottom,rgba(0,0,0,.14),rgba(0,0,0,.03) 3px,transparent);
+	padding: 15px;
+}
+.bottomContent{
+	max-width: 100%;
+	overflow: hidden;
+}
+.content{
+	width: 15.8%;
+	float: left;
+	margin: 5px;
+	text-align: center;
+}
+.content:hover{
+	box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2);
+}c
+.content a{
+	display: block;
+	color: #000;
+	padding: 10px;
+	font-size: 12px;
+	text-decoration: none;
+	border-radius: 5px;
+}
+.copyryt{
+	color: #919191;
+	margin-top: 20px;
+	text-align: center;
+}

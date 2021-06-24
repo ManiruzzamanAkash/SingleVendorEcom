@@ -1,0 +1,663 @@
+.ctgry a,
+.accArea a,
+.brandLogo,
+.note {
+	font-size: 14px;
+}
+
+.titleArea,
+.price,
+.empty-heading {
+	font-size: 18px;
+}
+
+.add-msg,
+.item-title,
+.total-area {
+	font-size: 16px;
+}
+
+.sub-name {
+	font-weight: 500;
+}
+
+.brandLogo a,
+.ctgry a,
+.sublink-category a,
+.accArea ul li a,
+.itemName a,
+.prod-name a,
+.listStyle:hover,
+.order-id a,
+.detail-view a,
+.order-name a {
+	text-decoration: none;
+}
+
+.amount,
+.footer-links,
+.item-title,
+.delivery-detail,
+.titleArea,
+.name,
+.note,
+.itemName,
+.item-cost,
+.item-delivery,
+.sellBy,
+.checkout-footer {
+	font-family: "Roboto", Arial, sans-serif;
+}
+
+.secName,
+.prodPrice,
+.qnt,
+.pPrice,
+.procBtn,
+.otherInfo {
+	font-family: "Ubuntu", sans-serif;
+}
+
+.form-control:focus {
+	box-shadow: none;
+	border-color: #c1c1c1;
+}
+
+.slider-title h6 {
+	font-size: 14px;
+	color: #828994;
+}
+
+.btn-danger:focus {
+	box-shadow: none;
+}
+
+html,
+body {
+	width: 100%;
+	/* min-width: 1340px; */
+	background: #d1d1d114;
+	margin: 0;
+	padding: 0;
+}
+
+.container {
+	padding: 0;
+}
+
+/* .container-fluid {
+    max-width: 1340px;
+    min-width: 1340px;
+} */
+
+header {
+	/* height: 55px;
+    z-index: 9999; */
+}
+
+header,
+.subheader {
+	width: 100%;
+	background: #f8f9fa;
+	box-shadow: 10px 20px 30px #f8f9fa;
+}
+
+.navi-box {
+	/* max-width: 1100px;
+    min-width: 1100px; */
+	margin: 0 auto;
+	display: flex;
+}
+
+.brandLogo,
+.ctgry,
+.lgnArea,
+.crtArea,
+.searchHere {
+	line-height: 55px;
+	margin-right: 40px;
+}
+
+.nav-single-menu {
+    color: #151533;
+    padding: 10px;
+}
+
+.brandLogo a,
+.ctgry,
+.lgnArea,
+.crtArea,
+.searchHere,
+.LnG,
+.username,
+.LnG:hover,
+.username:hover,
+.dropdown,
+.ctgry .dropdown:hover,
+.badge {
+	color: #fff;
+}
+
+.accArea ul li a,
+.ctgry ul li a {
+	color: #000;
+	/*background: red;*/
+	padding: 0 10px;
+	display: block;
+}
+
+.commoner:last-child {
+	margin: 0;
+}
+
+.form-group {
+	margin: 0;
+}
+
+.search {
+	width: 200px;
+	height: 35px;
+	border-radius: 5px 0px 0px 5px;
+	outline: 0;
+	font-size: 14px;
+	padding: 10px 15px;
+	display: inline-block;
+}
+
+.search,
+.srchBtn {
+	border: none;
+}
+
+.searchBtn {
+	height: 35px;
+	width: 35px;
+	font-size: 17px;
+	padding: 0px;
+	background: #fff;
+	border-radius: 0px 5px 5px 0px !important;
+	overflow: hidden;
+	color: #673ab7;
+}
+
+.icon {
+	color: #673ab7;
+	margin-right: 10px;
+}
+
+.lgnArea {
+	width: 130px;
+	text-align: center;
+	overflow: hidden;
+}
+
+.LnG:hover,
+.username:hover {
+	text-decoration: none;
+}
+
+.catList,
+.accmenu {
+	display: none;
+}
+
+.accmenu {
+	background: #fff;
+	z-index: 9999;
+	position: absolute;
+	opacity: 0;
+}
+
+.accmenu::after,
+.catList::after {
+	content: "\f0de";
+	font-family: FontAwesome;
+	color: #fff;
+	max-height: 25px;
+	font-size: 40px;
+	position: absolute;
+	overflow: hidden;
+}
+
+.accmenu::after {
+	top: -22px;
+	left: 85px;
+}
+
+.accArea ul {
+	width: 200px;
+	padding: 0;
+	margin-left: -30px;
+	text-align: left;
+	box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.1);
+}
+
+.accArea ul li {
+	width: 100%;
+	border-bottom: 1px solid #ededed;
+	line-height: 45px;
+	/*list-style: none;*/
+}
+
+.accArea ul li:hover {
+	background: #f7fffe;
+}
+
+.accArea ul li a {
+	padding: 5px 10px;
+	display: block;
+	font-size: 16px;
+}
+
+.accArea:hover .accmenu,
+.ctgry:hover .catList {
+	display: block;
+	animation: load 0.5s forwards;
+}
+
+@keyframes load {
+	100% {
+		opacity: 1;
+	}
+}
+
+.cartLogo {
+	height: 25px;
+}
+
+.badge {
+	background: #673ab7;
+	float: right;
+	margin-top: 13px;
+}
+
+.crtArea,
+.cartArea {
+	position: relative;
+}
+
+.counter {
+	margin-top: 12px;
+	padding: 3px 6px;
+	border: 1px solid #fff;
+	color: #fff;
+	margin-left: -15px;
+	border-radius: 100%;
+	background: red;
+	position: absolute;
+}
+
+.crtArea {
+	min-width: 4%;
+	cursor: pointer;
+}
+
+/*category*/
+
+.catList {
+	background: #fff;
+}
+
+.catList::after {
+	top: -15px;
+	left: 85px;
+}
+
+.ctgry ul {
+	left: 13%;
+	padding: 0;
+	line-height: 40px;
+	z-index: 9999;
+	position: absolute;
+	border-radius: 3px;
+	opacity: 0;
+	box-shadow: 0px 0px 8px 1px rgba(0, 0, 0, 0.1);
+}
+
+.ctgry ul li {
+	display: inherit;
+	width: 180px;
+}
+
+.ctgry ul li ul {
+	left: 100%;
+	top: 0;
+	position: absolute;
+	background: #fff;
+	width: 360px;
+}
+
+.ctgry ul li ul li {
+	float: left;
+	border-left: 0.5px solid #ccc;
+}
+
+.ctgry ul ul {
+	border-radius: 0px 3px 3px 0px;
+	display: none;
+}
+
+/*show time*/
+
+.ctgry ul li:hover > ul {
+	display: block;
+	opacity: 1;
+}
+
+/*===================================================================================
+=============================== Category Header =====================================
+===================================================================================*/
+.main-menu-links {
+    box-shadow: 10px 30px 40px #f8f9fa;
+    text-align: center;
+    background: #f8f9fa;
+}
+
+.subheader {
+	/* height: 28px; */
+	overflow: hidden;
+}
+
+.subheader ul {
+    list-style: none;
+}
+
+.subheader ul li {
+    display: inline-block;
+}
+
+.subheader ul li a {
+    padding: 10px;
+    padding-right: 20px;
+}
+
+.subheader ul li a:hover {
+    text-decoration: none;
+}
+
+.holder {
+	max-width: 1320px;
+	/* min-width: 1320px; */
+	padding-right: 15px;
+	padding-left: 15px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.subLinks a {
+	color: #fff;
+	display: block;
+}
+
+/*.sublink-category{
+	width: 178px;
+	font-size: 13px;
+	float: left;
+}*/
+
+.subLinks ul li {
+	width: 135px;
+	display: inline-block;
+	font-size: 13px;
+	text-align: center;
+	/*margin-right: 15px;*/
+}
+
+.fixed {
+	position: fixed;
+	z-index: 9999;
+	box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
+}
+
+/*Lazy load */
+
+.blur-up {
+	-webkit-filter: blur(5px);
+	filter: blur(5px);
+	transition: filter 400ms, -webkit-filter 400ms;
+}
+
+.blur-up.lazyloaded {
+	-webkit-filter: blur(0);
+	filter: blur(0);
+}
+
+/*=================================================================================*/
+
+/* Footer section */
+
+/*=================================================================================*/
+
+#footer,
+.copyright {
+	padding: 30px 30px;
+	margin: 0 auto;
+	background-color: #151533;
+	overflow: hidden;
+}
+
+.footer-content {
+	float: left;
+	width: 185px;
+	/*overflow: hidden;*/
+	margin-right: 3.7%;
+}
+
+.footer-links a {
+	font-size: 13px;
+	display: inline-block;
+	color: #fff;
+}
+
+#footer h4 {
+	color: #878787;
+}
+
+.footer-text,
+.theEnd {
+	max-width: 1340px;
+	color: #fff;
+	overflow: hidden;
+}
+
+.copyright {
+	background-color: #151533;
+	border-top: 1px solid #454d5e;
+	padding: 8px 0;
+	margin: 0;
+	bottom: 0;
+}
+
+.footer-links {
+	margin-bottom: 10px;
+}
+
+.container,
+.footer-content {
+	padding: 0;
+}
+
+.payW {
+	display: flex;
+}
+
+.payLogo {
+	margin-right: 10px;
+}
+
+/*==================================================================================
+=================================== Back to top ====================================
+==================================================================================*/
+
+#scroll-top {
+    text-align: center;
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 12px;
+    background: #151533;
+    color: #fff;
+    border-radius: 20px;
+    position: fixed;
+    bottom: 6%;
+    border: 1px solid #fff;
+    right: 5%;
+    cursor: pointer;
+    display: none;
+    box-shadow: 0px 5px 7px 0px rgb(0 0 0 / 50%);
+}
+
+.hidden {
+	display: none;
+}
+
+/*=-====Bootstrapthemes.co btco-hover-menu=====*/
+
+.navbar-light .navbar-nav .nav-link {
+	color: rgb(64, 64, 64);
+}
+
+.btco-hover-menu a,
+.navbar > li > a {
+	text-transform: capitalize;
+	padding: 10px 15px;
+}
+
+.btco-hover-menu .active a,
+.btco-hover-menu .active a:focus,
+.btco-hover-menu .active a:hover,
+.btco-hover-menu li a:hover,
+.btco-hover-menu li a:focus,
+.navbar > .show > a,
+.navbar > .show > a:focus,
+.navbar > .show > a:hover {
+	color: #000;
+	background: transparent;
+	outline: 0;
+}
+
+/*submenu style start from here*/
+
+.dropdown-menu {
+	padding: 0px 0;
+	margin: 0 0 0;
+	border: 0px solid transition !important;
+	border: 0px solid rgba(0, 0, 0, 0.15);
+	border-radius: 0px;
+	-webkit-box-shadow: none !important;
+	box-shadow: none !important;
+}
+
+/*first level*/
+
+.btco-hover-menu .collapse ul > li:hover > a {
+	background: #eeeeee;
+	margin-right: 0px;
+}
+
+.btco-hover-menu .collapse ul ul > li:hover > a,
+.navbar .show .dropdown-menu > li > a:focus,
+.navbar .show .dropdown-menu > li > a:hover {
+	background: #fff;
+}
+
+/*second level*/
+
+.btco-hover-menu .collapse ul ul ul > li:hover > a {
+	background: #fff;
+}
+
+/*third level*/
+
+.btco-hover-menu .collapse ul ul,
+.btco-hover-menu .collapse ul ul.dropdown-menu {
+	background: #f5f5f5;
+	max-height: 450px;
+	overflow: scroll;
+}
+
+.btco-hover-menu .collapse ul ul ul,
+.btco-hover-menu .collapse ul ul ul.dropdown-menu {
+	background: #f5f5f5;
+}
+
+.btco-hover-menu .collapse ul ul ul ul,
+.btco-hover-menu .collapse ul ul ul ul.dropdown-menu {
+	background: #f5f5f5;
+}
+
+/*Drop-down menu work on hover*/
+
+.btco-hover-menu {
+	background: none;
+	margin: 0;
+	padding: 0;
+	min-height: 60px;
+}
+
+@media only screen and (max-width: 991px) {
+	.btco-hover-menu .show > .dropdown-toggle::after {
+		transform: rotate(-90deg);
+	}
+}
+
+@media only screen and (min-width: 991px) {
+	.btco-hover-menu .collapse ul li {
+		position: relative;
+	}
+	.btco-hover-menu .collapse ul li:hover > ul {
+		display: block;
+	}
+	.btco-hover-menu .collapse ul ul {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		min-width: 250px;
+		display: none;
+	}
+	/*******/
+	.btco-hover-menu .collapse ul ul li {
+		position: relative;
+	}
+	.btco-hover-menu .collapse ul ul li:hover > ul {
+		display: block;
+	}
+	.btco-hover-menu .collapse ul ul ul {
+		position: absolute;
+		top: 0;
+		left: 100%;
+		min-width: 250px;
+		display: none;
+	}
+	/*******/
+	.btco-hover-menu .collapse ul ul ul li {
+		position: relative;
+	}
+	.btco-hover-menu .collapse ul ul ul li:hover ul {
+		display: block;
+	}
+	.btco-hover-menu .collapse ul ul ul ul {
+		position: absolute;
+		top: 0;
+		left: -100%;
+		min-width: 250px;
+		display: none;
+		z-index: 1;
+	}
+}
+
+li.nav-item {
+	margin-left: 5px;
+}
+
+.navbar-toggler {
+    padding: 0.25rem 0.75rem;
+    font-size: 1.25rem;
+    line-height: 1;
+    background-color: #ffffffc7;
+    border: 1px solid #fff;
+    border-radius: 0.25rem;
+    margin-right: 10px;
+    margin-left: 13px;
+}

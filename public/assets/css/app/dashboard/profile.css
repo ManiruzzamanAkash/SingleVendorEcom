@@ -1,0 +1,58 @@
+.profile-information{
+	padding: 7px 15px;
+	font-size: 14px;
+}
+.titleName, .heading{
+	font-family: 'Roboto', sans-serif;
+}
+.heading{
+	font-size: 15px;
+	font-weight: 500;
+	padding: 10px 15px;
+	border-bottom: 1px solid #ccc;
+}
+.info-title{
+	width: 95px;
+	float: left;
+}
+.info-title, .info-content{
+	font-family: 'Ubuntu', sans-serif;
+	font-weight: 400;
+}
+.mainContent{
+ width: 100%;
+}
+.title-area{
+	padding: 15px;
+	overflow: hidden;
+	/*border-bottom: 1px solid #ccc;*/
+	font-size: 18px;
+	margin-bottom: 10px;
+}
+.titleName{
+	float: left;
+}
+.verified{
+	width: 130px;
+	text-align: center;
+	background: orange;
+	color: #fff;
+	font-size: 11px;
+	padding: 5px;
+	border-radius: 15px;
+	float: right;
+}
+.information-area{
+	width: 300px;
+	padding-bottom: 10px;
+	float: left;
+	margin-right: 15px;
+	background: #fff;
+	box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2);
+}
+.information-area:last-child{
+	margin: 0;
+}
+.note{
+	padding: 5px 15px;
+}

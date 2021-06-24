@@ -1,0 +1,54 @@
+.mainContent{
+	background: #fff;
+	box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.2);
+	overflow: hidden;
+}
+.title-area{
+	border-bottom: 1px solid #ccc;
+	padding: 10px 15px;
+	font-weight: 500;
+	font-size: 22px;
+	margin-bottom: 10px;
+}
+.title-area h6{
+	font-family: 'Ubuntu', sans-serif;
+	color: #878787;
+	font-size: 14px;
+}
+.section{
+	/*background: #fff;*/
+	padding: 15px;
+	width: 305px;
+	float: left;
+}
+.sec-divider{
+	overflow: hidden;
+	width: 100%;
+}
+.sec-name{
+	font-size: 18px;
+	font-weight: 500;
+	font-family: 'Ubuntu', sans-serif;
+}
+.form-control, .saveData, .title-area{
+	font-family: 'Roboto', sans-serif;
+}
+.saveFooter{
+	margin-top: 20px;
+	box-shadow: 0px 5px 20px 0px rgba(0, 0, 0, 0.3);
+}
+.saveData{
+	width: 220px;
+	background: #f58509;
+	color: #fff;
+	padding: 15px;
+	margin: 15px;
+	font-size: 16px;
+	font-weight: 500;
+	float: right;
+	border: none;
+	cursor: pointer;
+}
+.saveData:hover{
+	background: #ff8600;
+}
