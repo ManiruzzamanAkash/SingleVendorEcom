@@ -51,10 +51,16 @@
               </div>
               <div class="col-md-3">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Discount Percentage</label>
-                  <input type="number" class="form-control" name="offer_price" id="exampleInputEmail1">
+                  <label for="exampleInputEmail1">Discount Ppercentage</label>
+                  <input type="number" class="form-control" name="discount" id="exampleInputEmail1">
                 </div>
               </div>
+              {{-- <div class="col-md-3">
+                <div class="form-group">
+                  <label for="exampleInputEmail1">Discount Ppercentage</label>
+                  <input type="number" class="form-control" name="offer_price" id="exampleInputEmail1">
+                </div>
+              </div> --}}
               <div class="col-md-3">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Quantity</label>

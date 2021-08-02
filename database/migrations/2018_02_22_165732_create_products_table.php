@@ -15,20 +15,22 @@ class CreateProductsTable extends Migration
     {
         Schema::create('products', function (Blueprint $table) {
             $table->increments('id');
-            $table->integer('category_id')->unsigned();
-            $table->integer('brand_id')->unsigned();
+            $table->unsignedInteger('category_id');
+            $table->unsignedInteger('brand_id');
             $table->string('title');
             $table->string('occation')->nullable();
             $table->string('slogan')->nullable();
-            $table->string('delivery_time');
+            $table->unsignedInteger('delivery_time')->default(4320)->comment('eg; time in minutes 4320 minutes = 3 days');
             $table->text('description')->nullable();
             $table->string('slug');
-            $table->integer('quantity')->default(1);
-            $table->integer('price');
-            $table->tinyInteger('status')->default(0);
-            $table->integer('offer_price')->nullable();
+            $table->unsignedInteger('quantity')->default(1);
+            $table->unsignedFloat('price')->default(0);
+            $table->boolean('status')->default(0);
+            $table->unsignedFloat('offer_price')->nullable();
+            $table->unsignedFloat('discount')->nullable();
+            $table->enum('discount_type', ['percentage', 'numeric'])->default('percentage');
             $table->string('warranty')->nullable();
-            $table->integer('admin_id')->unsigned();
+            $table->unsignedInteger('admin_id');
             $table->timestamps();
         });
     }

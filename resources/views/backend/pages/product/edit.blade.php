@@ -40,8 +40,8 @@
             </div>
 
             <div class="form-group">
-              <label for="exampleInputEmail1">Offer price</label>
-              <input type="number" class="form-control" name="offer_price" id="exampleInputEmail1" value="{{ $product->offer_price }}">
+              <label for="exampleInputEmail1">Discount</label>
+              <input type="number" class="form-control" name="discount" id="exampleInputEmail1" value="{{ $product->discount?$product->discount:0 }}">
             </div>
             <div class="form-group">
               <label for="exampleInputEmail1">Quantity</label>
