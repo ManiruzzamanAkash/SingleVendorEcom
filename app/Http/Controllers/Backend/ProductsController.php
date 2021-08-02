@@ -41,33 +41,40 @@ class ProductsController extends Controller
   {
 
     $request->validate([
-      'title'         => 'required|max:150',
-      'price'             => 'required|numeric',
-      'delivery_time'             => 'required',
-      'offer_price'             => 'required|numeric',
-      'quantity'             => 'required|numeric',
-      'category_id'             => 'required|numeric',
-      'brand_id'             => 'required|numeric',
+      'title'         => 'required|max: 150',
+      'price'         => 'required|numeric',
+      'delivery_time' => 'required',
+      'discount'      => 'required|numeric',
+      'quantity'      => 'required|numeric',
+      'category_id'   => 'required|numeric',
+      'brand_id'      => 'required|numeric',
     ]);
-
-
 
     $product = new Product();
 
-    $product->title = $request->title;
-    $product->description = $request->description;
-    $product->price = $request->price;
-    $product->occation = $request->occation;
-    $product->slogan = $request->slogan;
-    $product->delivery_time = $request->delivery_time;
-    $product->offer_price = $request->offer_price;
-    $product->quantity = $request->quantity;
-    $product->warranty = $request->warranty;
+    $product->title          = $request->title;
+    $product->description    = $request->description;
+    $product->occation       = $request->occation;
+    $product->slogan         = $request->slogan;
+    $product->delivery_time  = intval($request->delivery_time);
+    $product->price          = $request->price;
 
-    $product->slug = str_slug($request->title);
+    if ($request->discount) {
+      $product->discount    = $request->discount;
+      $product->offer_price = ($request->price * $request->discount) / 100;
+    } else {
+      $product->discount    = null;
+      $product->offer_price = 0;
+    }
+
+    $product->quantity       = $request->quantity;
+    // discount
+    $product->warranty      = $request->warranty;
+
+    $product->slug        = str_slug($request->title);
     $product->category_id = $request->category_id;
-    $product->brand_id = $request->brand_id;
-    $product->admin_id = Auth::id();
+    $product->brand_id    = $request->brand_id;
+    $product->admin_id    = Auth::id();
     $product->save();
 
     //ProductImage Model insert image
