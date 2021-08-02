@@ -14,25 +14,25 @@
             @include('backend.partials.messages')
             <div class="form-group">
               <label for="exampleInputEmail1">Title</label>
-              <input type="text" class="form-control" name="title" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter product name">
+              <input type="text" class="form-control" name="title" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter product Title">
             </div>
             <div class="row">
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Occation / #tag / Announcement</label>
-                  <input type="text" class="form-control" name="occation" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter product name">
+                  <input type="text" class="form-control" name="occation" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter product Occation / #tag / Announcement">
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Slogan</label>
-                  <input type="text" class="form-control" name="slogan" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter product name">
+                  <input type="text" class="form-control" name="slogan" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter product Slogan">
                 </div>
               </div>
               <div class="col-md-4">
                 <div class="form-group">
                   <label for="exampleInputEmail1">Delivery Date</label>
-                  <input type="text" class="form-control" name="delivery_time" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter product name">
+                  <input type="text" class="form-control" name="delivery_time" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter product Delivery Date">
                 </div>
               </div>
             </div>
@@ -51,7 +51,7 @@
               </div>
               <div class="col-md-3">
                 <div class="form-group">
-                  <label for="exampleInputEmail1">Old price</label>
+                  <label for="exampleInputEmail1">Discount Percentage</label>
                   <input type="number" class="form-control" name="offer_price" id="exampleInputEmail1">
                 </div>
               </div>

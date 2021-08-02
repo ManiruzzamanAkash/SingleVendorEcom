@@ -47,13 +47,14 @@
         @foreach ($sliders as $slider)
 
         <div class="carousel-item {{ $loop->index == 0 ? 'active' : '' }}">
-            <a href="{{ $slider->button_link }}" target="_blank">
+            {{-- <a  href="{{ $slider->button_link }}" target="_blank"> --}}
                 <img class="d-block w-100" src="{{ asset('images/sliders/'.$slider->image) }}" height="500px" alt="{{$slider->title}}">
                 <div class="carousel-caption d-none d-md-block">
                     <h3>{{ $slider->title }}</h3>
                     <p>{{ $slider->description?$slider->description:'No description' }}</p>
+                    <a href="{{ $slider->button_link }}" target="_blank" class="btn btn-outline-dark text-info">Shop Now</a>
                   </div>
-            </a>
+            {{-- </a> --}}
         </div>
 
         @endforeach
@@ -114,7 +115,7 @@
         <div class="slider-title">
             {{ $catSingle->slider_name }}
             <h6>{{ $catSingle->slider_slogan }}</h6>
-            <a href="" type="button" class="btn btn-outline-secondary">Shop Now</a>
+            <a href="{{ route('categories.index') }}" type="button" class="btn btn-outline-secondary">Shop Now</a>
         </div>
         <div class="slide-6 theme-arrow product-m">
             @foreach ($catSingle->products()->limit(12)->get() as $product)
@@ -180,6 +181,13 @@
 @endif
 @endif
 @endforeach
+
+<section>
+    <div>
+
+    </div>
+</section>
+
 
 <!-- Hot deal -->
 {{-- <section>
