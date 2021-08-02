@@ -37,6 +37,11 @@
                       </div>
 
                       <div class="form-group">
+                        <label for="description">Slider Description <small class="text-danger">(required)</small></label>
+                        <input type="text" class="form-control" name="description" id="description" placeholder="Slider description" required>
+                      </div>
+
+                      <div class="form-group">
                         <label for="image">Slider Image <small class="text-danger">(required)</small></label>
                         <input type="file" class="form-control" name="image" id="image" placeholder="Slider Image" required>
                       </div>
@@ -131,6 +136,11 @@
                           <div class="form-group">
                             <label for="title">Slider Title <small class="text-danger">(required)</small></label>
                             <input type="text" class="form-control" name="title" id="title" placeholder="Slider Title" required value="{{ $slider->title }}">
+                          </div>
+
+                          <div class="form-group">
+                            <label for="description">Slider Description <small class="text-danger">(required)</small></label>
+                            <input type="text" class="form-control" name="description" id="description" placeholder="Slider description" required>
                           </div>
 
                           <div class="form-group">

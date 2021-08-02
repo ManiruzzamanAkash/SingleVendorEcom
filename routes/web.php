@@ -11,6 +11,10 @@
 |
 */
 
+
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Route;
+
 Route::get('/', 'Frontend\PagesController@index')->name('index');
 Route::get('/contact', 'Frontend\PagesController@contact')->name('contact');
 

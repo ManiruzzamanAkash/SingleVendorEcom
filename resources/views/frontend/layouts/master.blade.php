@@ -23,6 +23,7 @@
 
 <body>
   <div id="app">
+    {{-- @include('frontend.partials.topbar') --}}
     @include('frontend.partials.nav')
     <div class="container-fluid">
       @yield('content')

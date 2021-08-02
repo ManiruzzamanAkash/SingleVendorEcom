@@ -26,12 +26,14 @@ class SlidersController extends Controller
   {
     $this->validate($request, [
       'title'  => 'required',
+      'description'  => 'required',
       'image'  => 'required|image',
       'priority'  => 'required',
       'button_link'  => 'nullable|url'
     ],
     [
       'title.required'  => 'Please provide slider title',
+      'description.required'  => 'Please provide slider description',
       'priority.required'  => 'Please provide slider priority',
       'image.required'  => 'Please provide slider image',
       'image.image'  => 'Please provide a valid slider image',
@@ -40,6 +42,7 @@ class SlidersController extends Controller
 
     $slider = new Slider();
     $slider->title = $request->title;
+    $slider->description = $request->description;
     $slider->button_text = $request->button_text;
     $slider->button_link = $request->button_link;
     $slider->priority = $request->priority;
@@ -62,12 +65,14 @@ class SlidersController extends Controller
     {
           $this->validate($request, [
           'title'  => 'required',
+          'description'  => 'required',
           'image'  => 'nullable|image',
           'priority'  => 'required',
           'button_link'  => 'nullable|url'
         ],
         [
           'title.required'  => 'Please provide slider title',
+          'description.required'  => 'Please provide slider description',
           'priority.required'  => 'Please provide slider priority',
           'image.image'  => 'Please provide a valid slider image',
           'button_link.url'  => 'Please provide a valid slider button link'
@@ -75,6 +80,7 @@ class SlidersController extends Controller
 
         $slider = Slider::find($id);
         $slider->title = $request->title;
+        $slider->description = $request->description;
         $slider->button_text = $request->button_text;
         $slider->button_link = $request->button_link;
         $slider->priority = $request->priority;

@@ -17,6 +17,7 @@ class CreateSlidersTable extends Migration
             $table->increments('id');
             $table->string('title');
             $table->string('image');
+            $table->text('description');
             $table->string('button_text')->nullable();
             $table->string('button_link')->nullable();
             $table->unsignedTinyInteger('priority')->default(10);
