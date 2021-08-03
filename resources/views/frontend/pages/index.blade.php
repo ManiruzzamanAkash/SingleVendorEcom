@@ -10,8 +10,8 @@
             @foreach ($sliders as $slider)
 
                 <div class="carousel-item {{ $loop->index == 0 ? 'active' : '' }}">
-                    <img class="d-block w-100" src="{{ asset('images/sliders/' . $slider->image) }}" height="500px"
-                        alt="{{ $slider->title }}">
+                    <img class="d-block w-100" src="{{ asset('images/sliders/' . $slider->image) }}" height="auto"
+                        alt="{{ $slider->title }}" >
                     <div class="carousel-caption d-none d-md-block">
                         <h3 class="text-white">{{ $slider->title }}</h3>
                         <p class="text-white">{{ $slider->description ? $slider->description : '' }}</p>
@@ -54,6 +54,7 @@
                                 $categoryProducts = $catSingle
                                     ->products()
                                     ->limit(12)
+                                    ->orderBy('id', 'desc')
                                     ->get();
                             @endphp
 
