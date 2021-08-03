@@ -14,3 +14,21 @@
 	position: absolute;
 }
 /** Bootstrap Overrides */
+
+
+.offer-section {
+	width: 100%;
+	height: 450px;
+	margin-bottom: 15px;
+	background-size: cover;
+    background-repeat: no-repeat;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	
+}
+
+.offer-body {
+	color: white;
+	text-align: center;	
+}
