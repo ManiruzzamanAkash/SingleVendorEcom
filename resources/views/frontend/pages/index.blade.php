@@ -104,10 +104,15 @@
                 <dr></dr>
                 <p>Summer favorites. New styles added.</p>
                 <dr></dr>
-                <a href="{{ route('categories.show', $catSingle->slug) }}" type="button"
-                    class="btn btn-outline-secondary">Shop Now</a>
-                <a href="SingleVendorEcom/products/category/t-shirt?offer=50" type="button"
-                    class="btn btn-outline-secondary">Shop Now</a>
+                <a href="{{ route('categories.show', 'women') }}?offer=50" type="button"
+                    class="btn btn-outline-secondary text-white">
+                    Shop Now
+                </a>
+
+                <a href="{{ route('categories.show', 'mens') }}?offer=50" type="button"
+                    class="btn btn-outline-secondary text-white">
+                    Shop Now
+                </a>
 
             </div>
         </div>
