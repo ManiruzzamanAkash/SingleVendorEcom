@@ -13,7 +13,7 @@
   <link rel="icon" href="public/assets/images/favicon/favicon.png" type="image/x-icon" />
   <link rel="shortcut icon" href="public/assets/images/favicon/favicon.png" type="image/x-icon" />
   <title>
-    @yield('title', 'Laravel Ecommerce Project')
+    @yield('title', config('app.name'))
   </title>
   <meta name="csrf-token" content="{{ csrf_token() }}">
   @include('frontend.partials.styles')
