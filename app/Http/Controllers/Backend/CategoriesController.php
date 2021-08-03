@@ -47,6 +47,7 @@ class CategoriesController extends Controller
     $category->sub_header = $request->sub_header;
     $category->slider_name = $request->slider_name;
     $category->slider_slogan = $request->slider_slogan;
+    
     if (empty($request->slug)) {
         $category->slug = StringHelper::createSlug($request->name, 'Category', 'slug', '-');
       }else{
@@ -84,9 +85,7 @@ class CategoriesController extends Controller
 
     public function update(Request $request, $id)
     {
-
       $category = Category::find($id);
-
       $this->validate($request, [
         'name'  => 'required',
         'image'  => 'nullable|image',
@@ -105,8 +104,8 @@ class CategoriesController extends Controller
       if (empty($request->slug)) {
         $category->slug = StringHelper::createSlug($request->name, 'Category', 'slug', '-');
       }else{
-        $category->slug = StringHelper::createSlug($request->slug, 'Category', 'slug', '-');
-    }
+        $category->slug = $request->slug;
+      }
       $category->description = $request->description;
       $category->parent_id = $request->parent_id;
       //insert images also
