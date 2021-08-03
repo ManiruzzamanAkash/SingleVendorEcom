@@ -17529,8 +17529,7 @@ input:focus {
 
 .sidebar {
     min-height: calc(100vh - 58px);
-    /* background: linear-gradient(88deg, #9C27B0, #3F51B5); */
-    background: #2E86C1;
+    background: #1367c8;
     font-family: "Poppins", sans-serif;
     padding: 0;
     width: 255px;
@@ -17625,7 +17624,7 @@ input:focus {
     font-family: "Poppins", sans-serif;
     display: block;
     height: auto;
-    padding: 0 1.625rem 2.25rem 1.188rem;
+    padding: 0 1.625rem 0.8rem 1.188rem;
 }
 
 .sidebar .nav .nav-item.nav-profile .profile-image {
@@ -17788,8 +17787,7 @@ input:focus {
 
 .navbar {
     font-family: "Poppins", sans-serif;
-    /* background: linear-gradient(88deg, #9C27B0, #3F51B5); */
-    background: #2E86C1;
+    background: #1367c8;
     transition: background 0.25s ease;
     -webkit-transition: background 0.25s ease;
     -moz-transition: background 0.25s ease;
@@ -17801,7 +17799,7 @@ input:focus {
     -webkit-transition: width 0.25s ease, background 0.25s ease;
     -moz-transition: width 0.25s ease, background 0.25s ease;
     -ms-transition: width 0.25s ease, background 0.25s ease;
-    background: linear-gradient(88deg, #263238, #3F51B5);
+    background: #1367c8;
     width: 255px;
     height: 58px;
 }

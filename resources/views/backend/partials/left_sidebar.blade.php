@@ -3,11 +3,8 @@
   <ul class="nav">
     <li class="nav-item nav-profile">
       <div class="nav-link">
-        <div class="profile-image">
-          <span class="online-status online"></span> </div>
         <div class="profile-name">
           <p class="name">{{ Auth::guard('admin')->user()->name }}</p>
-          <p class="designation">Admin</p>
           <div class="badge badge-teal mx-auto mt-3">Online</div>
         </div>
       </div>
@@ -18,8 +15,7 @@
 
 
     <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#general-pages" aria-expanded="false"
-        aria-controls="general-pages">
+      <a class="nav-link" data-toggle="collapse" href="#general-pages" aria-expanded="false" aria-controls="general-pages">
         <span class="menu-title">Manage Products</span>
         <i class="fa fa-chevron-down"></i>
       </a>
@@ -45,8 +41,7 @@
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#coupon-pages" aria-expanded="false"
-        aria-controls="coupon-pages">
+      <a class="nav-link" data-toggle="collapse" href="#coupon-pages" aria-expanded="false" aria-controls="coupon-pages">
         <span class="menu-title">Manage Coupons</span>
         <i class="fa fa-chevron-down"></i>
       </a>
@@ -60,8 +55,7 @@
 
 
     <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#category-pages" aria-expanded="false"
-        aria-controls="general-pages">
+      <a class="nav-link" data-toggle="collapse" href="#category-pages" aria-expanded="false" aria-controls="general-pages">
         <span class="menu-title">Manage Categories</span><i class="fa fa-chevron-down"></i>
       </a>
       <div class="collapse" id="category-pages">
@@ -73,8 +67,7 @@
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#brand-pages" aria-expanded="false"
-        aria-controls="general-pages">
+      <a class="nav-link" data-toggle="collapse" href="#brand-pages" aria-expanded="false" aria-controls="general-pages">
         <span class="menu-title">
           Manage Brands</span><i class="fa fa-chevron-down"></i>
       </a>
@@ -87,8 +80,7 @@
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#division-pages" aria-expanded="false"
-        aria-controls="general-pages"> <span class="menu-title">
+      <a class="nav-link" data-toggle="collapse" href="#division-pages" aria-expanded="false" aria-controls="general-pages"> <span class="menu-title">
           Manage Divisions</span><i class="fa fa-chevron-down"></i>
       </a>
       <div class="collapse" id="division-pages">
@@ -101,8 +93,7 @@
 
 
     <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#district-pages" aria-expanded="false"
-        aria-controls="general-pages">
+      <a class="nav-link" data-toggle="collapse" href="#district-pages" aria-expanded="false" aria-controls="general-pages">
         <span class="menu-title">
           Manage Districts</span><i class="fa fa-chevron-down"></i>
       </a>
@@ -116,8 +107,7 @@
 
 
     <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#slider-pages" aria-expanded="false"
-        aria-controls="general-pages"> <span class="menu-title">
+      <a class="nav-link" data-toggle="collapse" href="#slider-pages" aria-expanded="false" aria-controls="general-pages"> <span class="menu-title">
           Manage Sliders</span><i class="fa fa-chevron-down"></i>
       </a>
       <div class="collapse" id="slider-pages">
@@ -128,8 +118,7 @@
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#review-pages" aria-expanded="false"
-        aria-controls="general-pages"> <span class="menu-title">
+      <a class="nav-link" data-toggle="collapse" href="#review-pages" aria-expanded="false" aria-controls="general-pages"> <span class="menu-title">
           Manage Reviews</span><i class="fa fa-chevron-down"></i>
       </a>
       <div class="collapse" id="review-pages">
@@ -140,8 +129,7 @@
     </li>
 
     <li class="nav-item">
-      <a class="nav-link" data-toggle="collapse" href="#reports-pages" aria-expanded="false"
-        aria-controls="general-pages"> <span class="menu-title">
+      <a class="nav-link" data-toggle="collapse" href="#reports-pages" aria-expanded="false" aria-controls="general-pages"> <span class="menu-title">
           Reports</span><i class="fa fa-chevron-down"></i>
       </a>
       <div class="collapse" id="reports-pages">

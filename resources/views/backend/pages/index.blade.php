@@ -4,7 +4,7 @@
     <div class="main-panel">
         <div class="content-wrapper">
             <div class="card card-body">
-                <h3>Welcome to Amar Mart BD</h3>
+                <h3>Welcome to {{ config('app.name') }}</h3>
             </div>
 
             <div class="row mt-3 text-center">
