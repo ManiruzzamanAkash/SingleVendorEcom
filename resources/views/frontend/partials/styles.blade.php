@@ -46,12 +46,12 @@
 {{-- <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/style8.css') }}?v1.0.2"> --}}
 
 <!-- Custom CSS -->
-<link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/custom.css') }}?v=1.0.3" id="color">
+<link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/custom.css') }}?v={{ config('constants.asset_version') }}" id="color">
 
-<link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/app/header.css') }}?v=1.0.3">
+<link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/app/header.css') }}?v={{ config('constants.asset_version') }}">
 
 <!-- Responsive CSS -->
-<link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/responsive.css') }}?v=1.0.3">
+<link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/responsive.css') }}?v={{ config('constants.asset_version') }}">
 
 <!-- Fontawesome CSS -->
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
