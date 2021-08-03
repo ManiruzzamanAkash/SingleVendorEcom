@@ -20,25 +20,35 @@
 
 <!-- Start Sidebar + Content -->
 <div class='container content-holder'>
-
-	<div class="titleArea cateTitle">
-		{{ $category->name }}
-	</div>
-	@php
-
-	$products = $category->products()->paginate(20);
-	
-	if (request()->offer) {
-		// $products = $category->products()
-		// 			->where('discount', intval(request()->offer))
-		// 			->paginate(20);	
-	}
+	@php 
+		$query = $category->products(); 
+		$offers = [0, 10, 20, 30, 40, 50, 70, 80, 100]; 
+		if (request()->offer) {
+			$query->where('discount', '>=', request()->offer);
+		}
+		$products = $query->paginate(20);
 	@endphp
+
+	<div class="titleArea cateTitle" style="text-align: left">
+		<div class="pull-left">
+			{{ $category->name }}
+			<p><small>{{ $category->slogan }}</small></p>
+		</div>
+		<div class="pull-right">
+			Offers: 
+			@foreach ($offers as $offer)
+				<a class="btn btn-sm btn{{ request()->offer == $offer  ? '' : '-outline'}}-info" href="{{ route('categories.show', $category->slug) }}?offer={{ $offer }}">{{ $offer }}%</a>
+			@endforeach
+		</div>
+        <div class="clearfix"></div>
+	</div>
 
 	@if ($products->count() > 0)
 		@include('frontend.pages.product.partials.all_products')
 	@else
 
+
+	
 	<div class="empty-holder">
 		<div class="emptyContent">
 			<div class="empty-logo">
@@ -50,14 +60,6 @@
 			</div>
 		</div>
 	</div>
-	{{-- <div class="alert alert-warning">
-    <p>
-      <strong>Sorry !! No item in the Category !!</strong>
-    </p>
-    <p>
-      <a href="{{ route('products') }}" class="btn btn-theme">View Products</a>
-	</p>
-</div> --}}
 @endif
 </div>
 
