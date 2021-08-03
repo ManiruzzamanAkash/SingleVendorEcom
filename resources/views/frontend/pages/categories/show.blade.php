@@ -29,8 +29,9 @@
 	$products = $category->products()->paginate(20);
 	
 	if (request()->offer) {
+		dd(request()->offer)
 		// $products = $category->products()
-		// 			->where('discount_percentage', intval(request()->offer))
+		// 			->where('discount', intval(request()->offer))
 		// 			->paginate(20);	
 	}
 	@endphp
