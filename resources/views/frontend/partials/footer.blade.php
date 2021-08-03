@@ -30,6 +30,14 @@
     </div>
 </footer>
 <div class="copyright">
+    
+    <div class="social-body">
+        <a href="#"><i class="fab fa-facebook-square"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-youtube"></i></a>
+        
+    </div>
     <div class="text-center theEnd">
         Copyright &copy; DemoSite, 2018
     </div>
