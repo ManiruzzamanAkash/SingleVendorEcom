@@ -8,10 +8,7 @@
 @section('content')
   <div class="container content-holder">
     <div class="register-form-area">
-      <div class="logo">
-        <a href="{{ route('index') }}"><img src="{{ asset('public/assets/images/logo.png') }}"></a>
-      </div>
-    <register-user url="{{ url('/') }}"></register-user>
+      <register-user url="{{ url('/') }}"></register-user>
     </div>
   </div>
 @include('auth.partials.footer')
