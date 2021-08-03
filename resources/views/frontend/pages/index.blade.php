@@ -10,17 +10,19 @@
             @foreach ($sliders as $slider)
 
                 <div class="carousel-item {{ $loop->index == 0 ? 'active' : '' }}">
-
                     <img class="d-block w-100" src="{{ asset('images/sliders/' . $slider->image) }}" height="500px"
                         alt="{{ $slider->title }}">
                     <div class="carousel-caption d-none d-md-block">
-                        <h3 class="text-dark">{{ $slider->title }}</h3>
-                        <p class="text-dark">{{ $slider->description ? $slider->description : 'No description' }}</p>
-                        <a href="{{ route('brands.index') }}" type="button" class="btn btn-outline-secondary">Shop Now</a>
+                        <h3 class="text-white">{{ $slider->title }}</h3>
+                        <p class="text-white">{{ $slider->description ? $slider->description : '' }}</p>
+
+                        @if ($slider->button_link)
+                            <a href="{{ $slider->button_link }}" type="button" class="btn btn-outline-secondary">
+                                {{ $slider->button_text }}
+                            </a>
+                        @endif
                     </div>
-
                 </div>
-
             @endforeach
         </div>
         <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -43,37 +45,19 @@
                             {{ $catSingle->slider_name }}
                             <h6>{{ $catSingle->slider_slogan }}</h6>
                             <a href="{{ route('categories.show', $catSingle->slug) }}" type="button"
-                                class="btn btn-outline-secondary">Shop Now</a>
+                                class="btn btn-outline-secondary">
+                                Shop Now
+                            </a>
                         </div>
                         <div class="slide-6 theme-arrow product-m">
-                            @foreach ($catSingle->products()->limit(12)->get()
-        as $product)
-                                {{-- <div class="product-box">
-        <div class="product">
-             @if (Auth::check())
-                 <div class="wishlist-div">
-                     <add-wishlist url="{{ url('/') }}" id="{{ $product->id }}"
-            api_token="{{ Auth::user()->api_token }}"></add-wishlist>
-        </div>
-        @endif
-        <div class="product-image-div">
-            <a href="{!! route('products.show', $product->slug) !!}">
-                <img src="{{ asset('images/products/'.$product->images->first()->image) }}" alt="{{ $product->title }}" class="img-fluid blur-up lazyload product-image">
-            </a>
-        </div>
+                            @php
+                                $categoryProducts = $catSingle
+                                    ->products()
+                                    ->limit(12)
+                                    ->get();
+                            @endphp
 
-        <div class="product-info">
-            <a href="{!! route('products.show', $product->slug) !!}">
-                <h6 class="product-title">{{ $product->title }}</h6>
-            </a>
-            <h4 class="product-price">৳{{ $product->price }}</h4>
-        </div>
-        <div class="cart-info">
-            <add-cart url="{{ url('/') }}" id="{{ $product->id }}"></add-cart>
-        </div>
-    </div>
-</div> --}}
-
+                            @foreach ($categoryProducts as $product)
                                 <div class="product">
                                     <div class="proImg">
                                         <a href="{!! route('products.show', $product->slug) !!}" class="thumbnail">
@@ -81,6 +65,7 @@
                                                 src="{{ asset('images/products/' . $product->images->first()->image) }}"
                                                 class="img-responsive blur-up lazyload">
                                         </a>
+
                                         @if (Auth::check())
                                             <div class="wishlist-div">
                                                 <add-wishlist url="{{ url('/') }}" id="{{ $product->id }}"
@@ -88,6 +73,7 @@
                                                 </add-wishlist>
                                             </div>
                                         @endif
+
                                         <div class="info" onclick="location.href='{!! route('products.show', $product->slug) !!}'">
                                             <h5 class="prodTitle">
                                                 {{ $product->title }}
@@ -103,23 +89,24 @@
 
                                 </div>
                             @endforeach
-
                         </div>
-
-
                     </div>
                 </div>
             @endif
         @endif
     @endforeach
 
-    <section >
-        <div class="offer-section" style="background-image: url('{{ asset('images/Sale_HP__2x.jpg')}}');"  >
-            <div class="offer-body" >
-                <h3>Extra 50% off Sale</h3><dr></dr>
-                <p>Summer favorites. New styles added.</p><dr></dr>
-                <a href="{{ route('categories.show', $catSingle->slug) }}" type="button" class="btn btn-outline-secondary">Shop Now</a>
-                <a href="SingleVendorEcom/products/category/t-shirt?offer=50" type="button" class="btn btn-outline-secondary">Shop Now</a>
+    <section>
+        <div class="offer-section" style="background-image: url('{{ asset('images/Sale_HP__2x.jpg') }}');">
+            <div class="offer-body">
+                <h3>Extra 50% off Sale</h3>
+                <dr></dr>
+                <p>Summer favorites. New styles added.</p>
+                <dr></dr>
+                <a href="{{ route('categories.show', $catSingle->slug) }}" type="button"
+                    class="btn btn-outline-secondary">Shop Now</a>
+                <a href="SingleVendorEcom/products/category/t-shirt?offer=50" type="button"
+                    class="btn btn-outline-secondary">Shop Now</a>
 
             </div>
         </div>
