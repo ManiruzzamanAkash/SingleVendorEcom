@@ -18,7 +18,7 @@
     <ul class="navbar-nav navbar-nav-right">
       <li class="nav-item d-none d-lg-block">
         <a class="nav-link" href="{{ route('admin.index') }}">
-          <img class="img-xs rounded-circle" src="{{ asset('images/faces/face4.jpg') }}" alt="">
+          <img class="img-xs rounded-circle" src="{{ asset('images/faces-clipart/pic-4.png') }}" alt="">
         </a>
       </li>
     </ul>
