@@ -16,6 +16,72 @@
 			</div>
 			<div class="card-body">
 				@include('backend.partials.messages')
+				<div class="table-responsive product-table">
+					<table class="table table-striped table-bordered display ajax_view"  id="category_table">
+					  <thead>
+						<tr>
+						  <th>#SL</th>
+						  <th>Category Name</th>
+						  <th>Category Image</th>
+						  {{-- <th>Category Link</th> --}}
+						  <th>Parent Category</th>
+						  <th>Action</th>
+						</tr>
+					  </thead>
+					</table>
+				</div>
+			</div>
+		</div>
+
+	</div>
+</div>
+<!-- main-panel ends -->
+@endsection
+
+@section('scripts')
+<script>
+	const ajaxURL = "<?php echo Route::is('admin/categories') ?>";
+	$('table#category_table').DataTable({
+		dom: 'Blfrtip',
+		language: {processing: "<span class='spinner-border spinner-border-sm' role='status' aria-hidden='true'></span> Loading Data..."},
+		processing: true,
+		serverSide: true,
+		ajax: {url: ajaxURL},
+		aLengthMenu: [[25, 50, 100, 1000, -1], [25, 50, 100, 1000, "All"]],
+		buttons: ['excel', 'pdf', 'print'],
+		columns: [
+			{data: 'DT_RowIndex', name: 'DT_RowIndex'},
+			{data: 'name', name: 'name'},
+			{data: 'image', name: 'image'},
+			// {data: 'slug', name: 'slug'},
+			{data: 'parent_id', name: 'parent_id'},
+			{data: 'action', name: 'action'}
+		]
+	});
+  </script>
+  
+  @endsection
+
+
+
+{{-- @extends('backend.layouts.master')
+
+@section('content')
+<div class="main-panel">
+	<div class="content-wrapper">
+
+		<div class="card">
+			<div class="card-header">
+				<h2 class="float-left">
+					Manage Categories
+				</h2>
+				<p class="float-right">
+					<a href="{{ route('admin.category.create') }}" class="btn btn-primary">Add New Category</a>
+				</p>
+				<div class="clearfix"></div>
+			</div>
+			<div class="card-body">
+				@include('backend.partials.messages')
 				<table class="table table-hover table-striped">
 					<tr>
 						<th>#</th>
@@ -85,4 +151,4 @@
 	</div>
 </div>
 <!-- main-panel ends -->
-@endsection
+@endsection --}}

@@ -75,9 +75,11 @@ class ProductsController extends Controller
           })
           ->editColumn('image', function ($row) {
               
-                $pImage = ProductImage::where('product_id', $row->id)->first();
-                  return "<img height='50px' width='50px' src='" . asset('images/products/'.$pImage->image) . "' class='img img-display-list' />";
-              
+                $productImage = ProductImage::where('product_id', $row->id)->first();
+                if ($productImage->image != null) {
+                  return "<img height='50px' width='50px' src='" . asset('images/products/'.$productImage->image) . "' class='img img-display-list' />";
+                }
+                return '-';
           })
           ->editColumn('status', function ($row) {
               if ($row->status) {
