@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Validator;
 use Illuminate\Foundation\Auth\RegistersUsers;
 
@@ -97,7 +98,7 @@ class RegisterController extends Controller
     $user = User::create([
       'first_name' => $request->first_name,
       'last_name' => $request->last_name,
-      'username' => str_slug($request->first_name.$request->last_name),
+      'username' => Str::slug($request->first_name.$request->last_name),
       'division_id' => $request->division_id,
       'district_id' => $request->district_id,
       'phone_no' => $request->phone_no,
