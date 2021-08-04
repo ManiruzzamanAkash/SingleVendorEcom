@@ -32,6 +32,11 @@ class PagesController extends Controller
 	 */
 	public function search(Request $request)
 	{
+		$request->validate([
+			'search' => 'nullable|string',
+			'offer'  => 'nullable|numeric'
+		]);
+
 		$search = $request->search;
 
 		$query = Product::where('title', '!=', null);

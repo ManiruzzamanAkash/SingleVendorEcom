@@ -101,9 +101,9 @@
         <div class="offer-section" style="background-image: url('{{ asset('images/Sale_HP__2x.jpg') }}');">
             <div class="offer-body">
                 <h3>Extra 50% off Sale</h3>
-                <dr></dr>
+                
                 <p>Summer favorites. New styles added.</p>
-                <dr></dr>
+                
                 <a href="{{ route('categories.show', 'women') }}?offer=50" type="button"
                     class="btn btn-outline-secondary text-white">
                     Shop Now

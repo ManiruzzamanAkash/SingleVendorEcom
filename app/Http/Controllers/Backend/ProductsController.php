@@ -6,6 +6,7 @@ use App\Helpers\UploadHelper;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
+use Illuminate\Support\Str;
 use App\Models\Product;
 use App\Models\ProductImage;
 use Image;
@@ -71,7 +72,7 @@ class ProductsController extends Controller
     // discount
     $product->warranty      = $request->warranty;
 
-    $product->slug        = str_slug($request->title);
+    $product->slug        = Str::slug($request->title);
     $product->category_id = $request->category_id;
     $product->brand_id    = $request->brand_id;
     $product->admin_id    = Auth::id();
