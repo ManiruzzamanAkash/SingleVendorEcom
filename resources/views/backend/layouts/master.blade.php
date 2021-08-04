@@ -8,8 +8,17 @@
   <title>@yield('title', 'Admin | ' . config('app.name'))</title>
 
   <link rel="stylesheet" href="{{ asset('css/font-awesome.min.css') }}">
-  <link rel="stylesheet" href="{{asset('css/datatables.min.css')}}">
+  {{-- <link rel="stylesheet" href="{{asset('css/datatables.min.css')}}"> --}}
   <link rel="stylesheet" href="{{asset('css/admin_style.css')}}?v=1.2">
+
+  <!-- DataTable -->
+  <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/backend/css/datatables/datatables.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/backend/css/datatables/bootstrap.css') }}">
+  <!-- DataTable -->
+
+  <!-- Sweet Alert -->
+<link rel="stylesheet" type="text/css" href="{{ asset('public/assets/backend/js/sweetalert2/dist/sweetalert2.min.css') }}">
+<!-- Sweet Alert -->
 
 
   <link rel="shortcut icon" href="images/favicon.png" />
@@ -34,6 +43,15 @@
   <script src="{{ asset('js/popper.min.js') }}"></script>
   <script src="{{ asset('js/bootstrap.min.js') }}"></script>
   <script src="{{ asset('js/data-table.min.js') }}"></script>
+
+  <!-- Data Tables -->
+{{-- <script src="{{ asset('public/assets/backend/js/datatable/datatables/jquery.dataTables.min.js') }}"></script> --}}
+<script src="{{ asset('public/assets/backend/js/datatable/datatables/dataTables.bootstrap4.min.js') }}"></script>
+
+<!-- Sweet Alert -->
+<script src="{{ asset('public/assets/backend/js/sweetalert2/dist/sweetalert2.min.js') }}"></script>
+<script src="{{ asset('public/assets/backend/js/sweetalert2/sweet-alert.init.js') }}"></script>
+<!-- Sweet Alert -->
 
   <script>
     $(document).ready(function() {

@@ -12,6 +12,7 @@ use App\Models\ProductImage;
 use Image;
 use Auth;
 use File;
+use DataTables;
 
 class ProductsController extends Controller
 {
@@ -20,10 +21,73 @@ class ProductsController extends Controller
     $this->middleware('auth:admin');
   }
 
-  public function index()
+  public function index(Request $request)
   {
-    $products = Product::orderBy('id', 'desc')->get();
-    return view('backend.pages.product.index')->with('products', $products);
+  //   if (is_null($this->user) || !$this->user->can('blog.view')) {
+  //     $message = 'You are not allowed to access this page !';
+  //     return view('errors.403', compact('message'));
+  // }
+
+  if (request()->ajax()) {
+      
+      $products = Product::orderBy('id', 'desc')->get();
+      $datatable = DataTables::of($products)
+          ->addIndexColumn()
+          ->addColumn(
+              'action',
+              function ($row) {
+                  $csrf = "" . csrf_field() . "";
+                  $method_delete = "" . method_field("post") . "";
+                  // $method_put = "" . method_field("put") . "";
+                  $html = '';
+
+                  $html .= '<a class="btn waves-effect waves-light btn-success btn-sm btn-circle ml-1 " title="Edit Blog Details" href="' . route('admin.product.edit', $row->id) . '"><i class="fa fa-edit"></i></a>';
+
+                  $html .= '<a class="btn waves-effect waves-light btn-danger btn-sm btn-circle ml-2 text-white" title="Delete Admin" id="deleteItem' . $row->id . '"><i class="fa fa-trash"></i></a>';
+
+                  $html .= '<script>
+                                    $("#deleteItem' . $row->id . '").click(function(){
+                                        swal.fire({ title: "Are you sure?",text: "Advertisement will be deleted as trashed !",type: "warning",showCancelButton: true,confirmButtonColor: "#DD6B55",confirmButtonText: "Yes, delete it!"
+                                        }).then((result) => { if (result.value) {$("#deletePermanentForm' . $row->id . '").submit();}})
+                                    });
+                                </script>';
+                  
+                  $deleteRoute =  route('admin.product.delete', $row->id);
+                  $html .= '
+                  <form id="deletePermanentForm' . $row->id . '" action="' . $deleteRoute . '" method="post" style="display:none">' . $csrf . $method_delete . '
+                      <button type="submit" class="btn waves-effect waves-light btn-rounded btn-success"><i
+                              class="fa fa-check"></i> Confirm Permanent Delete</button>
+                      <button type="button" class="btn waves-effect waves-light btn-rounded btn-secondary" data-dismiss="modal"><i
+                              class="fa fa-times"></i> Cancel</button>
+                  </form>';
+                  
+                  return $html;
+              }
+          )
+
+          ->editColumn('title', function ($row) {
+              return $row->title;
+          })
+          ->editColumn('image', function ($row) {
+              if ($row->image != null) {
+                  return "<img src='" . asset('images/products/' . $row->image) . "' class='img img-display-list' />";
+              }
+              return '-';
+          })
+          ->editColumn('status', function ($row) {
+              if ($row->status) {
+                  return '<span class="badge badge-success font-weight-100">Active</span>';
+              }else {
+                  return '<span class="badge badge-warning">Inactive</span>';
+              }
+          });
+      $rawColumns = ['action', 'title', 'status', 'image'];
+      return $datatable->rawColumns($rawColumns)
+          ->make(true);
+  }
+
+     $products = Product::orderBy('id', 'desc')->get();
+     return view('backend.pages.product.index')->with('products', $products);
   }
 
   public function create()
@@ -45,7 +109,7 @@ class ProductsController extends Controller
       'title'         => 'required|max: 150',
       'price'         => 'required|numeric',
       'delivery_time' => 'required',
-      'discount'      => 'required|numeric',
+      'discount'      => 'nullable|numeric',
       'quantity'      => 'required|numeric',
       'category_id'   => 'required|numeric',
       'brand_id'      => 'required|numeric',
@@ -62,7 +126,7 @@ class ProductsController extends Controller
 
     if ($request->discount) {
       $product->discount    = $request->discount;
-      $product->offer_price = $request->price-(($request->price * $request->discount) / 100);
+      $product->offer_price = $request->price - (($request->price * $request->discount) / 100);
     } else {
       $product->discount    = null;
       $product->offer_price = 0;
@@ -104,7 +168,7 @@ class ProductsController extends Controller
     $request->validate([
       'title'         => 'required|max:150',
       'price'             => 'required|numeric',
-      'discount'             => 'required|numeric',
+      'discount'             => 'nullable|numeric',
       'delivery_time'             => 'required',
       'quantity'             => 'required|numeric',
       'category_id'             => 'required|numeric',
@@ -118,7 +182,7 @@ class ProductsController extends Controller
     $product->price = $request->price;
     if ($request->discount) {
       $product->discount    = $request->discount;
-      $product->offer_price = $request->price-(($request->price * $request->discount) / 100);
+      $product->offer_price = $request->price - (($request->price * $request->discount) / 100);
     } else {
       $product->discount    = null;
       $product->offer_price = 0;
