@@ -126,6 +126,8 @@
     font-family: 'Roboto', sans-serif;
     font-weight: 500;
     margin-bottom: 10px;
+    height: 50px;
+    overflow: hidden;
 }
 
 

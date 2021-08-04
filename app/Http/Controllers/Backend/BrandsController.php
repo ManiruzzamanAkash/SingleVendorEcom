@@ -93,11 +93,11 @@ class BrandsController extends Controller
       if (empty($request->slug)) {
         $brand->slug = StringHelper::createSlug($request->name, 'Brand', 'slug', '-');
       }else{
-        $brand->slug = StringHelper::createSlug($request->slug, 'Brand', 'slug', '-');
+        $brand->slug = $request->slug;
       }
       $brand->description = $request->description;
       //insert images also
-      if (count($request->image) > 0) {
+      if ($request->image) {
         //Delete the old image from folder
 
           if (File::exists('images/brands/'.$brand->image)) {
@@ -106,7 +106,7 @@ class BrandsController extends Controller
 
           $image = $request->file('image');
           $img = time() . '.'. $image->getClientOriginalExtension();
-          $location = public_path('images/brands/' .$img);
+          $location = 'images/brands/' .$img;
           Image::make($image)->save($location);
           $brand->image = $img;
       }

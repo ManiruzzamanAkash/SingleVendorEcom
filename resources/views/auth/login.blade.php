@@ -22,9 +22,6 @@
         </div>
     @endif
     <div class="login-area">
-        <div class="logo">
-            <a href="{{ route('index') }}"><img src="{{ asset('public/assets/images/logo.png') }}"></a>
-        </div>
         <div class="titleArea">
             Login to your account
         </div>

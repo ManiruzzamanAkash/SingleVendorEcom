@@ -10,8 +10,8 @@
             @foreach ($sliders as $slider)
 
                 <div class="carousel-item {{ $loop->index == 0 ? 'active' : '' }}">
-                    <img class="d-block w-100" src="{{ asset('images/sliders/' . $slider->image) }}" height="500px"
-                        alt="{{ $slider->title }}">
+                    <img class="d-block w-100" src="{{ asset('images/sliders/' . $slider->image) }}" height="auto"
+                        alt="{{ $slider->title }}" >
                     <div class="carousel-caption d-none d-md-block">
                         <h3 class="text-white">{{ $slider->title }}</h3>
                         <p class="text-white">{{ $slider->description ? $slider->description : '' }}</p>
@@ -54,6 +54,7 @@
                                 $categoryProducts = $catSingle
                                     ->products()
                                     ->limit(12)
+                                    ->orderBy('id', 'desc')
                                     ->get();
                             @endphp
 
@@ -103,10 +104,15 @@
                 <dr></dr>
                 <p>Summer favorites. New styles added.</p>
                 <dr></dr>
-                <a href="{{ route('categories.show', $catSingle->slug) }}" type="button"
-                    class="btn btn-outline-secondary">Shop Now</a>
-                <a href="SingleVendorEcom/products/category/t-shirt?offer=50" type="button"
-                    class="btn btn-outline-secondary">Shop Now</a>
+                <a href="{{ route('categories.show', 'women') }}?offer=50" type="button"
+                    class="btn btn-outline-secondary text-white">
+                    Shop Now
+                </a>
+
+                <a href="{{ route('categories.show', 'mens') }}?offer=50" type="button"
+                    class="btn btn-outline-secondary text-white">
+                    Shop Now
+                </a>
 
             </div>
         </div>

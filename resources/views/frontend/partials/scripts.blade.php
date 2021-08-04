@@ -1,5 +1,5 @@
 <!-- Vue App JS -->
-<script src="{{ asset('public/js/app.js') }}?v=1.0.2"></script>
+<script src="{{ asset('public/js/app.js') }}?v={{ config('constants.asset_version') }}"></script>
 
 
 <!-- latest jquery-->
@@ -27,9 +27,5 @@
 <!-- Custome scripts js -->
 
 
-<script src="{{ asset('public/assets/js/custom-scripts.js') }}?v1.0.3"></script>
+<script src="{{ asset('public/assets/js/custom-scripts.js') }}?v={{ config('constants.asset_version') }}"></script>
 {{-- <script src="{{ asset('public/assets/js/timer-two.js') }}" ></script> --}}
-
-<!-- Data Tables -->
-<script src="{{ asset('public/assets/backend/js/datatable/datatables/jquery.dataTables.min.js') }}"></script>
-<script src="{{ asset('public/assets/backend/js/datatable/datatables/dataTables.bootstrap4.min.js') }}"></script>

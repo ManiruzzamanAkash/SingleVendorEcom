@@ -62,8 +62,10 @@
             <tr>
               <th>#</th>
               <th>Product Code</th>
-              <th>Product Title</th>
+              <th>Product</th>
+              <th>Product Image</th>
               <th>Price</th>
+              <th>Offer Price & Discount</th>
               <th>Quantity</th>
               <th>Action</th>
             </tr>
@@ -74,9 +76,24 @@
             <tr>
               <td>{{ $loop->index+1 }}</td>
               <td>#PLE{{ $product->id }}</td>
-              <td>{{ $product->title }}</td>
-              <td>{{ $product->price }}</td>
-              <td>{{ $product->quantity }}</td>
+              <td>
+                {{ $product->title }}
+              </td>
+              <td>
+                <img width="50" src="{{ asset('images/products/'.$product->images->first()->image) }}" alt="{{ $product->title }}" class="img-fluid blur-up lazyload product-image">
+              </td>
+              <td>৳{{ $product->price }}</td>
+              <td>
+                ৳{{ $product->offer_price }}
+                @if ($product->discount)
+                  <span class="text-success">
+                      <br />
+                      Discount - {{ $product->discount }}%
+                  </span>
+                @endif
+               
+              </td>
+              <td>{{ $product->quantity }} Pcs</td>
               <td>
                 <a href="{{ route('admin.product.edit', $product->id) }}" class="btn btn-success">Edit</a>
                 <a href="#deleteModal{{ $product->id }}" data-toggle="modal" class="btn btn-danger">Delete</a>

@@ -15,6 +15,8 @@ class AppServiceProvider extends ServiceProvider
     public function boot()
     {
         Schema::defaultStringLength(191);
+        
+        if (env('APP_DEBUG')) ini_set('opcache.revalidate_freq', '0');
     }
 
     /**
