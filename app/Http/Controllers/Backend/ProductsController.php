@@ -28,9 +28,15 @@ class ProductsController extends Controller
   //     return view('errors.403', compact('message'));
   // }
 
+  //return $image = ProductImage::where('product_id', 3)->first();
+
+    //  return $products = ProductImage::join('products', 'product_images.product_id', '=', 'products.id')->orderBy('products.id', 'desc')->get();
+  // return  $products = Product::with('images')->orderBy('products.id', 'desc')->first()->images['0']->image;
+
   if (request()->ajax()) {
       
-      $products = Product::orderBy('id', 'desc')->get();
+      $products = Product::orderBy('products.id', 'desc')->get();
+      
       $datatable = DataTables::of($products)
           ->addIndexColumn()
           ->addColumn(
@@ -38,12 +44,11 @@ class ProductsController extends Controller
               function ($row) {
                   $csrf = "" . csrf_field() . "";
                   $method_delete = "" . method_field("post") . "";
-                  // $method_put = "" . method_field("put") . "";
                   $html = '';
 
-                  $html .= '<a class="btn waves-effect waves-light btn-success btn-sm btn-circle ml-1 " title="Edit Blog Details" href="' . route('admin.product.edit', $row->id) . '"><i class="fa fa-edit"></i></a>';
+                  $html .= '<a class="btn waves-effect waves-light btn-success btn-sm btn-circle ml-1 p-1 " title="Edit Blog Details" href="' . route('admin.product.edit', $row->id) . '"><i class="fa fa-edit"></i></a>';
 
-                  $html .= '<a class="btn waves-effect waves-light btn-danger btn-sm btn-circle ml-2 text-white" title="Delete Admin" id="deleteItem' . $row->id . '"><i class="fa fa-trash"></i></a>';
+                  $html .= '<a class="btn waves-effect waves-light btn-danger btn-sm btn-circle ml-1 p-1 text-white" title="Delete Admin" id="deleteItem' . $row->id . '"><i class="fa fa-trash"></i></a>';
 
                   $html .= '<script>
                                     $("#deleteItem' . $row->id . '").click(function(){
@@ -69,10 +74,10 @@ class ProductsController extends Controller
               return $row->title;
           })
           ->editColumn('image', function ($row) {
-              if ($row->image != null) {
-                  return "<img src='" . asset('images/products/' . $row->image) . "' class='img img-display-list' />";
-              }
-              return '-';
+              
+                $pImage = ProductImage::where('product_id', $row->id)->first();
+                  return "<img height='50px' width='50px' src='" . asset('images/products/'.$pImage->image) . "' class='img img-display-list' />";
+              
           })
           ->editColumn('status', function ($row) {
               if ($row->status) {
@@ -97,6 +102,7 @@ class ProductsController extends Controller
 
   public function edit($id)
   {
+    
     $product = Product::find($id);
     return view('backend.pages.product.edit')->with('product', $product);
   }

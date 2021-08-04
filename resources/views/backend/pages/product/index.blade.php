@@ -44,23 +44,22 @@
       </div>
       <div class="card-body">
         @include('backend.partials.messages')
-        <table class="table table-hover table-striped"  id="products_table">
-          <thead>
-            <tr>
-              <th>#SL</th>
-              <th>title</th>
-              {{-- <th>Product</th>
-              <th>Product Image</th> --}}
-              <th>Price</th>
-              <th>Offer Price & Discount</th>
-              <th>Quantity</th>
-              <th>Status</th>
-              <th>Action</th>
-            </tr>
-          </thead>
-
-
-        </table>
+        <div class="table-responsive product-table">
+          <table class="table table-striped table-bordered display ajax_view"  id="products_table">
+            <thead>
+              <tr>
+                <th>#SL</th>
+                <th>title</th>
+                <th>Product Image</th>
+                <th>Price</th>
+                <th>Offer Price & Discount</th>
+                <th>Quantity</th>
+                {{-- <th>Status</th> --}}
+                <th>Action</th>
+              </tr>
+            </thead>
+          </table>
+        </div>
       </div>
     </div>
 
@@ -84,12 +83,11 @@
       columns: [
           {data: 'DT_RowIndex', name: 'DT_RowIndex'},
           {data: 'title', name: 'title'},
-          // {data: 'Product', name: 'Product'},
-          // {data: 'Product image', name: 'Product image'},
+          {data: 'image', name: 'image'},
           {data: 'price', name: 'price'},
           {data: 'offer_price', name: 'offer_price'},
           {data: 'quantity', name: 'quantity'},
-          {data: 'status', name: 'status'},
+          // {data: 'status', name: 'status'},
           {data: 'action', name: 'action'}
       ]
   });
