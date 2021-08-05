@@ -90,9 +90,9 @@
 						<td>{{ $slider->priority }}</td>
 
 						<td>
-							<a href="#editModal{{ $slider->id }}" data-toggle="modal" class="btn btn-success">Edit</a>
+							<a href="#editModal{{ $slider->id }}" data-toggle="modal" class="btn btn-success btn-sm btn-circle m-1 p-1"><i class="fa fa-edit"></i></a>
 
-							<a href="#deleteModal{{ $slider->id }}" data-toggle="modal" class="btn btn-danger">Delete</a>
+							<a href="#deleteModal{{ $slider->id }}" data-toggle="modal" class="btn btn-danger btn-sm btn-circle m-1 p-1"><i class="fa fa-trash"></i></a>
 
 							<!-- Delete Modal -->
 							<div class="modal fade" id="deleteModal{{ $slider->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

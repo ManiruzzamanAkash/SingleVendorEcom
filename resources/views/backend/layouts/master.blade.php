@@ -16,10 +16,10 @@
   <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/backend/css/datatables/bootstrap.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/backend/css/datatables/buttons.dataTables.min.css') }}">
   <!-- DataTable -->
-
+  
   <!-- Sweet Alert -->
-<link rel="stylesheet" type="text/css" href="{{ asset('public/assets/backend/js/sweetalert2/dist/sweetalert2.min.css') }}">
-<!-- Sweet Alert -->
+  <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/backend/js/sweetalert2/dist/sweetalert2.min.css') }}">
+  <!-- Sweet Alert -->
 
 
   <link rel="shortcut icon" href="images/favicon.png" />
@@ -46,7 +46,7 @@
   <script src="{{ asset('js/data-table.min.js') }}"></script>
 
   <!-- Data Tables -->
-{{-- <script src="{{ asset('public/assets/backend/js/datatable/datatables/jquery.dataTables.min.js') }}"></script> --}}
+
 <script src="{{ asset('public/assets/backend/js/datatable/datatables/dataTables.bootstrap4.min.js') }}"></script>
 <script src="{{ asset('public/assets/backend/js/datatable/datatables/jszip.min.js') }}"></script>
 <script src="{{ asset('public/assets/backend/js/datatable/datatables/dataTables.buttons.min.js') }}"></script>
@@ -60,6 +60,11 @@
 <script src="{{ asset('public/assets/backend/js/sweetalert2/dist/sweetalert2.min.js') }}"></script>
 <script src="{{ asset('public/assets/backend/js/sweetalert2/sweet-alert.init.js') }}"></script>
 <!-- Sweet Alert -->
+
+<!-- summernote css/js -->
+{{-- <link rel="stylesheet" href="{{ asset('public/assets/backend/css/summernote-lite.min.css') }}"> --}}
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote-lite.min.css" rel="stylesheet">
+<script src="{{ asset('public/assets/backend/js/summernote-lite.min.js') }}"></script>
 
   <script>
     $(document).ready(function() {

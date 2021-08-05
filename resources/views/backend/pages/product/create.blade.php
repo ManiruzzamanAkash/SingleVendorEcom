@@ -42,8 +42,8 @@
 
 					<div class="form-group">
 						<label for="exampleInputPassword1">Description</label>
-						<textarea name="description" rows="8" cols="80" class="form-control">{{ old('description') }}</textarea>
-
+						<textarea  name="description" id="summernote" ></textarea>
+						
 					</div>
 					<div class="row">
 						<div class="col-md-3">
@@ -137,4 +137,25 @@
 	</div>
 </div>
 <!-- main-panel ends -->
+@endsection
+
+@section('scripts')
+
+<script>
+	$('#summernote').summernote({
+	  placeholder: 'Write a short description',
+	  tabsize: 2,
+	  height: 120,
+	  toolbar: [
+		['style', ['style']],
+		['font', ['bold', 'underline', 'clear']],
+		['color', ['color']],
+		['para', ['ul', 'ol', 'paragraph']],
+		['table', ['table']],
+		['insert', ['link', 'picture', 'video']],
+		['view', ['fullscreen', 'codeview', 'help']]
+	  ]
+	});
+  </script>
+
 @endsection
