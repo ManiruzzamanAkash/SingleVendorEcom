@@ -212,7 +212,8 @@ class ProductsController extends Controller
     $product = Product::find($id);
     if (!is_null($product)) {
       // Delete product images
-      foreach ($product->images as $productImage) {
+      $pImage=ProductImage::where('product_id', $id)->get();
+      foreach ($pImage as $productImage) {
         $image = $productImage->image;
         UploadHelper::deleteFile('images/products/' . $image);
         $productImage->delete();
@@ -228,7 +229,7 @@ class ProductsController extends Controller
         $review->delete();
       }
 
-      $product->delete();
+       $product->delete();
     }
 
     session()->flash('success', 'Product has deleted successfully !!');
