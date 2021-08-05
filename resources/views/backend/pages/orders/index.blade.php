@@ -11,6 +11,73 @@
       <div class="card-body">
         @include('backend.partials.messages')
         <div class="table-responsive">
+          <table class="table table-striped table-bordered display ajax_view"  id="order_table">
+            <thead>
+              <tr>
+                <th>#SL</th>
+                <th>Orderer Name</th>
+                <th>Contact No</th>
+                <th>Date</th>
+                <th>Total Amount</th>
+                <th>Discount/Shipping Charge</th> 
+                <th>Order Status</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            </tbody>
+
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+<!-- main-panel ends -->
+@endsection
+
+@section('scripts')
+
+<script>
+  const ajaxURL = "<?php echo Route::is('admin/orders') ?>";
+  $('table#order_table').DataTable({
+      dom: 'Blfrtip',
+      language: {processing: "<span class='spinner-border spinner-border-sm' role='status' aria-hidden='true'></span> Loading Data..."},
+      processing: true,
+      serverSide: true,
+      ajax: {url: ajaxURL},
+      aLengthMenu: [[25, 50, 100, 1000, -1], [25, 50, 100, 1000, "All"]],
+      buttons: ['copy', 'csv','excel', 'pdf', 'print'],
+      columns: [
+          {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+          {data: 'name', name: 'name'},
+          {data: 'phone_no', name: 'phone_no'},
+          {data: 'created_at', name: 'created_at'},
+          {data: 'message', name: 'message'},
+          {data: 'custom_discount', name: 'custom_discount'},
+          {data: 'is_paid', name: 'is_paid'},
+          
+          {data: 'action', name: 'action'}
+      ]
+  });
+</script>
+
+@endsection
+
+{{-- @extends('backend.layouts.master')
+
+@section('content')
+<div class="main-panel">
+  <div class="content-wrapper">
+
+    <div class="card">
+      <div class="card-header">
+        Manage Orders
+      </div>
+      <div class="card-body">
+        @include('backend.partials.messages')
+        <div class="table-responsive">
           <table class="table table-hover table-striped" id="dataTable">
             <thead>
               <tr>
@@ -75,11 +142,11 @@
                     @endif
                   </p>
                   <p>
-                    {{-- @if ($order->is_paid) --}}
-                    {{-- <button type="button" class="btn btn-success btn-sm">Delivery Compleate</button> --}}
-                    {{-- @else --}}
+                    @if ($order->is_paid) 
+                    <button type="button" class="btn btn-success btn-sm">Delivery Compleate</button> 
+                     @else
                     <button type="button" class="btn btn-danger btn-sm">Delivery Pending</button>
-                    {{-- @endif --}}
+                     @endif
                   </p>
                 </td>
                 <td>
@@ -140,4 +207,4 @@
   </div>
 </div>
 <!-- main-panel ends -->
-@endsection
+@endsection --}}
