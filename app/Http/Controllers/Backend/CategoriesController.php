@@ -19,9 +19,7 @@ class CategoriesController extends Controller
   }
 
   public function index(Request $request)
-  {
-    // return $categories = Category::orderBy('id', 'asc')->get();
-    // return $parent_name = Category::where('parent_id', 7)->first()->name;
+  {  
 
     if (request()->ajax()) {
 
