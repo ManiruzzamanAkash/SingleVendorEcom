@@ -9,6 +9,7 @@ use App\Models\Coupon;
 use App\Helpers\StringHelper;
 use Image;
 use File;
+use DataTables;
 
 class CouponsController extends Controller
 {
@@ -19,8 +20,63 @@ class CouponsController extends Controller
   
   public function index()
   {
-    $coupons = Coupon::orderBy('id', 'desc')->get();
-    return view('backend.pages.coupons.index', compact('coupons'));
+    if (request()->ajax()) {
+      
+      $coupons = Coupon::orderBy('id', 'desc')->get();
+      
+      $datatable = DataTables::of($coupons)
+          ->addIndexColumn()
+          ->addColumn(
+              'action',
+              function ($row) {
+                  $csrf = "" . csrf_field() . "";
+                  $method_delete = "" . method_field("post") . "";
+                  $html = '';
+
+                  $html .= '<a class="btn waves-effect waves-light btn-success btn-sm btn-circle ml-1 p-1 " title="Edit Blog Details" href="' . route('admin.coupon.edit', $row->id) . '"><i class="fa fa-edit"></i></a>';
+
+                  $html .= '<a class="btn waves-effect waves-light btn-danger btn-sm btn-circle ml-1 p-1 text-white" title="Delete Admin" id="deleteItem' . $row->id . '"><i class="fa fa-trash"></i></a>';
+
+                  $html .= '<script>
+                              $("#deleteItem' . $row->id . '").click(function(){
+                                  swal.fire({ title: "Are you sure?",text: "Coupon will be deleted !",type: "warning",showCancelButton: true,confirmButtonColor: "#DD6B55",confirmButtonText: "Yes, delete it!"
+                                  }).then((result) => { if (result.value) {$("#deletePermanentForm' . $row->id . '").submit();}})
+                              });
+                            </script>';
+                  
+                  $deleteRoute =  route('admin.coupon.delete', $row->id);
+                  $html .= '
+                  <form id="deletePermanentForm' . $row->id . '" action="' . $deleteRoute . '" method="post" style="display:none">' . $csrf . $method_delete . '
+                      <button type="submit" class="btn waves-effect waves-light btn-rounded btn-success"><i
+                              class="fa fa-check"></i> Confirm Permanent Delete</button>
+                      <button type="button" class="btn waves-effect waves-light btn-rounded btn-secondary" data-dismiss="modal"><i
+                              class="fa fa-times"></i> Cancel</button>
+                  </form>';
+                  
+                  return $html;
+              }
+          )
+
+          ->editColumn('discount_amount', function ($row) {
+            if ($row->direct_amount_or_percentage) {
+              return $row->discount_amount.' Taka';
+          }else {
+              return $row->discount_amount.' %';
+          }
+          })
+          ->editColumn('is_order_discount', function ($row) {
+              if ($row->is_order_discount) {
+                  return '<span class="badge badge-success font-weight-100">Order Discount</span>';
+              }else {
+                  return '<span class="badge badge-info">Item Discount</span>';
+              }
+          });
+      $rawColumns = ['action', 'discount_amount', 'is_order_discount', 'image'];
+      return $datatable->rawColumns($rawColumns)
+      ->make(true);
+  }
+    // $coupons = Coupon::orderBy('id', 'desc')->get();
+    return view('backend.pages.coupons.index');
   }
 
   public function create()

@@ -51,11 +51,11 @@ class ProductsController extends Controller
                   $html .= '<a class="btn waves-effect waves-light btn-danger btn-sm btn-circle ml-1 p-1 text-white" title="Delete Admin" id="deleteItem' . $row->id . '"><i class="fa fa-trash"></i></a>';
 
                   $html .= '<script>
-                                    $("#deleteItem' . $row->id . '").click(function(){
-                                        swal.fire({ title: "Are you sure?",text: "Product will be deleted !",type: "warning",showCancelButton: true,confirmButtonColor: "#DD6B55",confirmButtonText: "Yes, delete it!"
-                                        }).then((result) => { if (result.value) {$("#deletePermanentForm' . $row->id . '").submit();}})
-                                    });
-                                </script>';
+                              $("#deleteItem' . $row->id . '").click(function(){
+                                  swal.fire({ title: "Are you sure?",text: "Product will be deleted !",type: "warning",showCancelButton: true,confirmButtonColor: "#DD6B55",confirmButtonText: "Yes, delete it!"
+                                  }).then((result) => { if (result.value) {$("#deletePermanentForm' . $row->id . '").submit();}})
+                              });
+                            </script>';
                   
                   $deleteRoute =  route('admin.product.delete', $row->id);
                   $html .= '
@@ -90,7 +90,7 @@ class ProductsController extends Controller
           });
       $rawColumns = ['action', 'title', 'status', 'image'];
       return $datatable->rawColumns($rawColumns)
-          ->make(true);
+      ->make(true);
   }
 
      $products = Product::orderBy('id', 'desc')->get();

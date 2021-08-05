@@ -16,6 +16,76 @@
         </div>
         <div class="card-body">
             @include('backend.partials.messages')
+          <table class="table table-hover table-striped"  id="couponTable">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>Title</th>
+                <th>Code</th>
+                <th>Discount Type</th>
+                <th>Criteria Amount</th>
+                <th>Discount</th>
+                <th>Valid Upto</th>
+                <th>Total available</th>
+                <th>Action</th>
+              </tr>
+            </thead>
+
+          </table>
+        </div>
+      </div>
+
+    </div>
+  </div>
+  <!-- main-panel ends -->
+@endsection
+
+@section('scripts')
+
+<script>
+  const ajaxURL = "<?php echo Route::is('admin/coupons') ?>";
+  $('table#couponTable').DataTable({
+      dom: 'Blfrtip',
+      language: {processing: "<span class='spinner-border spinner-border-sm' role='status' aria-hidden='true'></span> Loading Data..."},
+      processing: true,
+      serverSide: true,
+      ajax: {url: ajaxURL},
+      aLengthMenu: [[25, 50, 100, 1000, -1], [25, 50, 100, 1000, "All"]],
+      buttons: ['copy', 'csv','excel', 'pdf', 'print'],
+      columns: [
+          {data: 'DT_RowIndex', name: 'DT_RowIndex'},
+          {data: 'title', name: 'title'},
+          {data: 'code', name: 'code'},
+          {data: 'is_order_discount', name: 'is_order_discount'},
+          {data: 'criteria_amount', name: 'criteria_amount'},
+          {data: 'discount_amount', name: 'discount_amount'},
+          {data: 'valid_date', name: 'valid_date'},
+          {data: 'total_quantity', name: 'total_quantity'},
+          {data: 'action', name: 'action'}
+      ]
+  });
+</script>
+
+@endsection
+
+{{-- @extends('backend.layouts.master')
+
+@section('content')
+  <div class="main-panel">
+    <div class="content-wrapper">
+
+      <div class="card">
+        <div class="card-header">
+          <h2 class="float-left">
+            Manage Coupons
+          </h2>
+          <p class="float-right">
+            <a href="{{ route('admin.coupon.create') }}" class="btn btn-primary">Add New Coupon</a>
+          </p>
+          <div class="clearfix"></div>
+        </div>
+        <div class="card-body">
+            @include('backend.partials.messages')
           <table class="table table-hover table-striped"  id="dataTable">
             <thead>
               <tr>
@@ -103,4 +173,4 @@
     </div>
   </div>
   <!-- main-panel ends -->
-@endsection
+@endsection --}}
