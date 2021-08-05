@@ -14,6 +14,7 @@
   <!-- DataTable -->
   <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/backend/css/datatables/datatables.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/backend/css/datatables/bootstrap.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/backend/css/datatables/buttons.dataTables.min.css') }}">
   <!-- DataTable -->
 
   <!-- Sweet Alert -->
@@ -47,6 +48,13 @@
   <!-- Data Tables -->
 {{-- <script src="{{ asset('public/assets/backend/js/datatable/datatables/jquery.dataTables.min.js') }}"></script> --}}
 <script src="{{ asset('public/assets/backend/js/datatable/datatables/dataTables.bootstrap4.min.js') }}"></script>
+<script src="{{ asset('public/assets/backend/js/datatable/datatables/jszip.min.js') }}"></script>
+<script src="{{ asset('public/assets/backend/js/datatable/datatables/dataTables.buttons.min.js') }}"></script>
+<script src="{{ asset('public/assets/backend/js/datatable/datatables/pdfmake.min.js') }}"></script>
+<script src="{{ asset('public/assets/backend/js/datatable/datatables/vfs_fonts.js') }}"></script>
+<script src="{{ asset('public/assets/backend/js/datatable/datatables/buttons.html5.min.js') }}"></script>
+<script src="{{ asset('public/assets/backend/js/datatable/datatables/buttons.print.min.js') }}"></script>
+
 
 <!-- Sweet Alert -->
 <script src="{{ asset('public/assets/backend/js/sweetalert2/dist/sweetalert2.min.js') }}"></script>

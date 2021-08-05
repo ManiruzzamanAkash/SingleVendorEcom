@@ -86,7 +86,7 @@
       serverSide: true,
       ajax: {url: ajaxURL},
       aLengthMenu: [[25, 50, 100, 1000, -1], [25, 50, 100, 1000, "All"]],
-      buttons: ['excel', 'pdf', 'print'],
+      buttons: ['copy', 'csv','excel', 'pdf', 'print'],
       columns: [
           {data: 'DT_RowIndex', name: 'DT_RowIndex'},
           {data: 'title', name: 'title'},

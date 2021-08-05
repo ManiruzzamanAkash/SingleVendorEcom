@@ -9,6 +9,7 @@ use App\Models\Brand;
 use App\Helpers\StringHelper;
 use Image;
 use File;
+use DataTables;
 
 class BrandsController extends Controller
 {
@@ -19,8 +20,58 @@ class BrandsController extends Controller
   
   public function index()
   {
-    $brands = Brand::orderBy('id', 'desc')->get();
-    return view('backend.pages.brands.index', compact('brands'));
+    if (request()->ajax()) {
+      
+      $brands = Brand::orderBy('id', 'desc')->get();
+      
+      $datatable = DataTables::of($brands)
+          ->addIndexColumn()
+          ->addColumn(
+              'action',
+              function ($row) {
+                  $csrf = "" . csrf_field() . "";
+                  $method_delete = "" . method_field("post") . "";
+                  $html = '';
+
+                  $html .= '<a class="btn waves-effect waves-light btn-success btn-sm btn-circle ml-1 p-1 " title="Edit Blog Details" href="' . route('admin.brand.edit', $row->id) . '"><i class="fa fa-edit"></i></a>';
+
+                  $html .= '<a class="btn waves-effect waves-light btn-danger btn-sm btn-circle ml-1 p-1 text-white" title="Delete Admin" id="deleteItem' . $row->id . '"><i class="fa fa-trash"></i></a>';
+
+                  $html .= '<script>
+                                    $("#deleteItem' . $row->id . '").click(function(){
+                                        swal.fire({ title: "Are you sure?",text: "Advertisement will be deleted as trashed !",type: "warning",showCancelButton: true,confirmButtonColor: "#DD6B55",confirmButtonText: "Yes, delete it!"
+                                        }).then((result) => { if (result.value) {$("#deletePermanentForm' . $row->id . '").submit();}})
+                                    });
+                                </script>';
+                  
+                  $deleteRoute =  route('admin.brand.delete', $row->id);
+                  $html .= '
+                  <form id="deletePermanentForm' . $row->id . '" action="' . $deleteRoute . '" method="post" style="display:none">' . $csrf . $method_delete . '
+                      <button type="submit" class="btn waves-effect waves-light btn-rounded btn-success"><i
+                              class="fa fa-check"></i> Confirm Permanent Delete</button>
+                      <button type="button" class="btn waves-effect waves-light btn-rounded btn-secondary" data-dismiss="modal"><i
+                              class="fa fa-times"></i> Cancel</button>
+                  </form>';
+                  
+                  return $html;
+              }
+          )
+
+          ->editColumn('title', function ($row) {
+              return $row->title;
+          })
+          ->editColumn('image', function ($row) {
+            if ($row->image != null) {
+              return "<img height='50px' width='50px' src='" . asset('images/brands/' . $row->image) . "' class='img img-display-list' />";
+          }
+          return '-';
+          });
+      $rawColumns = ['action', 'title', 'image'];
+      return $datatable->rawColumns($rawColumns)
+          ->make(true);
+  }
+    // $brands = Brand::orderBy('id', 'desc')->get();
+     return view('backend.pages.brands.index');
   }
 
   public function create()
@@ -49,10 +100,12 @@ class BrandsController extends Controller
       }
     $brand->description = $request->description;
     //insert images also
-    if (count($request->image) > 0) {
+    
+    // count($request->image) > 0
+    if ($request->hasFile('image')) {
         $image = $request->file('image');
         $img = time() . '.'. $image->getClientOriginalExtension();
-        $location = public_path('images/brands/' .$img);
+        $location = 'images/brands/' .$img;
         Image::make($image)->save($location);
         $brand->image = $img;
     }
