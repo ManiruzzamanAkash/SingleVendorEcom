@@ -36,11 +36,11 @@ class DivisionsController extends Controller
             $html .= '<a class="btn waves-effect waves-light btn-danger btn-sm btn-circle ml-1 p-1 text-white" title="Delete Admin" id="deleteItem' . $row->id . '"><i class="fa fa-trash"></i></a>';
 
             $html .= '<script>
-                                    $("#deleteItem' . $row->id . '").click(function(){
-                                        swal.fire({ title: "Are you sure?",text: "Advertisement will be deleted as trashed !",type: "warning",showCancelButton: true,confirmButtonColor: "#DD6B55",confirmButtonText: "Yes, delete it!"
-                                        }).then((result) => { if (result.value) {$("#deletePermanentForm' . $row->id . '").submit();}})
-                                    });
-                                </script>';
+                        $("#deleteItem' . $row->id . '").click(function(){
+                            swal.fire({ title: "Are you sure?",text: "Division will be deleted !",type: "warning",showCancelButton: true,confirmButtonColor: "#DD6B55",confirmButtonText: "Yes, delete it!"
+                            }).then((result) => { if (result.value) {$("#deletePermanentForm' . $row->id . '").submit();}})
+                        });
+                      </script>';
 
             $deleteRoute =  route('admin.division.delete', $row->id);
             $html .= '

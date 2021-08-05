@@ -39,7 +39,7 @@ class BrandsController extends Controller
 
                   $html .= '<script>
                                     $("#deleteItem' . $row->id . '").click(function(){
-                                        swal.fire({ title: "Are you sure?",text: "Advertisement will be deleted as trashed !",type: "warning",showCancelButton: true,confirmButtonColor: "#DD6B55",confirmButtonText: "Yes, delete it!"
+                                        swal.fire({ title: "Are you sure?",text: "Brand will be deleted !",type: "warning",showCancelButton: true,confirmButtonColor: "#DD6B55",confirmButtonText: "Yes, delete it!"
                                         }).then((result) => { if (result.value) {$("#deletePermanentForm' . $row->id . '").submit();}})
                                     });
                                 </script>';
