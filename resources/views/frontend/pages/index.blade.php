@@ -1,38 +1,55 @@
 @extends('frontend.layouts.master')
 
 @section('stylesheets')
-    <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/app/home.css') }}{{-- ?v=1.0.2 --}}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/app/home.css') }}">
 @endsection
 
 @section('content')
+@php
+    // dd($settings->website);
+@endphp
     <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
         <div class="carousel-inner blur-up lazyload">
-            @foreach ($sliders as $slider)
 
+            @foreach ($sliders as $slider)
                 <div class="carousel-item {{ $loop->index == 0 ? 'active' : '' }}">
                     <img class="d-block w-100" src="{{ asset('images/sliders/' . $slider->image) }}" height="auto"
                         alt="{{ $slider->title }}" >
                     <div class="carousel-caption d-none d-md-block">
-                        <h3 class="text-white">{{ $slider->title }}</h3>
-                        <p class="text-white">{{ $slider->description ? $slider->description : '' }}</p>
+                        <h3 class="slider-title">{{ $slider->title }}</h3>
+                        <p class="slider-description">{!! $slider->description ? $slider->description : '' !!}</p>
 
                         @if ($slider->button_link)
-                            <a href="{{ $slider->button_link }}" type="button" class="btn btn-outline-secondary">
+                            <a href="{{ $slider->button_link }}" type="button" class="btn btn-outline-primary btn-carousel">
                                 {{ $slider->button_text }}
+                            </a>
+                        @endif
+
+                        @if ($slider->button_link)
+                            <a href="{{ $slider->button_link }}" type="button" class="btn btn-outline-primary btn-carousel">
+                                {{ $slider->button_text }}
+                            </a>
+                        @endif
+
+                        @if ($slider->button_link2)
+                            <a href="{{ url($slider->button_link2) }}" type="button" class="btn btn-outline-secondary">
+                                {{ $slider->button_text2 }}
                             </a>
                         @endif
                     </div>
                 </div>
             @endforeach
         </div>
-        <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            <span class="sr-only">Next</span>
-        </a>
+        @if (count($sliders) > 1)
+            <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="sr-only">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="sr-only">Next</span>
+            </a>
+        @endif
     </div>
     <!-- Slider End -->
 
