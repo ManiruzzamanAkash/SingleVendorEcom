@@ -2,6 +2,7 @@
 
 namespace App\Providers;
 
+use App\Models\Setting;
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Schema;
 
@@ -17,6 +18,9 @@ class AppServiceProvider extends ServiceProvider
         Schema::defaultStringLength(191);
         
         if (env('APP_DEBUG')) ini_set('opcache.revalidate_freq', '0');
+
+        // Sharable Data across views
+        view()->share('settings', Setting::getSettings());
     }
 
     /**

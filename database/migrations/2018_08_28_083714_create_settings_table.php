@@ -15,10 +15,15 @@ class CreateSettingsTable extends Migration
     {
         Schema::create('settings', function (Blueprint $table) {
             $table->increments('id');
+            $table->string('website_name');
+            $table->string('website_logo');
+            $table->string('website_footer_text');
             $table->string('email')->nullable();
             $table->string('phone')->nullable();
             $table->string('address')->nullable();
-            $table->unsignedInteger('shipping_cost')->default(100);
+            $table->unsignedFloat('shipping_cost')->default(50);
+            $table->text('notice')->nullable();
+            $table->text('info')->nullable();
             $table->timestamps();
         });
     }
