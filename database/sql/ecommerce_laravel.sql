@@ -4,7 +4,7 @@
 -- https://tableplus.com/
 --
 -- Database: ecommerce_laravel
--- Generation Time: 2021-08-04 02:00:47.9260
+-- Generation Time: 2021-08-06 23:23:10.8450
 -- -------------------------------------------------------------
 
 
@@ -61,7 +61,7 @@ CREATE TABLE `carts` (
   CONSTRAINT `carts_order_id_foreign` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE,
   CONSTRAINT `carts_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE,
   CONSTRAINT `carts_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=15 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `categories` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
@@ -120,7 +120,7 @@ CREATE TABLE `migrations` (
   `migration` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `batch` int NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=36 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `orders` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
@@ -221,10 +221,15 @@ CREATE TABLE `reviews` (
 
 CREATE TABLE `settings` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `email` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `address` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `shipping_cost` int unsigned NOT NULL DEFAULT '100',
+  `website_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `website_logo` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `website_footer_text` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `shipping_cost` double(8,2) unsigned NOT NULL DEFAULT '50.00',
+  `notice` text COLLATE utf8mb4_unicode_ci,
+  `info` text COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -300,8 +305,8 @@ INSERT INTO `carts` (`id`, `product_id`, `user_id`, `order_id`, `ip_address`, `p
 (8, 16, 20, NULL, '37.111.199.92', 3, '2019-10-06 08:12:52', '2019-12-24 22:20:38'),
 (9, 15, 20, 2, '103.112.64.13', 1, '2019-10-28 18:46:13', '2019-10-28 18:47:00'),
 (10, 14, 20, NULL, '103.138.212.30', 1, '2019-12-24 22:20:53', '2019-12-24 22:20:53'),
-(12, 22, NULL, NULL, NULL, 2, '2021-08-03 19:31:57', '2021-08-03 19:32:06'),
-(13, 20, 32, 3, NULL, 1, '2021-08-03 19:48:39', '2021-08-03 19:49:11');
+(13, 20, 32, 3, NULL, 1, '2021-08-03 19:48:39', '2021-08-03 19:49:11'),
+(14, 18, NULL, NULL, NULL, 1, '2021-08-04 06:20:31', '2021-08-04 06:20:31');
 
 INSERT INTO `categories` (`id`, `name`, `sub_header`, `slider_name`, `slider_slogan`, `manage_home_slider`, `slug`, `description`, `image`, `parent_id`, `created_at`, `updated_at`) VALUES
 (1, 'Electronics', 'Electronics', 'Electronics', 'Electronics', 1, 'electronics', NULL, '1628007064.jpg', NULL, '2019-09-02 10:10:38', '2021-08-03 16:14:44'),
@@ -338,7 +343,6 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (11, '2018_07_21_115850_create_divisions_table', 4),
 (12, '2018_07_21_115908_create_districts_table', 4),
 (14, '2018_08_28_034133_create_carts_table', 5),
-(15, '2018_08_28_083714_create_settings_table', 6),
 (16, '2018_08_28_085245_create_payments_table', 7),
 (18, '2018_02_23_015128_create_admins_table', 9),
 (19, '2019_02_24_043826_create_sliders_table', 10),
@@ -348,7 +352,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 (26, '2018_02_23_020211_create_product_images_table', 14),
 (28, '2018_08_28_033110_create_orders_table', 16),
 (33, '2018_02_22_165732_create_products_table', 19),
-(34, '2018_02_23_014906_create_categories_table', 20);
+(34, '2018_02_23_014906_create_categories_table', 20),
+(35, '2018_08_28_083714_create_settings_table', 21);
 
 INSERT INTO `orders` (`id`, `user_id`, `payment_id`, `ip_address`, `name`, `phone_no`, `shipping_address`, `email`, `message`, `is_paid`, `is_completed`, `is_seen_by_admin`, `delivery_status`, `transaction_id`, `created_at`, `updated_at`, `shipping_charge`, `custom_discount`, `coupon_code`) VALUES
 (1, 20, 1, '103.108.62.13', 'Arman ahmed', '01759128544', 'old town', 'shanewaz12@gmail.com', NULL, 0, 0, 1, 0, NULL, '2019-10-01 15:00:24', '2019-10-01 15:01:07', 60, 60, 'bijoy16'),
@@ -432,12 +437,11 @@ INSERT INTO `products` (`id`, `category_id`, `brand_id`, `title`, `occation`, `s
 INSERT INTO `reviews` (`id`, `product_id`, `user_id`, `title`, `description`, `point`, `is_approved`, `created_at`, `updated_at`) VALUES
 (1, 3, 19, 'Nice Software', 'sdsdsd', 4.00, 0, '2019-09-06 17:15:41', '2019-09-06 17:15:41');
 
-INSERT INTO `settings` (`id`, `email`, `phone`, `address`, `shipping_cost`, `created_at`, `updated_at`) VALUES
-(1, 'test@example.com', '01951233084', 'Dhaka-1200, Dhaka', 60, '2018-08-28 14:40:14', '2018-08-28 14:40:14');
+INSERT INTO `settings` (`id`, `website_name`, `website_logo`, `website_footer_text`, `email`, `phone`, `address`, `shipping_cost`, `notice`, `info`, `created_at`, `updated_at`) VALUES
+(1, 'The KINGSMAN', 'logo.png', '@copy; 2021 all rights reserved', 'info@kingsman.com', '01951233084', 'Dhaka', 50.00, NULL, '{\"social\":{\"facebook\":\"https:\\/\\/facebook.com\\/website\",\"twitter\":\"https:\\/\\/twitter.com\\/website\",\"instagram\":\"https:\\/\\/instagram.com\\/website\",\"linkedin\":\"https:\\/\\/linkedin.com\\/website\",\"pinterest\":\"https:\\/\\/pinterest.com\\/website\",\"youtube\":\"https:\\/\\/youtube.com\\/website\"},\"theme\":{\"base_theme\":\"light\",\"slider\":{\"single_slider\":true,\"enable_two_buttons\":false},\"header_menu\":{\"enable_all_category\":true,\"enable_single_category\":false}}}', '2021-08-06 17:04:01', '2021-08-06 17:04:01');
 
 INSERT INTO `sliders` (`id`, `title`, `description`, `image`, `button_text`, `button_link`, `priority`, `created_at`, `updated_at`) VALUES
-(6, 'KingsMan', 'Get Royal Products in your budget...', '1628004700.jpeg', NULL, NULL, 1, '2019-08-18 10:09:34', '2021-08-03 15:31:41'),
-(7, 'Deals of the Day', 'Deals of the Day', '1628004687.jpeg', NULL, NULL, 0, '2019-08-18 10:09:55', '2021-08-03 15:31:27');
+(7, 'Back Out There', 'From school to the office, <br>\r\ndaywear designed for the new everyday.', '1628267710.jpeg', 'Shop Women\'s', 'http://localhost:8200/Ecommerce/Ecommerce-Laravel/product/category/women', 0, '2019-08-18 10:09:55', '2021-08-06 16:35:11');
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `username`, `phone_no`, `email`, `password`, `street_address`, `division_id`, `district_id`, `status`, `ip_address`, `avatar`, `shipping_address`, `api_token`, `remember_token`, `created_at`, `updated_at`) VALUES
 (19, 'Maniruzzaman', 'Akash', 'maniruzzamanakash', '1951233084', 'manirujjamanakash@gmail.com', '$2y$10$19CCRRhzE0UyV1JxxhS5pu8pRpUn9dZxECOKEScdSh/UQonqL/nqm', 'Patuakhali, Bangladesh', 2, 5, 1, '::1', NULL, NULL, 'c17a8a79ba06864b34fd4101130f72439075da332ba8cad432dca0dc969e', 'lhgYkvRFGTUnSc6s108n9LDmfzyKXE6DElxVRp1LnRcqP1bZPM6PHLLXfbTs', '2019-04-26 18:41:48', '2019-04-26 18:42:52'),
@@ -445,7 +449,7 @@ INSERT INTO `users` (`id`, `first_name`, `last_name`, `username`, `phone_no`, `e
 (29, 'Admin', 'company', 'armaanahmed1', '01986895415', 'shahnewaz926@gmail.com', '$2y$10$.HortIReKQ/NnZhrXzaN7uqZ5cVtaj0mCw.RIREizrbIS6/bQaB.u', '60/2 old town dhaka', 2, 5, 1, '::1', NULL, NULL, '4f3087ca49f9af0b6752de95c09a470cd1539ec8a8c602057c73cccde5c9', 'OjwW9UMnmnCKNlS4xXdc56j1Q75msRg3zS6djR6SKWvsMAA0e5amxwkNTJOF', '2019-08-25 08:35:19', '2019-08-30 05:13:23'),
 (30, 'Shahidur Rahman', 'Ansari', 'shahidurrahmanansari', '01934367189', 'rajiul2018@gmail.com', '$2y$10$BMRG3nYtwV3z9TbD2oOm5.6b9fPmulSl/BrM3cQQ3HHSfKoQ8H7a2', '60/2 old town dhaka', 2, 5, 1, '::1', NULL, NULL, 'b66373e472f79ff682cb817b61d9c272739a6e1565dfaa8de0de8f473ff6', NULL, '2019-09-01 16:53:21', '2019-09-01 16:53:49'),
 (31, 'Faiyaz', 'ansari', 'faiyazansari', '01986895413', 'maccaf.team@gmail.com', '$2y$10$jJlfwThsxK1R3t/O1zFajOPSqtYXJiYGPnC0q87J0aeGygZEswFrC', 'old town', 5, 7, 0, '103.138.213.110', NULL, NULL, '8bc00eafc4a2a21f4add3a808c7402edee96855a26f91cd11ebe4a3dca34', '6N9Xgo6jO46jDyN6udZNH5Fow50X1pANAmB0ZHhBivbhamX8VV', '2020-01-01 06:29:43', '2020-01-01 06:29:43'),
-(32, 'Maniruzzaman', 'Akash', 'maniruzzamanakash1', '01951233084', 'm.akash.cse@gmail.com', '$2y$10$AfM6.ULrLfm20ohjvLrMQObfjZoTSuOhFQfXmO0lmXL67nWf/D3TW', 'Mohakhali', 2, 5, 1, '::1', NULL, NULL, 'e546835a66d927d865c087a478cc2f4e5e0bb0d87a774cc461f6b59790e0', 'Y3Ku7sTTi5zHJbKT7W5ZUCPpo5hiG9pfzJiGOB6FzPTeZlXwUuwTevyKZuTk', '2021-08-03 19:39:41', '2021-08-03 19:39:41');
+(32, 'Maniruzzaman', 'Akash', 'maniruzzamanakash1', '01951233084', 'm.akash.cse@gmail.com', '$2y$10$AfM6.ULrLfm20ohjvLrMQObfjZoTSuOhFQfXmO0lmXL67nWf/D3TW', 'Mohakhali', 2, 5, 1, '::1', NULL, NULL, 'e546835a66d927d865c087a478cc2f4e5e0bb0d87a774cc461f6b59790e0', 'pUaEVMmHbGU0nlcAQNL69Gw1JbpQ77z5zyJsFEb2vfbGUknyp2Hpn3vp2M1P', '2021-08-03 19:39:41', '2021-08-03 19:39:41');
 
 INSERT INTO `wishlists` (`id`, `product_id`, `user_id`, `created_at`, `updated_at`) VALUES
 (2, 3, 19, '2019-09-15 16:10:05', '2019-09-15 16:10:05'),
