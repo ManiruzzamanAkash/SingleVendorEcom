@@ -47,7 +47,7 @@
 <!-- Slider End -->
 <!-- offer 50% start -->
 <section>
-    <div class="offer-section" style="background-image: url('{{ asset('images/Sale_HP__2x.jpg') }}');">
+    <div class="offer-section" style="background-image: url('{{ asset('images/Sale_HP__2x.jpg') }}');margin-top: -20px;">
         <div class="offer-body">
             <h3>Extra 50% off Sale</h3>
 
