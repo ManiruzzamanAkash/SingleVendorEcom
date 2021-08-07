@@ -18,12 +18,10 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
     @include('frontend.partials.styles')
     @yield('stylesheets')
-
 </head>
 
 <body>
     <div id="app">
-
         @if ($settings->website->theme->base_theme === 'light')
 			@include('frontend.partials.nav_light_theme')
 		@else

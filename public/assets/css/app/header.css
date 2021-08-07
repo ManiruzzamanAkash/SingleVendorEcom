@@ -119,8 +119,8 @@ header,
 }
 
 .nav-single-menu {
-    color: #151533;
-    padding: 10px;
+	color: #151533;
+	padding: 10px;
 }
 
 .brandLogo a,
@@ -277,14 +277,14 @@ header,
 }
 
 .counter {
-    margin-top: 4px;
-    padding: 3px 6px;
-    border: 1px solid #fff;
-    color: #fff;
-    margin-left: -7px;
-    border-radius: 100%;
-    background: red;
-    position: absolute;
+	margin-top: 4px;
+	padding: 3px 6px;
+	border: 1px solid #fff;
+	color: #fff;
+	margin-left: -7px;
+	border-radius: 100%;
+	background: red;
+	position: absolute;
 }
 
 .crtArea {
@@ -348,9 +348,9 @@ header,
 =============================== Category Header =====================================
 ===================================================================================*/
 .main-menu-links {
-    box-shadow: 10px 30px 40px #f8f9fa;
-    text-align: center;
-    background: #f8f9fa;
+	box-shadow: 10px 30px 40px #f8f9fa;
+	text-align: center;
+	background: #f8f9fa;
 }
 
 .subheader {
@@ -359,20 +359,20 @@ header,
 }
 
 .subheader ul {
-    list-style: none;
+	list-style: none;
 }
 
 .subheader ul li {
-    display: inline-block;
+	display: inline-block;
 }
 
 .subheader ul li a {
-    padding: 10px;
-    padding-right: 20px;
+	padding: 10px;
+	padding-right: 20px;
 }
 
 .subheader ul li a:hover {
-    text-decoration: none;
+	text-decoration: none;
 }
 
 .holder {
@@ -490,22 +490,22 @@ header,
 ==================================================================================*/
 
 #scroll-top {
-    text-align: center;
-    width: 40px;
-    height: 40px;
-    text-decoration: none;
-    padding: 10px;
-    font-size: 12px;
-    background: #151533;
-    color: #fff;
-    border-radius: 20px;
-    position: fixed;
-    bottom: 6%;
-    border: 1px solid #fff;
-    right: 5%;
-    cursor: pointer;
-    display: none;
-    box-shadow: 0px 5px 7px 0px rgb(0 0 0 / 50%);
+	text-align: center;
+	width: 40px;
+	height: 40px;
+	text-decoration: none;
+	padding: 10px;
+	font-size: 12px;
+	background: #151533;
+	color: #fff;
+	border-radius: 20px;
+	position: fixed;
+	bottom: 6%;
+	border: 1px solid #fff;
+	right: 5%;
+	cursor: pointer;
+	display: none;
+	box-shadow: 0px 5px 7px 0px rgb(0 0 0 / 50%);
 }
 
 .hidden {
@@ -594,7 +594,7 @@ header,
 	margin: 0;
 	padding: 0;
 	min-height: 60px;
-	background: #fff!important;
+	background: #fff !important;
 }
 
 @media only screen and (max-width: 991px) {
@@ -653,12 +653,95 @@ li.nav-item {
 }
 
 .navbar-toggler {
-    padding: 0.25rem 0.75rem;
-    font-size: 1.25rem;
-    line-height: 1;
-    background-color: #ffffffc7;
-    border: 1px solid #fff;
-    border-radius: 0.25rem;
-    margin-right: 10px;
-    margin-left: 13px;
+	padding: 0.25rem 0.75rem;
+	font-size: 1.25rem;
+	line-height: 1;
+	background-color: #ffffffc7;
+	border: 1px solid #fff;
+	border-radius: 0.25rem;
+	margin-right: 10px;
+	margin-left: 13px;
 }
+
+/* Navigation Bar Light */
+#theme-light-nav-area a:hover {
+	text-decoration: none;
+}
+
+#theme-light-nav-area .header-top {
+    height: 120px;
+    background: #ffffff8a;
+}
+
+#theme-light-nav-area .logo-area {
+    position: absolute;
+    top: 5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 170px;
+    z-index: 10;
+}
+
+#theme-light-nav-area .logo-area img{
+    width: 110px;
+	margin-left: 20px;
+}
+
+#theme-light-nav-area .logo-area h2 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #565653;
+}
+
+#theme-light-nav-area .header-right-icons .header-right-icon {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    color: #464646;
+    cursor: pointer;
+    font-size: 1rem;
+    float: right;
+    margin-top: 60px;
+    padding-right: 20px;
+    font-weight: 200;
+}
+
+#theme-light-nav-area .header-right-icons .header-right-icon i {
+    color: #464646;
+    font-weight: 200;
+}
+
+#theme-light-nav-area .main-menu .navbar {
+    background: #fff!important;
+    padding: 0px;
+}
+
+#theme-light-nav-area .navbar-nav .nav-link {
+    cursor: pointer;
+    font-size: 0.9rem;
+    height: 100%;
+    transition: 0.5s;
+    color: #464646;
+    border-bottom: 2px solid transparent;
+}
+
+#theme-light-nav-area .navbar-nav .nav-link:hover {
+    border-bottom: 2px solid #000;
+    color: #0d1112;
+}
+
+@media only screen and (min-width: 10px) and (max-width: 992px) {
+	#theme-light-nav-area .main-menu .navbar-toggler {
+		position: absolute;
+		left: 0px!important;
+		top: -90px;
+	}
+
+	#theme-light-nav-area .main-menu {
+		margin-bottom: 2px;
+		padding: 10px;
+		background: #fff;
+	}
+}
+/* Navigation Bar Light End*/
