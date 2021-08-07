@@ -202,3 +202,12 @@
     /* border-radius: 2px; */
 	/* background-size: cover; */
 }
+
+.home-category p{
+	font-size: 30px;
+}
+.home-category a{
+	font-size: 20px;
+	text-decoration: none;
+	color: white;
+}
