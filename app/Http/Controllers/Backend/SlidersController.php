@@ -29,8 +29,7 @@ class SlidersController extends Controller
       'title'  => 'required',
       'description'  => 'required',
       'image'  => 'required|image',
-      'priority'  => 'required',
-      'button_link'  => 'nullable|url'
+      'priority'  => 'required'
     ],
     [
       'title.required'  => 'Please provide slider title',
