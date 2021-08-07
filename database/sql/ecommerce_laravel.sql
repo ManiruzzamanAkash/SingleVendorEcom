@@ -4,7 +4,7 @@
 -- https://tableplus.com/
 --
 -- Database: ecommerce_laravel
--- Generation Time: 2021-08-06 23:23:10.8450
+-- Generation Time: 2021-08-07 21:46:28.3210
 -- -------------------------------------------------------------
 
 
@@ -78,7 +78,7 @@ CREATE TABLE `categories` (
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `categories_slug_unique` (`slug`)
-) ENGINE=InnoDB AUTO_INCREMENT=20 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `coupons` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
@@ -194,7 +194,7 @@ CREATE TABLE `products` (
   `status` tinyint NOT NULL DEFAULT '0',
   `offer_price` int DEFAULT NULL,
   `discount` float DEFAULT NULL,
-  `discount_type` enum('percentage','numeric') COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'percentage',
+  `discount_type` enum('percentage','numeric') CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL DEFAULT 'percentage',
   `warranty` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `admin_id` int unsigned NOT NULL,
   `created_at` timestamp NULL DEFAULT NULL,
@@ -221,15 +221,15 @@ CREATE TABLE `reviews` (
 
 CREATE TABLE `settings` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
-  `website_name` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `website_logo` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `website_footer_text` varchar(191) COLLATE utf8mb4_unicode_ci NOT NULL,
-  `email` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `phone` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
-  `address` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `website_name` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `website_logo` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `website_footer_text` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
+  `email` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `phone` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `address` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `shipping_cost` double(8,2) unsigned NOT NULL DEFAULT '50.00',
-  `notice` text COLLATE utf8mb4_unicode_ci,
-  `info` text COLLATE utf8mb4_unicode_ci,
+  `notice` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
+  `info` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
@@ -238,15 +238,18 @@ CREATE TABLE `settings` (
 CREATE TABLE `sliders` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
   `title` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `description` text COLLATE utf8mb4_unicode_ci,
+  `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `image` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `button_text` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
   `button_link` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `button_text2` varchar(252) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `button_link2` varchar(252) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
+  `status` tinyint(1) NOT NULL DEFAULT '1',
   `priority` tinyint unsigned NOT NULL DEFAULT '10',
   `created_at` timestamp NULL DEFAULT NULL,
   `updated_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `users` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
@@ -309,11 +312,12 @@ INSERT INTO `carts` (`id`, `product_id`, `user_id`, `order_id`, `ip_address`, `p
 (14, 18, NULL, NULL, NULL, 1, '2021-08-04 06:20:31', '2021-08-04 06:20:31');
 
 INSERT INTO `categories` (`id`, `name`, `sub_header`, `slider_name`, `slider_slogan`, `manage_home_slider`, `slug`, `description`, `image`, `parent_id`, `created_at`, `updated_at`) VALUES
-(1, 'Electronics', 'Electronics', 'Electronics', 'Electronics', 1, 'electronics', NULL, '1628007064.jpg', NULL, '2019-09-02 10:10:38', '2021-08-03 16:14:44'),
-(5, 'Jewelry & Ornaments', 'Jewelries', 'Jewelry & Ornaments', 'Jewelry & Ornaments', 1, 'jewelry-&-ornaments', NULL, NULL, NULL, '2019-09-02 10:14:32', '2021-08-03 16:11:20'),
-(6, 'Mens fashion', 'Mens', 'Mens', 'Mens', 1, 'mens', NULL, '1628007033.jpg', NULL, '2019-09-02 10:14:45', '2021-08-03 16:14:28'),
-(7, 'Women\'s fashion', 'Women\'s', 'Women', 'Women', 1, 'women', NULL, '1628007010.jpg', NULL, '2019-09-02 10:14:59', '2021-08-03 16:11:36'),
-(8, 'Baby & kids', 'Baby items', 'Baby & kids', 'Baby & kids', 1, 'baby-&-kids-1-1', NULL, NULL, NULL, '2019-09-02 10:15:14', '2019-09-02 10:50:53');
+(5, 'Women\'s Bottoms', 'Jewelries', 'Jewelry & Ornaments', 'Jewelry & Ornaments', 1, 'jewelry-&-ornaments', NULL, '1628350102.jpg', NULL, '2019-09-02 10:14:32', '2021-08-07 15:28:22'),
+(6, 'Women\'s Underwears', 'Mens', 'Women\'\'s', 'Mens', 1, 'Women\'\'s', NULL, '1628350185.jpg', NULL, '2019-09-02 10:14:45', '2021-08-07 15:29:45'),
+(7, 'Men\'s Tops', 'Women\'s', 'Men', 'Men', 1, 'Men', NULL, '1628350273.jpg', NULL, '2019-09-02 10:14:59', '2021-08-07 15:31:13'),
+(8, 'Men\'s Bottoms', 'Mens', 'Mens', 'Men', 1, 'Mens', 'Mens', '1628350412.jpg', NULL, '2019-09-02 10:15:14', '2021-08-07 15:33:32'),
+(20, 'Women\'s Top\'s', 'Women\'s Top\'s', 'Women\'s Top\'s', 'Women\'s Top\'s', 1, 'women\'s-top\'s', 'Women\'s Top\'s', '1628350007.jpg', NULL, '2021-08-07 15:26:48', '2021-08-07 15:35:36'),
+(21, 'Men\'s Underwears', 'Men\'s Underwears', 'Men\'s Underwears', 'Men\'s Underwears', 1, 'men\'s-underwears', NULL, '1628350509.jpg', NULL, '2021-08-07 15:35:09', '2021-08-07 15:35:09');
 
 INSERT INTO `coupons` (`id`, `title`, `code`, `description`, `is_order_discount`, `discount_amount`, `criteria_amount`, `direct_amount_or_percentage`, `total_quantity`, `valid_date`, `created_at`, `updated_at`) VALUES
 (1, '16 December Bijoy Dibosh', 'bijoy16', NULL, 1, 60.00, 1.00, 1, 91, '2019-12-31', '2019-06-30 02:22:09', '2019-12-24 22:21:38');
@@ -440,8 +444,8 @@ INSERT INTO `reviews` (`id`, `product_id`, `user_id`, `title`, `description`, `p
 INSERT INTO `settings` (`id`, `website_name`, `website_logo`, `website_footer_text`, `email`, `phone`, `address`, `shipping_cost`, `notice`, `info`, `created_at`, `updated_at`) VALUES
 (1, 'The KINGSMAN', 'logo.png', '@copy; 2021 all rights reserved', 'info@kingsman.com', '01951233084', 'Dhaka', 50.00, NULL, '{\"social\":{\"facebook\":\"https:\\/\\/facebook.com\\/website\",\"twitter\":\"https:\\/\\/twitter.com\\/website\",\"instagram\":\"https:\\/\\/instagram.com\\/website\",\"linkedin\":\"https:\\/\\/linkedin.com\\/website\",\"pinterest\":\"https:\\/\\/pinterest.com\\/website\",\"youtube\":\"https:\\/\\/youtube.com\\/website\"},\"theme\":{\"base_theme\":\"light\",\"slider\":{\"single_slider\":true,\"enable_two_buttons\":false},\"header_menu\":{\"enable_all_category\":true,\"enable_single_category\":false}}}', '2021-08-06 17:04:01', '2021-08-06 17:04:01');
 
-INSERT INTO `sliders` (`id`, `title`, `description`, `image`, `button_text`, `button_link`, `priority`, `created_at`, `updated_at`) VALUES
-(7, 'Back Out There', 'From school to the office, <br>\r\ndaywear designed for the new everyday.', '1628267710.jpeg', 'Shop Women\'s', 'http://localhost:8200/Ecommerce/Ecommerce-Laravel/product/category/women', 0, '2019-08-18 10:09:55', '2021-08-06 16:35:11');
+INSERT INTO `sliders` (`id`, `title`, `description`, `image`, `button_text`, `button_link`, `button_text2`, `button_link2`, `status`, `priority`, `created_at`, `updated_at`) VALUES
+(9, 'Denim Icons and Tees', '<p><b>The uniform. Forever jeans </b></p><p><b>and breathable t-shirt.</b></p>', '1628351092.jpeg', 'Shop Women\'s', 'products/category/women', 'Shop Mem\'s', 'products/category/mens', 1, 10, '2021-08-07 06:14:19', '2021-08-07 15:44:54');
 
 INSERT INTO `users` (`id`, `first_name`, `last_name`, `username`, `phone_no`, `email`, `password`, `street_address`, `division_id`, `district_id`, `status`, `ip_address`, `avatar`, `shipping_address`, `api_token`, `remember_token`, `created_at`, `updated_at`) VALUES
 (19, 'Maniruzzaman', 'Akash', 'maniruzzamanakash', '1951233084', 'manirujjamanakash@gmail.com', '$2y$10$19CCRRhzE0UyV1JxxhS5pu8pRpUn9dZxECOKEScdSh/UQonqL/nqm', 'Patuakhali, Bangladesh', 2, 5, 1, '::1', NULL, NULL, 'c17a8a79ba06864b34fd4101130f72439075da332ba8cad432dca0dc969e', 'lhgYkvRFGTUnSc6s108n9LDmfzyKXE6DElxVRp1LnRcqP1bZPM6PHLLXfbTs', '2019-04-26 18:41:48', '2019-04-26 18:42:52'),
