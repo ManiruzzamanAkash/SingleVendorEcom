@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Aug 07, 2021 at 05:14 PM
+-- Generation Time: Aug 07, 2021 at 05:36 PM
 -- Server version: 10.4.17-MariaDB
 -- PHP Version: 7.4.14
 
@@ -133,11 +133,12 @@ CREATE TABLE `categories` (
 --
 
 INSERT INTO `categories` (`id`, `name`, `sub_header`, `slider_name`, `slider_slogan`, `manage_home_slider`, `slug`, `description`, `image`, `parent_id`, `created_at`, `updated_at`) VALUES
-(1, 'Electronics', 'Electronics', 'Electronics', 'Electronics', 1, 'electronics', NULL, '1628007064.jpg', NULL, '2019-09-02 04:10:38', '2021-08-03 10:14:44'),
-(5, 'Jewelry & Ornaments', 'Jewelries', 'Jewelry & Ornaments', 'Jewelry & Ornaments', 1, 'jewelry-&-ornaments', NULL, NULL, NULL, '2019-09-02 04:14:32', '2021-08-03 10:11:20'),
-(6, 'Mens fashion', 'Mens', 'Mens', 'Mens', 1, 'mens', NULL, '1628007033.jpg', NULL, '2019-09-02 04:14:45', '2021-08-03 10:14:28'),
-(7, 'Women\'s fashion', 'Women\'s', 'Women', 'Women', 1, 'women', NULL, '1628007010.jpg', NULL, '2019-09-02 04:14:59', '2021-08-03 10:11:36'),
-(8, 'Baby & kids', 'Baby items', 'Baby & kids', 'Baby & kids', 1, 'baby-&-kids-1-1', NULL, NULL, NULL, '2019-09-02 04:15:14', '2019-09-02 04:50:53');
+(5, 'Women\'s Bottoms', 'Jewelries', 'Jewelry & Ornaments', 'Jewelry & Ornaments', 1, 'jewelry-&-ornaments', NULL, '1628350102.jpg', NULL, '2019-09-02 04:14:32', '2021-08-07 09:28:22'),
+(6, 'Women\'s Underwears', 'Mens', 'Women\'\'s', 'Mens', 1, 'Women\'\'s', NULL, '1628350185.jpg', NULL, '2019-09-02 04:14:45', '2021-08-07 09:29:45'),
+(7, 'Men\'s Tops', 'Women\'s', 'Men', 'Men', 1, 'Men', NULL, '1628350273.jpg', NULL, '2019-09-02 04:14:59', '2021-08-07 09:31:13'),
+(8, 'Men\'s Bottoms', 'Mens', 'Mens', 'Men', 1, 'Mens', 'Mens', '1628350412.jpg', NULL, '2019-09-02 04:15:14', '2021-08-07 09:33:32'),
+(20, 'Women\'s Top\'s', 'Women\'s Top\'s', 'Women\'s Top\'s', 'Women\'s Top\'s', 1, 'women\'s-top\'s', 'Women\'s Top\'s', '1628350007.jpg', NULL, '2021-08-07 09:26:48', '2021-08-07 09:35:36'),
+(21, 'Men\'s Underwears', 'Men\'s Underwears', 'Men\'s Underwears', 'Men\'s Underwears', 1, 'men\'s-underwears', NULL, '1628350509.jpg', NULL, '2021-08-07 09:35:09', '2021-08-07 09:35:09');
 
 -- --------------------------------------------------------
 
@@ -755,7 +756,7 @@ ALTER TABLE `carts`
 -- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT for table `coupons`
