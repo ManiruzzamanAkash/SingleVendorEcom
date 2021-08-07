@@ -282,6 +282,4 @@
 	  ]
 	});
   </script>
-
-
 @endsection
