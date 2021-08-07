@@ -107,8 +107,8 @@
 .slider-title {
 	font-size: 24px;
 	font-family: "Ubuntu", sans-serif;
-	padding: 15px 18px;
-	border-bottom: 1px solid #c1c1c1;
+	/* padding: 15px 18px; */
+	/* border-bottom: 1px solid #c1c1c1; */
 	margin-bottom: 10px;
 	text-align: center;
 }

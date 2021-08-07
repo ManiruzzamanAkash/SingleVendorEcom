@@ -25,17 +25,17 @@
                             </a>
                         @endif
 
-                        @if ($slider->button_link)
-                            <a href="{{ $slider->button_link }}" type="button" class="btn btn-outline-primary btn-carousel">
-                                {{ $slider->button_text }}
-                            </a>
-                        @endif
-
                         @if ($slider->button_link2)
-                            <a href="{{ url($slider->button_link2) }}" type="button" class="btn btn-outline-secondary">
+                            <a href="{{ $slider->button_link2 }}" type="button" class="btn btn-outline-primary btn-carousel">
                                 {{ $slider->button_text2 }}
                             </a>
                         @endif
+
+                        {{-- @if ($slider->button_link2)
+                            <a href="{{ url($slider->button_link2) }}" type="button" class="btn btn-outline-secondary">
+                                {{ $slider->button_text2 }}
+                            </a>
+                        @endif --}}
                     </div>
                 </div>
             @endforeach

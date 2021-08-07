@@ -198,6 +198,7 @@ Route::group(['prefix' => 'admin'], function () {
   Route::group(['prefix' => '/sliders'], function () {
     Route::get('/', 'Backend\SlidersController@index')->name('admin.sliders');
     Route::post('/store', 'Backend\SlidersController@store')->name('admin.slider.store');
+    Route::get('/edit/{id}', 'Backend\SlidersController@edit')->name('admin.slider.edit');
     Route::post('/slider/edit/{id}', 'Backend\SlidersController@update')->name('admin.slider.update');
     Route::post('/slider/delete/{id}', 'Backend\SlidersController@delete')->name('admin.slider.delete');
   });

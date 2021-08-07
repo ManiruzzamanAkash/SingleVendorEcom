@@ -65,14 +65,22 @@ class SlidersController extends Controller
 
   }
 
+  public function edit($id)
+  {
+    
+    $slider = Slider::find($id);
+    return view('backend.pages.sliders.edit')->with('slider', $slider);
+  }
+
     public function update(Request $request, $id)
     {
+      // return $request;
           $this->validate($request, [
           'title'  => 'required',
           'description'  => 'required',
           'image'  => 'nullable|image',
           'priority'  => 'required',
-          'button_link'  => 'nullable|url'
+          'button_link'  => 'nullable'
         ],
         [
           'title.required'  => 'Please provide slider title',

@@ -38,7 +38,7 @@
 
 									<div class="form-group">
 										<label for="description">Slider Description <small class="text-danger">(required)</small></label>
-										<input type="text" class="form-control" name="description" id="description" placeholder="Slider description" required>
+										<textarea rows="3" class="form-control" name="description" id="summernote" placeholder="Slider description" required></textarea>
 									</div>
 
 									<div class="form-group">
@@ -130,9 +130,10 @@
 						</td>
 
 						<td>
-							<a href="#editModal{{ $slider->id }}" data-toggle="modal" class="btn btn-success btn-sm btn-circle m-1 p-1"><i class="fa fa-edit"></i></a>
+							<a href="{{ route('admin.slider.edit',$slider->id) }}" class="btn btn-success btn-sm btn-circle m-1 p-1"><i class="fa fa-edit"></i></a>
 
 							<a href="#deleteModal{{ $slider->id }}" data-toggle="modal" class="btn btn-danger btn-sm btn-circle m-1 p-1"><i class="fa fa-trash"></i></a>
+							{{-- <a href="{{ route('admin.slider.edit',$slider->id) }}"class="btn btn-danger btn-sm btn-circle m-1 p-1"><i class="fa fa-trash"></i></a> --}}
 
 							<!-- Delete Modal -->
 							<div class="modal fade" id="deleteModal{{ $slider->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -158,7 +159,7 @@
 								</div>
 							</div>
 
-							<!-- Edit Modal -->
+							{{-- <!-- Edit Modal -->
 							<div class="modal fade" id="editModal{{ $slider->id }}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
 								<div class="modal-dialog" role="document">
 									<div class="modal-content">
@@ -179,7 +180,7 @@
 
 												<div class="form-group">
 													<label for="description">Slider Description <small class="text-danger">(required)</small></label>
-													<textarea rows="3" class="form-control" name="description" id="description" placeholder="Slider description" required>{{ $slider->description }}</textarea>
+													<textarea rows="3" class="form-control" name="description" id="summernote2" placeholder="Slider description" required>{{ $slider->description }}</textarea>
 												</div>
 
 												<div class="form-group">
@@ -247,7 +248,7 @@
 										</div>
 									</div>
 								</div>
-							</div>
+							</div> --}}
 
 
 						</td>
@@ -261,4 +262,26 @@
 	</div>
 </div>
 <!-- main-panel ends -->
+@endsection
+
+@section('scripts')
+
+<script>
+	$('#summernote').summernote({
+	  placeholder: 'Write a short description',
+	  tabsize: 2,
+	  height: 120,
+	  toolbar: [
+		['style', ['style']],
+		['font', ['bold', 'underline', 'clear']],
+		['color', ['color']],
+		['para', ['ul', 'ol', 'paragraph']],
+		['table', ['table']],
+		['insert', ['link', 'picture', 'video']],
+		['view', ['fullscreen', 'codeview', 'help']]
+	  ]
+	});
+  </script>
+
+
 @endsection
