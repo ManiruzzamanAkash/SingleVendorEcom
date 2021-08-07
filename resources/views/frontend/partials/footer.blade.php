@@ -38,11 +38,11 @@
 </footer>
 <div class="copyright">
     
-    <div class="social-body">
-        <a href="#"><i class="fab fa-facebook-square"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>    
+    <div class="footer-logo">
+        <a href="{{ route('index') }}">
+            <img src="{{ asset('images/logo.png') }}" style="height: 60px;">
+        </a> 
+        <p class="text-white text-uppercase">Kingsman</p>   
     </div>
     <div class="text-center theEnd">
         Copyright &copy; DemoSite, 2018
