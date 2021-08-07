@@ -6,7 +6,7 @@
                     <a href="{{ route('index') }}">
                         <img src="{{ asset('images/logo.png') }}" class="logo-main">
                         <br>
-                        <h2>The KINGS MAN</h2>
+                        <h2>{{ strtoupper(config('app.name')) }}</h2>
                     </a>
                 </div>
             </div>
