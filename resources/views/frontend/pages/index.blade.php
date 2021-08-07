@@ -125,60 +125,18 @@
 @endforeach
 
 <section>
-    <div class="container mb-3">
+    <div class="container mb-5">
         <div class="row">
-            <div class="col-4 ">
-                <div class="category-image d-flex align-items-end" style="background-image: url('{{ asset('images/VN_Tops_W_2x.jpg') }}');">
-                    <div class="ml-4 pb-2 text-white">
-                        <p>Men's Underwear</p>
-                        <a>Shop Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 ">
-                <div class="category-image d-flex align-items-end" style="background-image: url('{{ asset('images/VN_Bottoms_W_2x.jpg') }}');">
-                    <div class="ml-4 pb-2 text-white">
-                        <p>Men's Underwear</p>
-                        <a>Shop Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 ">
-                <div class="category-image d-flex align-items-end" style="background-image: url('{{ asset('images/VN_Underwear_W_2x.jpg') }}');">
-                    <div class="ml-4 pb-2 text-white">
-                        <p>Men's Underwear</p>
-                        <a>Shop Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 ">
-                <div class="category-image d-flex align-items-end" style="background-image: url('{{ asset('images/VN_Tees_M_2x.jpg') }}');">
-                    <div class="ml-4 pb-2 text-white">
-                        <p>Men's Underwear</p>
-                        <a>Shop Now</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-4 ">
-                <a>
-                    <div class="category-image d-flex align-items-end" style="background-image: url('{{ asset('images/VN_Bottoms_M_2x.jpg') }}');">
-                        <div class="ml-4 pb-2 text-white">
-                            <p>Men's Underwear</p>
-                            <a>Shop Now</a>
+            @foreach ($categories as $category)
+                <div class="col-4 ">
+                    <div onclick="location.href='{{ route('categories.show', $category->slug) }} }}'" class="category-image d-flex align-items-end" style="background-image: url('{{ asset('images/categories/' . $category->image) }}');">
+                        <div class="ml-4 home-category pb-2 text-white">
+                            <p>{{ $category->name }}</p>
+                            <a href="{{ route('categories.show', $category->slug) }}" >Shop Now</a>
                         </div>
                     </div>
-                </a>
-            </div>
-            <div class="col-4 ">
-                <a>
-                    <div class="category-image d-flex align-items-end" style="background-image: url('{{ asset('images/VN_Underwear_M_2x.jpg') }}');">
-                        <div class="ml-4 pb-2 text-white">
-                            <p>Men's Underwear</p>
-                            <a>Shop Now</a>
-                        </div>
-                    </div>
-                </a>
-            </div>
+                </div> 
+            @endforeach
         </div>
 </section>
 
