@@ -15,7 +15,8 @@
                 <div class="carousel-item {{ $loop->index == 0 ? 'active' : '' }}">
                     <img class="d-block w-100" src="{{ asset('images/sliders/' . $slider->image) }}" height="auto"
                         alt="{{ $slider->title }}" >
-                    <div class="carousel-caption d-none d-md-block">
+                    {{-- <div class="carousel-caption d-none d-md-block "> --}}
+                    <div class="carousel-caption d-none d-md-block ">
                         <h3 class="slider-title">{{ $slider->title }}</h3>
                         <p class="slider-description">{!! $slider->description ? $slider->description : '' !!}</p>
 
@@ -52,6 +53,29 @@
         @endif
     </div>
     <!-- Slider End -->
+    <!-- offer 50% start -->
+    <section>
+        <div class="offer-section" style="background-image: url('{{ asset('images/Sale_HP__2x.jpg') }}');">
+            <div class="offer-body">
+                <h3>Extra 50% off Sale</h3>
+                
+                <p>Summer favorites. New styles added.</p>
+                
+                <a href="{{ route('categories.show', 'women') }}?offer=50" type="button"
+                    class="btn btn-outline-secondary btn-carousel">
+                    Shop Women's
+                </a>
+
+                <a href="{{ route('categories.show', 'mens') }}?offer=50" type="button"
+                    class="btn btn-outline-secondary btn-carousel">
+                    Shop Men's
+                </a>
+
+            </div>
+        </div>
+    </section>
+    <!-- offer 50%  End -->
+
 
     @foreach ($categories as $catSingle)
         @if ($catSingle->manage_home_slider > 0)
