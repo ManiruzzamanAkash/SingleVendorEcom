@@ -60,7 +60,6 @@
             <a href="{{ route('categories.show', 'mens') }}?offer=50" type="button" class="btn btn-outline-secondary btn-carousel">
                 Shop Men's
             </a>
-
         </div>
     </div>
 </section>
@@ -129,7 +128,7 @@
         <div class="row">
             @foreach ($categories as $category)
                 <div class="col-4 ">
-                    <div onclick="location.href='{{ route('categories.show', $category->slug) }} }}'" class="category-image d-flex align-items-end" style="background-image: url('{{ asset('images/categories/' . $category->image) }}');">
+                    <div onclick="location.href='{{ route("categories.show", $category->slug) }}'" class="category-image d-flex align-items-end" style="background-image: url('{{ asset('images/categories/' . $category->image) }}');">
                         <div class="ml-4 home-category pb-2 text-white">
                             <p>{{ $category->name }}</p>
                             <a href="{{ route('categories.show', $category->slug) }}" >Shop Now</a>

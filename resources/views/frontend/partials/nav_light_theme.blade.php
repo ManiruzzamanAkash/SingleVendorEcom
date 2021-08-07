@@ -11,9 +11,14 @@
                 </div>
             </div>
             <div class="header-right-icons">
-                <a href="{{ route('carts') }}" class="header-right-icon"><i class="fa fa-shopping-cart"></i> 0</a>
+                <a href="{{ route('carts') }}" class="header-right-icon">
+                    <i class="fa fa-shopping-cart"></i>
+                    <cart-total-item url="{{ url('/') }}"></cart-total-item>
+                </a>
                 <a href="{{ route('login') }}" class="header-right-icon"><i class="fa fa-user"></i> SIGN IN</a>
-                <a href="#" class="header-right-icon"><i class="fa fa-search"></i> Search</a>
+                <a href="#" class="header-right-icon pointer" id="search-input-button">
+                    <i class="fa fa-search"></i> Search
+                </a>
             </div>
             <div class="clearfix"></div>
         </div>
@@ -39,5 +44,20 @@
                 </div>
             </div>
         </nav>
+    </div>
+
+    {{-- Toggle Off-canvas Searchbar --}}
+    <div class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" id="search-close-nav">&times;</a>
+        <form class="my-2 my-lg-0  ml-4" action="{!! route('search') !!}" method="get">
+            <div class="form-group">
+                <label for="search" class="ml-2">Search All Products...</label>
+                <br>
+                <input type="text" class="navbar-form search float-left" name="search" placeholder="Search Products" required="required" id="search">
+                <button type="submit" class="btn searchBtn  float-left">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
+            </div>
+        </form>
     </div>
 </div>

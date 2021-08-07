@@ -1,3 +1,7 @@
+#app {
+    overflow: hidden;
+}
+
 .ctgry a,
 .accArea a,
 .brandLogo,
@@ -729,6 +733,50 @@ li.nav-item {
 #theme-light-nav-area .navbar-nav .nav-link:hover {
     border-bottom: 2px solid #000;
     color: #0d1112;
+}
+
+#theme-light-nav-area #search-input {
+    border: 0px solid gray;
+    background: transparent;
+    padding: 10px;
+}
+
+#theme-light-nav-area .sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    right: 0;
+    background-color: #fbfbfb;
+    overflow-x: hidden;
+    padding-top: 60px;
+    transition: 0.5s;
+    border-left: 1px solid #000;
+    z-index: 1000;
+	display: none;
+	padding-top: 10%;
+}
+
+#theme-light-nav-area .sidenav .form-group {
+	margin-left: -20px;
+}
+
+#theme-light-nav-area .sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 17px;
+    font-size: 36px;
+    margin-left: 50px;
+    color: #7f7f7f8c;
+}
+
+@media only screen and (min-width: 10px) and (max-width: 750px) {
+	#theme-light-nav-area #search-input-button {
+		right: 52px!important;
+		top: 35px!important;
+		position: absolute;
+	}
 }
 
 @media only screen and (min-width: 10px) and (max-width: 992px) {

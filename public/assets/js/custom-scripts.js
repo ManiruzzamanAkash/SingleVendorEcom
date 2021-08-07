@@ -1102,4 +1102,13 @@ $(document).ready(function() {
 
         return false;
     });
+
+    $('#search-input-button').on('click', function(e) {
+        $(".sidenav").css({ width: 250, display: 'block' });
+    });
+
+    $('#search-close-nav').on('click', function(e) {
+        $(".sidenav").css({ width: 0, display: 'none' });
+    });
+
 });
