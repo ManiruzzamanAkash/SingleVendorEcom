@@ -12,6 +12,9 @@ class Slider extends Model
         'description', 
         'button_text', 
         'button_link', 
+        'button_text2', 
+        'button_link2', 
+        'status', 
         'priority'
     ];
 }

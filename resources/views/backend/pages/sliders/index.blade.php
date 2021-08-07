@@ -46,21 +46,53 @@
 										<input type="file" class="form-control" name="image" id="image" placeholder="Slider Image" required>
 									</div>
 
-									<div class="form-group">
-										<label for="button_text">Slider Button Text <small class="text-info">(optional)</small></label>
-										<input type="text" class="form-control" name="button_text" id="button_text" placeholder="Slider Button Text (if need)">
+									<div class="row">
+										<div class="col-6">
+											<div class="form-group">
+												<label for="button_text">Slider Button Text <small class="text-info">(optional)</small></label>
+												<input type="text" class="form-control" name="button_text" id="button_text" placeholder="Slider Button Text (if need)">
+											</div>
+										</div>
+										<div class="col-6">
+											<div class="form-group">
+												<label for="button_link">Slider Button Link <small class="text-info">(optional)</small></label>
+												<input type="text" class="form-control" name="button_link" id="button_link" placeholder="Slider Button Text (if need)">
+											</div>
+										</div>
 									</div>
 
-									<div class="form-group">
-										<label for="button_link">Slider Button Link <small class="text-info">(optional)</small></label>
-										<input type="url" class="form-control" name="button_link" id="button_link" placeholder="Slider Button Text (if need)">
+									<div class="row">
+										<div class="col-6">
+											<div class="form-group">
+												<label for="button_text">Slider Button Text 2 <small class="text-info">(optional)</small></label>
+												<input type="text" class="form-control" name="button_text2" id="button_text" placeholder="Slider Button Text (if need)">
+											</div>
+										</div>
+										<div class="col-6">
+											<div class="form-group">
+												<label for="button_link">Slider Button Link 2 <small class="text-info">(optional)</small></label>
+												<input type="text" class="form-control" name="button_link2" id="button_link" placeholder="Slider Button Text (if need)">
+											</div>
+										</div>
 									</div>
 
-									<div class="form-group">
-										<label for="priority">Slider Priority <small class="text-info">(required)</small></label>
-										<input type="number" class="form-control" name="priority" id="priority" placeholder="Slider Priority; e.g: 10" value="10" required>
+									<div class="row">
+										<div class="col-6">
+											<div class="form-group">
+												<label for="priority">Slider Priority <small class="text-info">(required)</small></label>
+												<input type="number" class="form-control" name="priority" id="priority" placeholder="Slider Priority; e.g: 10" value="10" required>
+											</div>
+										</div>
+										<div class="col-6">
+											<div class="form-group">
+												<label for="button_link">Slider Status <small class="text-info"></small></label>
+												<select class="form-control" name="status" >
+													<option value="1">Yes</option>
+													<option value="0">No</option>
+												</select>
+											</div>
+										</div>
 									</div>
-
 									<button type="submit" class="btn btn-success">Add New</button>
 									<button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
 
@@ -77,6 +109,7 @@
 						<th>Slider Title</th>
 						<th>Slider Image</th>
 						<th>Slider Priority</th>
+						<th>Status</th>
 						<th>Action</th>
 					</tr>
 
@@ -88,6 +121,13 @@
 							<img src="{{ asset('images/sliders/'.$slider->image) }}" width="40">
 						</td>
 						<td>{{ $slider->priority }}</td>
+						<td>
+							@if ( $slider->status)
+								<span class="badge badge-success ">Active</span>
+							@else
+								<span class="badge badge-danger ">Inactive</span>
+							@endif
+						</td>
 
 						<td>
 							<a href="#editModal{{ $slider->id }}" data-toggle="modal" class="btn btn-success btn-sm btn-circle m-1 p-1"><i class="fa fa-edit"></i></a>
@@ -152,19 +192,52 @@
 													<input type="file" class="form-control" name="image" id="image" placeholder="Slider Image">
 												</div>
 
-												<div class="form-group">
-													<label for="button_text">Slider Button Text <small class="text-info">(optional)</small></label>
-													<input type="text" class="form-control" name="button_text" id="button_text" placeholder="Slider Button Text (if need)" value="{{ $slider->button_text }}">
+												<div class="row">
+													<div class="col-6">
+														<div class="form-group">
+															<label for="button_text">Slider Button Text <small class="text-info">(optional)</small></label>
+															<input type="text" class="form-control" name="button_text" id="button_text" placeholder="Slider Button Text (if need)" value="{{ $slider->button_text }}">
+														</div>
+													</div>
+													<div class="col-6">
+														<div class="form-group">
+															<label for="button_link">Slider Button Link <small class="text-info">(optional)</small></label>
+															<input type="text" class="form-control" name="button_link" id="button_link" placeholder="Slider Button Text (if need)" value="{{ $slider->button_link }}">
+														</div>
+													</div>
 												</div>
 
-												<div class="form-group">
-													<label for="button_link">Slider Button Link <small class="text-info">(optional)</small></label>
-													<input type="url" class="form-control" name="button_link" id="button_link" placeholder="Slider Button Text (if need)" value="{{ $slider->button_link }}">
+												<div class="row">
+													<div class="col-6">
+														<div class="form-group">
+															<label for="button_text">Slider Button Text 2 <small class="text-info">(optional)</small></label>
+															<input type="text" class="form-control" name="button_text2" id="button_text" placeholder="Slider Button Text (if need)" value="{{ $slider->button_text2 }}">
+														</div>
+													</div>
+													<div class="col-6">
+														<div class="form-group">
+															<label for="button_link">Slider Button Link 2 <small class="text-info">(optional)</small></label>
+															<input type="text" class="form-control" name="button_link2" id="button_link" placeholder="Slider Button Text (if need)" value="{{ $slider->button_link2 }}">
+														</div>
+													</div>
 												</div>
 
-												<div class="form-group">
-													<label for="priority">Slider Priority <small class="text-info">(required)</small></label>
-													<input type="number" class="form-control" name="priority" id="priority" placeholder="Slider Priority; e.g: 10" required value="{{ $slider->priority }}">
+												<div class="row">
+													<div class="col-6">
+														<div class="form-group">
+															<label for="priority">Slider Priority <small class="text-info">(required)</small></label>
+															<input type="number" class="form-control" name="priority" id="priority" placeholder="Slider Priority; e.g: 10" required value="{{ $slider->priority }}">
+														</div>
+													</div>
+													<div class="col-6">
+														<div class="form-group">
+															<label for="button_link">Slider Status <small class="text-info"></small></label>
+															<select class="form-control" name="status" >
+																<option value="1" {{ $slider->status==1 ? 'selected' : '' }} >Yes</option>
+																<option value="0" {{ $slider->status==0 ? 'selected' : '' }} >No</option>
+															</select>
+														</div>
+													</div>
 												</div>
 
 												<button type="submit" class="btn btn-success">Update</button>

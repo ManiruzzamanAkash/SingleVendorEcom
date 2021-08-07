@@ -24,6 +24,7 @@ class SlidersController extends Controller
 
   public function store(Request $request)
   {
+    // return $request;
     $this->validate($request, [
       'title'  => 'required',
       'description'  => 'required',
@@ -45,6 +46,9 @@ class SlidersController extends Controller
     $slider->description = $request->description;
     $slider->button_text = $request->button_text;
     $slider->button_link = $request->button_link;
+    $slider->button_text2 = $request->button_text2;
+    $slider->button_link2 = $request->button_link2;
+    $slider->status = $request->status;
     $slider->priority = $request->priority;
 
     if ($request->image > 0) {
@@ -83,6 +87,9 @@ class SlidersController extends Controller
         $slider->description = $request->description;
         $slider->button_text = $request->button_text;
         $slider->button_link = $request->button_link;
+        $slider->button_text2 = $request->button_text2;
+        $slider->button_link2 = $request->button_link2;
+        $slider->status = $request->status;
         $slider->priority = $request->priority;
 
         if ($request->image > 0) {
