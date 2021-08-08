@@ -10,9 +10,7 @@
 @endsection
 
 @section('content')
-@php
-// dd($settings->website);
-@endphp
+
 <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
     <div class="carousel-inner blur-up lazyload">
 
@@ -51,6 +49,24 @@
 </div>
 <!-- Slider End -->
 
+<!-- Categories Section -->
+<section>
+    <div class="container-fluid mb-5">
+        <div class="row">
+            @foreach ($homepage_categories as $category)
+                <div class="col-sm-6 col-md-4 col-lg-4">
+                    <div onclick="location.href='{{ route("categories.show", $category->slug) }}'" class="category-image d-flex align-items-end pointer" style="background-image: url('{{ asset('images/categories/' . $category->image) }}');">
+                        <div class="ml-4 home-category pb-2 text-white">
+                            <p>{{ $category->name }}</p>
+                            <a href="{{ route('categories.show', $category->slug) }}" >Shop Now</a>
+                        </div>
+                    </div>
+                </div> 
+            @endforeach
+        </div>
+</section>
+<!-- Categories Section -->
+
 <!-- offer 50% start -->
 <section>
     <div class="offer-section" style="background-image: url('{{ asset('images/Sale_HP__2x.jpg') }}');margin-top: -20px;">
@@ -70,24 +86,6 @@
     </div>
 </section>
 <!-- offer 50%  End -->
-
-<!-- Categories Section -->
-<section>
-    <div class="container-fluid mb-5">
-        <div class="row">
-            @foreach ($homepage_categories as $category)
-                <div class="col-sm-6 col-md-4 col-lg-4">
-                    <div onclick="location.href='{{ route("categories.show", $category->slug) }}'" class="category-image d-flex align-items-end pointer" style="background-image: url('{{ asset('images/categories/' . $category->image) }}');">
-                        <div class="ml-4 home-category pb-2 text-white">
-                            <p>{{ $category->name }}</p>
-                            <a href="{{ route('categories.show', $category->slug) }}" >Shop Now</a>
-                        </div>
-                    </div>
-                </div> 
-            @endforeach
-        </div>
-</section>
-<!-- Categories Section -->
 
 @if ($settings->website->theme->base_theme === 'light')
     @include('frontend.partials.category-wise-products-light')
