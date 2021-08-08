@@ -64,7 +64,7 @@
 								<label for="show_navbar">Visible on Navbar ?</label>
 								<select class="form-control" name="show_navbar" id="show_navbar">
 									<option value="1" {{ $category->show_navbar ? 'selected' : '' }}>Yes</option>
-									<option value="0" {{ $category->show_navbar ? 'selected' : '' }}>No</option>
+									<option value="0" {{ ! $category->show_navbar ? 'selected' : '' }}>No</option>
 								</select>
 							</div>
 						</div>
@@ -79,7 +79,7 @@
 								<label for="show_homepage">Visible on Homepage ?</label>
 								<select class="form-control" name="show_homepage" id="show_homepage">
 									<option value="1" {{ $category->show_homepage ? 'selected' : '' }}>Yes</option>
-									<option value="0" {{ $category->show_homepage ? 'selected' : '' }}>No</option>
+									<option value="0" {{ ! $category->show_homepage ? 'selected' : '' }}>No</option>
 								</select>
 							</div>
 						</div>
