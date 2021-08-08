@@ -37,6 +37,9 @@
 							$total_price = 0;
 							@endphp
 							@foreach (App\Models\Cart::totalCarts() as $cart)
+								@php
+								$price = $cart->product->offer_price ? $cart->product->offer_price : $cart->product->price;
+								@endphp
 								<tr>
 									<td>
 										@if ($cart->product->images->count() > 0)
@@ -47,12 +50,14 @@
 									</td>
 									<td><a href="{{ route('products.show', $cart->product->slug) }}">{{ $cart->product->title }}</a></td>
 									<td>{{ $cart->product_quantity }}</td>
-									<td>৳{{ $cart->product->price }}</td>
+									<td>
+										৳ {{ $price }}
+									</td>
 									<td>
 										@php
-										$total_price += $cart->product->price * $cart->product_quantity;
+										$total_price += $price * $cart->product_quantity;
 										@endphp
-										৳{{ $cart->product->price * $cart->product_quantity }}
+										৳{{ $price * $cart->product_quantity }}
 									</td>
 								</tr>
 							@endforeach

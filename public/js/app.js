@@ -2065,10 +2065,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
@@ -41494,26 +41490,26 @@ var render = function() {
                             _c("div", { staticClass: "price" }, [
                               _vm._v(
                                 "\n\t\t\t\t\t\t\t\t\t\t৳ " +
-                                  _vm._s(cart.product.price) +
+                                  _vm._s(
+                                    cart.product.offer_price
+                                      ? cart.product.offer_price
+                                      : cart.product.price
+                                  ) +
                                   "\n\t\t\t\t\t\t\t\t\t"
                               )
                             ]),
                             _vm._v(" "),
                             _c("div", { staticClass: "oldprice" }, [
                               _vm._v(
-                                "\n\t\t\t\t\t\t\t\t\t\t৳ " +
-                                  _vm._s(cart.product.offer_price) +
+                                "\n\t\t\t\t\t\t\t\t\t\t" +
+                                  _vm._s(
+                                    cart.product.offer_price
+                                      ? "৳ " + cart.product.price
+                                      : ""
+                                  ) +
                                   "\n\t\t\t\t\t\t\t\t\t"
                               )
                             ])
-                          ]),
-                          _vm._v(" "),
-                          _c("div", { staticClass: "delivery-detail" }, [
-                            _vm._v(
-                              "\n\t\t\t\t\t\t\t\t\tDelivery in\n\t\t\t\t\t\t\t\t\t" +
-                                _vm._s(cart.product.delivery_time) +
-                                " days..!\n\t\t\t\t\t\t\t\t"
-                            )
                           ]),
                           _vm._v(" "),
                           _c("div", { staticClass: "qnt" }, [

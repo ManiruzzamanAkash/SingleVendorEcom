@@ -27,10 +27,10 @@
                     </div>
                     <div class="prod-price">
                         <div class="product-price">
-                            ৳ {{ $product->price }}
+                            ৳ {{ $product->offer_price ? $product->offer_price : $product->price }}
                         </div>
                         <div class="prodOld-price">
-                            ৳ {{ $product->offer_price }}
+                            {{ $product->offer_price ? '৳ ' . $product->price : '' }}
                         </div>
                     </div>
                     <div class="prod-slogan text-success">

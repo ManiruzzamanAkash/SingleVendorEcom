@@ -45,15 +45,11 @@
 								</div>
 								<div class="prodPrice">
 									<div class="price">
-										৳ {{ cart.product.price }}
+										৳ {{ cart.product.offer_price ? cart.product.offer_price : cart.product.price }}
 									</div>
 									<div class="oldprice">
-										৳ {{ cart.product.offer_price }}
+										{{ cart.product.offer_price ? '৳ ' +cart.product.price : '' }}
 									</div>
-								</div>
-								<div class="delivery-detail">
-									Delivery in
-									{{ cart.product.delivery_time }} days..!
 								</div>
 								<div class="qnt">
 									<input
