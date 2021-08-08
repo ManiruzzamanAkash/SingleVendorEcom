@@ -72,7 +72,7 @@
 /*=================================================================================*/
 
 .product {
-	max-width: 180px;
+	/* max-width: 180px; */
 	align-content: center;
 	overflow: hidden;
 }

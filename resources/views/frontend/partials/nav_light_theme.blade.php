@@ -15,7 +15,7 @@
                     <i class="fa fa-shopping-cart"></i>
                     <cart-total-item url="{{ url('/') }}"></cart-total-item>
                 </a>
-                <a href="{{ route('login') }}" class="header-right-icon"><i class="fa fa-user"></i> SIGN IN</a>
+                <a href="{{ route('login') }}" class="header-right-icon header-right-sign-in"><i class="fa fa-user"></i> SIGN IN</a>
                 <a href="#" class="header-right-icon pointer" id="search-input-button">
                     <i class="fa fa-search"></i> Search
                 </a>
@@ -54,8 +54,8 @@
                 <label for="search" class="ml-2">Search All Products...</label>
                 <br>
                 <input type="text" class="navbar-form search float-left" name="search" placeholder="Search Products" required="required" id="search">
-                <button type="submit" class="btn searchBtn  float-left">
-                    <i class="fa fa-search" aria-hidden="true"></i>
+                <button type="submit" class="btn btn-primary btn-block mt-2 search-button-light-theme">
+                    <i class="fa fa-search" aria-hidden="true"></i> Search
                 </button>
             </div>
         </form>

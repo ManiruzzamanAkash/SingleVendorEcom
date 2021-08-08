@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-  <div class="container content-holder">
+  <div class="container">
     <div class="register-form-area">
       <register-user url="{{ url('/') }}"></register-user>
     </div>

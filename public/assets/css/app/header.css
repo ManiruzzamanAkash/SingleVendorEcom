@@ -184,6 +184,12 @@ header,
 	color: #673ab7;
 }
 
+.search-button-light-theme {
+    width: 200px;
+    margin-left: 2px;
+    margin-top: 60px!important;
+}
+
 .icon {
 	color: #673ab7;
 	margin-right: 10px;
@@ -771,11 +777,22 @@ li.nav-item {
     color: #7f7f7f8c;
 }
 
+@media only screen and (min-width: 10px) and (max-width: 310px) {
+	#theme-light-nav-area .header-right-icons {
+		display: none;
+	}
+}
+
 @media only screen and (min-width: 10px) and (max-width: 750px) {
 	#theme-light-nav-area #search-input-button {
-		right: 52px!important;
+		right: 0px!important;
 		top: 35px!important;
 		position: absolute;
+	}
+	#theme-light-nav-area .header-right-sign-in {
+		right: 0px!important;
+		top: -35px!important;
+		position: absolute!important;
 	}
 }
 
