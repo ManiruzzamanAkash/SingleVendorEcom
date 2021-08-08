@@ -14,11 +14,10 @@ class PagesController extends Controller
 	public function index()
 	{
 		$sliders 			 = Slider::where('status',1)->orderBy('priority', 'asc')->get();
-		$products 			 = Product::orderBy('id', 'desc')->paginate(9);
 		$homepage_categories = Category::getCategories([ 'show_homepage' => true ]);
 		$navbar_categories   = Category::getCategories([ 'show_navbar' => true ]);
 
-		return view('frontend.pages.index', compact('products', 'sliders', 'homepage_categories', 'navbar_categories'));
+		return view('frontend.pages.index', compact( 'sliders', 'homepage_categories', 'navbar_categories'));
 	}
 
 	public function contact()
