@@ -42,10 +42,12 @@
         <a href="{{ route('index') }}">
             <img src="{{ asset('images/logo.png') }}" style="height: 60px;">
         </a> 
-        <p class="text-white text-uppercase">Kingsman</p>   
+        <p class="text-white text-uppercase">
+            {{ config('app.name') }}
+        </p>   
     </div>
-    <div class="text-center theEnd">
-        Copyright &copy; DemoSite, 2018
+    <div class="text-center text-white">
+        {{ $settings->website_footer_text }}
     </div>
 </div>
 <a href="#" id="scroll-top">
