@@ -23,18 +23,13 @@
     border-radius: 5px;
 }
 
-.price-detail {
-    width: 300px;
-}
-
 .details {
-    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
 }
 
 .item-detail {
     padding: 10px 15px;
     display: flex;
-    float: left;
 }
 
 .itemImg .thumbnail {
@@ -138,8 +133,7 @@
 }
 
 .cart-actions {
-    float: left;
-    margin: 15px 10px;
+    padding: 15px 10px;
 }
 
 
@@ -152,7 +146,6 @@
 /*=================================================================================*/
 
 .total-area {
-    border-top: 1px solid #ddd;
     padding: 20px 15px;
     overflow: hidden;
 }
@@ -166,7 +159,6 @@
 }
 
 .procBtn {
-    text-align: center;
     color: #fff;
     font-size: 17px;
     padding: 19px;
@@ -211,6 +203,8 @@
     color: #b1b1b1;
     font-size: 22px;
     cursor: pointer;
+    margin-left: 20px;
+    text-align: center;
 }
 
 
@@ -252,4 +246,10 @@
 
 .goHome:hover {
     color: #fff;
+}
+
+@media screen and (min-width: 120px) and (max-width: 991px){
+    .pPrice {
+        float: left;
+    }
 }

@@ -15,7 +15,7 @@ export default {
   mounted() {
     // Count total items
     var app = this;
-    console.log("URL", app.url);
+
     axios
       .get(app.url + "/api/carts/total")
       .then(response => {
@@ -31,17 +31,14 @@ export default {
   },
   methods: {
     totalItemsCount(value) {
-      console.log("Allah Help");
       var app = this;
-      console.log("value");
-      console.log(value);
       app.totals = value;
     }
   },
+  
   created() {
     bus.$on("totalItemChanged", data => {
       this.totals = data;
-      console.log(data);
     });
   }
 };

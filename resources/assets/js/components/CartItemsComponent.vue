@@ -1,18 +1,18 @@
 <template>
 	<div class="container content-holder">
 		<div class="row">
-			<div class="content-area">
+			<div class="col-sm-12 col-md-8">
 				<div class="content-detail" v-if="carts.length">
 					<h4 class="titleArea">
-						My Cart (<cart-total-item></cart-total-item>)
+						My Cart ({{ totalItems }})
 					</h4>
 
 					<div
-						class="details"
+						class="row details"
 						v-for="(cart, index) in carts"
 						:key="index"
 					>
-						<div class="item-detail">
+						<div class="col-md-10 item-detail border-top-0">
 							<div class="itemImg">
 								<a
 									:href="
@@ -69,7 +69,7 @@
 							</div>
 						</div>
 
-						<div class="cart-actions">
+						<div class="col-md-2 cart-actions">
 							<button
 								type="submit"
 								class="action"
@@ -99,40 +99,42 @@
 				<div class="clearfix"></div>
 			</div>
 
-			<div class="price-detail" v-if="carts.length">
-				<div class="priceArea">
-					<h4 class="titleArea">price</h4>
-					<div class="total-area">
-						<div class="name">Total Price:</div>
-						<div class="pPrice">৳{{ totals }}</div>
-					</div>
-					<div class="">
-						<p>
-							<a :href="url + '/checkout'" class="procBtn"
-								>PROCEED</a
-							>
-						</p>
-					</div>
-					<div class="clearfix"></div>
-				</div>
-				<div class="anthrSec">
-					<div class="logo">
-						<i class="fa fa-plane" aria-hidden="true"></i>
-					</div>
-					<div class="note">
-						Best delivery experience,<br />
-						Get your product on time.
-					</div>
-				</div>
-				<div class="anthrSec">
-					<div class="logo">
-						<i class="fa fa-thumbs-up" aria-hidden="true"></i>
-					</div>
-					<div class="note">
-						All products are 100% Authentic,<br />
-						Get exact what you order.
-					</div>
-				</div>
+			<div class="col-sm-12 col-md-4">
+				<div class="price-detail" v-if="carts.length">
+                    <div class="priceArea">
+                        <h4 class="titleArea">price</h4>
+                        <div class="total-area">
+                            <div class="name">Total Price:</div>
+                            <div class="pPrice">৳{{ totals }}</div>
+                        </div>
+                        <div class="">
+                            <p>
+                                <a :href="url + '/checkout'" class="procBtn"
+                                    >PROCEED</a
+                                >
+                            </p>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                    <div class="anthrSec">
+                        <div class="logo">
+                            <i class="fa fa-plane" aria-hidden="true"></i>
+                        </div>
+                        <div class="note">
+                            Best delivery experience,<br />
+                            Get your product on time.
+                        </div>
+                    </div>
+                    <div class="anthrSec">
+                        <div class="logo">
+                            <i class="fa fa-thumbs-up" aria-hidden="true"></i>
+                        </div>
+                        <div class="note">
+                            All products are 100% Authentic,<br />
+                            Get exact what you order.
+                        </div>
+                    </div>
+                </div>
 			</div>
 		</div>
 	</div>
@@ -155,8 +157,9 @@ export default {
 	},
 	data() {
 		return {
-			carts: [],
-			totals: 0,
+			carts     : [],
+			totals    : 0,
+            totalItems: 0,
 		};
 	},
 	methods: {
@@ -167,7 +170,6 @@ export default {
 					product_quantity: app.carts[index].product_quantity,
 				})
 				.then((response) => {
-					console.log(response);
 					if (response.data.success == true) {
 						app.generateNotification(
 							response.data.message,
@@ -176,7 +178,6 @@ export default {
 						);
 						app.fetchCartItems();
 						app.setTotalAmounts();
-						app.setTotalItems();
 					} else {
 						app.generateNotification(
 							response.data.message,
@@ -194,7 +195,6 @@ export default {
 			axios
 				.post(app.url + "/api/carts/delete/" + cart_id)
 				.then((response) => {
-					console.log(response);
 					if (response.data.success == true) {
 						app.generateNotification(
 							response.data.message,
@@ -203,7 +203,6 @@ export default {
 						);
 						app.fetchCartItems();
 						app.setTotalAmounts();
-						app.setTotalItems();
 					} else {
 						app.generateNotification(
 							response.data.message,
@@ -222,6 +221,7 @@ export default {
 				.get(app.url + "/api/carts")
 				.then((response) => {
 					app.carts = response.data.data;
+                    this.setTotalItems();
 				})
 				.catch((e) => {
 					console.log(e);
@@ -245,6 +245,7 @@ export default {
 			axios
 				.get(app.url + "/api/carts/total")
 				.then((response) => {
+                    app.totalItems = response.data;
 					bus.$emit("totalItemChanged", response.data);
 				})
 				.catch((e) => {
