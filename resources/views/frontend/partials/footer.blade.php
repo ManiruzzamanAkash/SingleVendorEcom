@@ -40,16 +40,11 @@
     
     <div class="footer-logo">
         <a href="{{ route('index') }}">
-            <img src="{{ asset('images/logo.png') }}" style="height: 60px;">
+            <img src="{{ asset('images/' . $settings->website_logo) }}" style="height: 60px;">
         </a> 
-<<<<<<< HEAD
-        {{-- <p class="text-white text-uppercase">Kingsman</p>    --}}
-        <p class="text-white text-uppercase">{{ strtoupper(config('app.name')) }}</p>   
-=======
         <p class="text-white text-uppercase">
             {{ config('app.name') }}
         </p>   
->>>>>>> origin/main
     </div>
     <div class="text-center text-white">
         {{ $settings->website_footer_text }}

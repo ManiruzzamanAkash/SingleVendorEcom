@@ -222,6 +222,12 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/delete/{id}', 'Backend\ReviewsController@delete')->name('admin.review.delete');
   });
 
+  // Setting Routes
+  Route::group(['prefix' => '/setting'], function () {
+    Route::get('/edit/{id}', 'Backend\SettingController@edit')->name('admin.setting.edit');
+    Route::post('/update/{id}', 'Backend\SettingController@update')->name('admin.setting.update');
+  });
+
   // Report Routes
   Route::group(['prefix' => '/reports'], function () {
     Route::get('/', 'Backend\ReportsController@index')->name('admin.reports');

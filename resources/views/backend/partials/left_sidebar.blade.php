@@ -140,6 +140,17 @@
       </div>
     </li>
 
+    <li class="nav-item">
+      <a class="nav-link" data-toggle="collapse" href="#setting-pages" aria-expanded="false" aria-controls="general-pages"> <span class="menu-title">
+          Settings</span><i class="fa fa-chevron-down"></i>
+      </a>
+      <div class="collapse" id="setting-pages">
+        <ul class="nav flex-column sub-menu">
+          <li class="nav-item"> <a class="nav-link" href="{{ route('admin.setting.edit',1) }}">Manage Settings</a></li>
+        </ul>
+      </div>
+    </li>
+
 
     <li class="nav-item">
       <a class="nav-link" href="#logout-pages">
