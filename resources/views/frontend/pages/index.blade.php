@@ -70,7 +70,7 @@
 <section>
     <div class="container-fluid mb-5">
         <div class="row">
-            @foreach ($categories as $category)
+            @foreach ($homepage_categories as $category)
                 <div class="col-sm-6 col-md-4 col-lg-4">
                     <div onclick="location.href='{{ route("categories.show", $category->slug) }}'" class="category-image d-flex align-items-end pointer" style="background-image: url('{{ asset('images/categories/' . $category->image) }}');">
                         <div class="ml-4 home-category pb-2 text-white">
