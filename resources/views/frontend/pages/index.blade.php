@@ -14,7 +14,7 @@
         @foreach ($sliders as $slider)
         <div class="carousel-item {{ $loop->index == 0 ? 'active' : '' }}">
             <img class="d-block w-100" src="{{ asset('images/sliders/' . $slider->image) }}" height="auto" alt="{{ $slider->title }}">
-            <div class="carousel-caption d-none d-md-block ">
+            <div class="carousel-caption d-md-block ">
                 <h3 class="slider-title text-white">{{ $slider->title }}</h3>
                 <p class="slider-description">{!! $slider->description ? $slider->description : '' !!}</p>
 
@@ -45,6 +45,7 @@
     @endif
 </div>
 <!-- Slider End -->
+
 <!-- offer 50% start -->
 <section>
     <div class="offer-section" style="background-image: url('{{ asset('images/Sale_HP__2x.jpg') }}');margin-top: -20px;">
@@ -65,6 +66,23 @@
 </section>
 <!-- offer 50%  End -->
 
+<!-- Categories Section -->
+<section>
+    <div class="container-fluid mb-5">
+        <div class="row">
+            @foreach ($categories as $category)
+                <div class="col-sm-6 col-md-4 col-lg-4">
+                    <div onclick="location.href='{{ route("categories.show", $category->slug) }}'" class="category-image d-flex align-items-end pointer" style="background-image: url('{{ asset('images/categories/' . $category->image) }}');">
+                        <div class="ml-4 home-category pb-2 text-white">
+                            <p>{{ $category->name }}</p>
+                            <a href="{{ route('categories.show', $category->slug) }}" >Shop Now</a>
+                        </div>
+                    </div>
+                </div> 
+            @endforeach
+        </div>
+</section>
+<!-- Categories Section -->
 
 @foreach ($categories as $catSingle)
 @if ($catSingle->manage_home_slider > 0)
@@ -72,7 +90,7 @@
 <div class="container content-holder">
     <div class="col-md-12 main-title">
         <div class="slider-title ">
-            {{ $catSingle->slider_name }}
+            <span class="text-black">{{ $catSingle->slider_name }}</span>
             <h6>{{ $catSingle->slider_slogan }}</h6>
             <a href="{{ route('categories.show', $catSingle->slug) }}" type="button" class="btn btn-outline-secondary">
                 Shop Now
@@ -122,21 +140,5 @@
 @endif
 @endif
 @endforeach
-
-<section>
-    <div class="container mb-5">
-        <div class="row">
-            @foreach ($categories as $category)
-                <div class="col-4 ">
-                    <div onclick="location.href='{{ route("categories.show", $category->slug) }}'" class="category-image d-flex align-items-end" style="background-image: url('{{ asset('images/categories/' . $category->image) }}');">
-                        <div class="ml-4 home-category pb-2 text-white">
-                            <p>{{ $category->name }}</p>
-                            <a href="{{ route('categories.show', $category->slug) }}" >Shop Now</a>
-                        </div>
-                    </div>
-                </div> 
-            @endforeach
-        </div>
-</section>
 
 @endsection

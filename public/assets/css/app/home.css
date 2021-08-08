@@ -203,6 +203,10 @@
 	/* background-size: cover; */
 }
 
+.text-black {
+    color: #8e949e !important;
+}
+
 .home-category p{
 	font-size: 30px;
 }
