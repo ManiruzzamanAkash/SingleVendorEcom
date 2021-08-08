@@ -7,6 +7,8 @@
             <div class="card">
                 <div class="card-header">
                     Add Category
+                    &nbsp;&nbsp;
+				    <a href="{{ route('admin.categories') }}" class="btn btn-secondary"><i class="fa fa-arrow-left"></i> Back</a>
                 </div>
                 <div class="card-body">
                     <form action="{{ route('admin.category.store') }}" method="post" enctype="multipart/form-data">
@@ -49,11 +51,18 @@
                         </div>
 
                         <div class="row">
-							<div class="col-md-9">
+							<div class="col-md-6">
 								<div class="form-group">
 									<label for="exampleInputPassword1">Sub Header</label>
 									<input type="text" class="form-control" name="sub_header" id="slug" aria-describedby="emailHelp"
 										placeholder="Enter Category URL Text, e.g- mans-fashion">
+								</div>
+							</div>
+
+							<div class="col-md-3">
+								<div class="form-group">
+									<label for="bg_color">Background Color</label>
+									<input type="color" value="transparent" class="form-control" name="bg_color" id="bg_color" placeholder="Enter Category URL Text, e.g- mans-fashion">
 								</div>
 							</div>
 	
@@ -122,7 +131,8 @@
                         </div>
 
 
-                        <button type="submit" class="btn btn-primary">Add Category</button>
+                        <button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Save</button>
+                        <a href="{{ route('admin.categories') }}" class="btn btn-secondary"><i class="fa fa-times"></i> Cancel</a>
                     </form>
                 </div>
             </div>

@@ -6,7 +6,9 @@
 
 		<div class="card">
 			<div class="card-header">
-				Edit Category
+				Edit Category - {{ $category->name }}
+				&nbsp;&nbsp;
+				<a href="{{ route('admin.categories') }}" class="btn btn-secondary"><i class="fa fa-arrow-left"></i> Back</a>
 			</div>
 			<div class="card-body">
 				<form action="{{ route('admin.category.update', $category->id) }}" method="post" enctype="multipart/form-data">
@@ -43,10 +45,18 @@
 					</div>
 
 					<div class="row">
-						<div class="col-md-9">
+						<div class="col-md-6">
 							<label for="sub_header">Sub Header</label>
 							<input type="text" class="form-control" name="sub_header" id="sub_header" value="{{ $category->sub_header }}">
 						</div>
+
+						<div class="col-md-3">
+							<div class="form-group">
+								<label for="bg_color">Background Color</label>
+								<input type="color" value="{{ $category->bg_color }}" class="form-control" name="bg_color" id="bg_color" placeholder="Enter Category URL Text, e.g- mans-fashion">
+							</div>
+						</div>
+
 						<div class="col-md-3">
 							<div class="form-group">
 								<label for="status">Status ?</label>
@@ -117,7 +127,8 @@
 					</div>
 
 
-					<button type="submit" class="btn btn-success">Update Category</button>
+					<button type="submit" class="btn btn-success"><i class="fa fa-check"></i> Save </button>
+					<a href="{{ route('admin.categories') }}" class="btn btn-secondary"><i class="fa fa-times"></i> Cancel</a>
 				</form>
 			</div>
 		</div>

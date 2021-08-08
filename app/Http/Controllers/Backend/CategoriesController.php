@@ -132,6 +132,7 @@ class CategoriesController extends Controller
     $category->show_navbar       = $request->show_navbar;
     $category->homepage_priority = $request->homepage_priority;
     $category->navbar_priority   = $request->navbar_priority;
+    $category->bg_color          = $request->bg_color;
     $category->status            = $request->status;
 
     if (empty($request->slug)) {
@@ -193,6 +194,7 @@ class CategoriesController extends Controller
     $category->show_navbar       = $request->show_navbar;
     $category->homepage_priority = $request->homepage_priority;
     $category->navbar_priority   = $request->navbar_priority;
+    $category->bg_color          = $request->bg_color;
     $category->status            = $request->status;
 
     if (empty($request->slug)) {
