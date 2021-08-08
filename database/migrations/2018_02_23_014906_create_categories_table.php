@@ -16,6 +16,10 @@ class CreateCategoriesTable extends Migration
         Schema::create('categories', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
+            $table->boolean('show_navbar')->default(false);
+            $table->boolean('show_homepage')->default(false);
+            $table->unsignedTinyInteger('priority')->default(1);
+            $table->boolean('status')->default(1);
 
             $table->string('sub_header');
             $table->string('slider_name');
