@@ -4,7 +4,7 @@
             <div class="">
                 <div class="logo-area">
                     <a href="{{ route('index') }}">
-                        <img src="{{ asset('images/logo.png') }}" class="logo-main">
+                        <img src="{{ asset('images/' . $settings->website_logo) }}" class="logo-main">
                         <br>
                         <h2>{{ strtoupper(config('app.name')) }}</h2>
                     </a>

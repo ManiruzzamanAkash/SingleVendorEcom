@@ -43,7 +43,7 @@
     
     <div class="footer-logo">
         <a href="{{ route('index') }}">
-            <img src="{{ asset('images/logo.png') }}" style="height: 60px;">
+            <img src="{{ asset('images/' . $settings->website_logo) }}" style="height: 60px;">
         </a> 
         <p class="text-white text-uppercase">
             {{ config('app.name') }}

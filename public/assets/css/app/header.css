@@ -701,6 +701,7 @@ li.nav-item {
     font-size: 1.2rem;
     font-weight: bold;
     color: #565653;
+	margin-left: 35px;
 }
 
 #theme-light-nav-area .header-right-icons .header-right-icon {
