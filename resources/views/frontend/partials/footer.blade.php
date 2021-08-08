@@ -25,15 +25,18 @@
                 <h4 class="secName">Shop by</h4>
                 <div class="footer-links"><a href="#">Sitemap</a></div>
                 <div class="footer-links"><a href="#">Brands</a></div>
-                <div class="social-body pt-3">
-                    {{-- <label class="d-block text-white">Social follow</label> --}}
-                    <a href="{{ $settings->website->social->facebook }}" target="_blank" ><i class="fab fa-facebook-square"></i></a>
-                    <a href="{{ $settings->website->social->instagram }}" target="_blank" ><i class="fab fa-instagram"></i></a>
-                    <a href="{{ $settings->website->social->twitter }}" target="_blank" ><i class="fab fa-twitter"></i></a>
-                    <a href="{{ $settings->website->social->youtube }}" target="_blank" ><i class="fab fa-youtube"></i></a>    
-                </div>
             </div>
         </div>
+        <div class="pull-right">
+            <div class="social-body pt-3">
+                {{-- <label class="d-block text-white">Social follow</label> --}}
+                <a href="{{ $settings->website->social->facebook }}" target="_blank" ><i class="fab fa-facebook-square"></i></a>
+                <a href="{{ $settings->website->social->instagram }}" target="_blank" ><i class="fab fa-instagram"></i></a>
+                <a href="{{ $settings->website->social->twitter }}" target="_blank" ><i class="fab fa-twitter"></i></a>
+                <a href="{{ $settings->website->social->youtube }}" target="_blank" ><i class="fab fa-youtube"></i></a>    
+            </div>
+        </div>
+        <div class="clearfix"></div>
     </div>
 </footer>
 <div class="copyright">
