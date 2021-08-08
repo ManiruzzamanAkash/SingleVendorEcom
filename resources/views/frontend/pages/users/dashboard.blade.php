@@ -6,9 +6,9 @@
 
 @section('content')
 <div class="container content-holder">
-  <div class="contents">
+  <div class="contents row">
     @include('frontend.pages.users.partials')
-    <div class="right-side-area">
+    <div class="right-side-area col-md-8">
       {{-- <h2>Welcome {{ $user->first_name . ' '. $user->last_name }}</h2>
       <p>You can change your profile and every informations here..</p>
       <hr> --}}

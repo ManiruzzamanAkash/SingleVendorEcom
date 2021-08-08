@@ -1,15 +1,15 @@
 @extends('frontend.layouts.master')
+
 @section('stylesheets')
     <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/app/dashboard/dashboard.css') }}{{-- ?v=1.0.2 --}}">
     <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/app/dashboard/accsetting.css') }}?v=1.0.2">
-    
 @endsection
 
 @section('content')
-<div class="container content-holder">
-  <div class="contents">
+<div class="container">
+  <div class="contents row">
     @include('frontend.pages.users.partials')
-    <div class="right-side-area">
+    <div class="right-side-area col-md-8">
      <div class="mainContent">
       <div class="title-area">
         Edit Information

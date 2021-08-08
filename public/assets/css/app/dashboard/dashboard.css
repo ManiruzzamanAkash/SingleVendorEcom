@@ -1,25 +1,4 @@
- /*=================================================================================*/
-                               /* Dashboard Stricture */
-/*=================================================================================*/
-.content-holder{
-	max-width: 1250px;
-	min-width: 1250px;
-	margin-top: 20px;
-	margin-bottom: 20px;
-	padding: 0;
-	border-radius: 5px;
-}
-.list-area{
-	width: 300px;
-	margin-right: 14px;
-}
-.contents{
-	display: flex;
-}
-.content-area{
-	width: 950px;
- 	border-radius: 5px;
-}
+
  /*=================================================================================*/
                                /* Dashboard List Style */
 /*=================================================================================*/
