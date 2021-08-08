@@ -32,9 +32,9 @@
 }
 
 .item-detail {
-    /* padding: 10px 15px; */
-    /* display: flex; */
-    /* float: left; */
+    padding: 10px 15px;
+    display: flex;
+    float: left;
 }
 
 .itemImg .thumbnail {
@@ -55,7 +55,7 @@
 /*=================================================================================*/
 
 .itemImg {
-    width: 160px;
+    width: 100px;
     margin: 0 15px;
     float: left;
 }
