@@ -41,7 +41,11 @@ class Order extends Model
     $order = Order::find($this->id);
     $total = [];
     foreach($order->carts as $cart){
-      $total[] = $cart->product_quantity * $cart->product->price;
+      if($cart->product->offer_price) {
+        $total[] = $cart->product_quantity * $cart->product->offer_price;
+      } else {
+        $total[] = $cart->product_quantity * $cart->product->price;
+      }
     }
     return array_sum($total);
   }
