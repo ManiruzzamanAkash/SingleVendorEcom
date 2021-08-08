@@ -11,11 +11,11 @@ class Category extends Model
 		'show_navbar',
 		'show_homepage',
 		'status',
-		'priority',
+		'navbar_priority',
+		'homepage_priority',
 		'sub_header',
 		'slider_name',
 		'slider_slogan',
-		'manage_home_slider',
 		'slug',
 		'description',
 		'image',
@@ -52,14 +52,35 @@ class Category extends Model
 
 	public static function getCategories($args = []) {
 		$defaults = [
-			'show_navbar' => null,
+			'show_navbar'   => null,
 			'show_homepage' => null,
+			'is_single'		=> false
 		];
 
 		$data = array_merge( $args, $defaults );
 
 		$query = Category::where('status', 1);
 
-		if()
+		if (! empty($data['show_navbar'])) {
+			$query->where('show_navbar', (bool) $data['show_navbar']);
+			
+			if ((bool) $data['show_navbar']) {
+				$query->orderBy('navbar_priority', 1);
+			}
+		}
+
+		if (! empty($data['show_homepage'])) {
+			$query->where('show_homepage', (bool) $data['show_homepage']);
+			
+			if ((bool) $data['show_homepage']) {
+				$query->orderBy('homepage_priority', 1);
+			}
+		}
+
+		if ( $data['is_single'] ) {
+			return $query->first();
+		}
+
+		return $query->get();
 	}
 }

@@ -69,7 +69,7 @@ CREATE TABLE `categories` (
   `sub_header` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `slider_name` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `slider_slogan` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
-  `manage_home_slider` int NOT NULL DEFAULT '1',
+  `show_homepage` int NOT NULL DEFAULT '1',
   `slug` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
   `description` text CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci,
   `image` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci DEFAULT NULL,
@@ -311,7 +311,7 @@ INSERT INTO `carts` (`id`, `product_id`, `user_id`, `order_id`, `ip_address`, `p
 (13, 20, 32, 3, NULL, 1, '2021-08-03 19:48:39', '2021-08-03 19:49:11'),
 (14, 18, NULL, NULL, NULL, 1, '2021-08-04 06:20:31', '2021-08-04 06:20:31');
 
-INSERT INTO `categories` (`id`, `name`, `sub_header`, `slider_name`, `slider_slogan`, `manage_home_slider`, `slug`, `description`, `image`, `parent_id`, `created_at`, `updated_at`) VALUES
+INSERT INTO `categories` (`id`, `name`, `sub_header`, `slider_name`, `slider_slogan`, `show_homepage`, `slug`, `description`, `image`, `parent_id`, `created_at`, `updated_at`) VALUES
 (5, 'Women\'s Bottoms', 'Jewelries', 'Jewelry & Ornaments', 'Jewelry & Ornaments', 1, 'jewelry-&-ornaments', NULL, '1628350102.jpg', NULL, '2019-09-02 10:14:32', '2021-08-07 15:28:22'),
 (6, 'Women\'s Underwears', 'Mens', 'Women\'\'s', 'Mens', 1, 'Women\'\'s', NULL, '1628350185.jpg', NULL, '2019-09-02 10:14:45', '2021-08-07 15:29:45'),
 (7, 'Men\'s Tops', 'Women\'s', 'Men', 'Men', 1, 'Men', NULL, '1628350273.jpg', NULL, '2019-09-02 10:14:59', '2021-08-07 15:31:13'),
