@@ -54,7 +54,7 @@
 .img-holder,
 .price-area,
 .galleryImg {
-    display: flex;
+    /* display: flex; */
 }
 
 .content-area {
@@ -62,7 +62,7 @@
 }
 
 .img-content {
-    /* width: 100%; */
+    margin-left: 10px;
     padding: 15px;
 }
 
