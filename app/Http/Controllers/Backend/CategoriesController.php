@@ -58,26 +58,37 @@ class CategoriesController extends Controller
           }
         )
 
-        ->editColumn('title', function ($row) {
-          return $row->title;
-        })
+        ->editColumn('name', function ($row) {
+          $html = $row->name;
+          $html .= '<br /><a href="' . route('categories.show', $row->slug) . '" target="_blank"><i class="fa fa-link"></i> View</a>';
+          return $html;
+        })->escapeColumns([])
+        
+        ->editColumn('show_homepage', function ($row) {
+          return $row->show_homepage ? '<span class="badge badge-success">Yes</span>' : '<span class="badge badge-warning">No</span>';
+        })->escapeColumns([])
+
+        ->editColumn('show_navbar', function ($row) {
+          return $row->show_navbar ? '<span class="badge badge-success">Yes</span>' : '<span class="badge badge-warning">No</span>';
+        })->escapeColumns([])
+
+        ->editColumn('status', function ($row) {
+          return $row->status ? '<span class="badge badge-success">Active</span>' : '<span class="badge badge-danger">Inactive</span>';
+        })->escapeColumns([])
+
         ->editColumn('image', function ($row) {
           if ($row->image != null) {
             return "<img height='50px' width='50px' src='" . asset('images/categories/' . $row->image) . "' class='img img-display-list' />";
         }
         return '-';
         })
-        // ->editColumn('slug', function ($row) {
-          
-        //   $html = '<a href="' . route('admin.category.edit', $row->slug) . '" target="_blank"><i class="fa fa-link"></i> View</a>';
-        //   return $html;
-        // })
+
         ->editColumn('parent_id', function ($row) {
           
-          if ($row->parent_id == NULL) {
-            return '<span >Primary Category</span>';
+          if ($row->parent_id == null) {
+            return '<span>-</span>';
           } else {
-            return $parent_name = Category::where('parent_id', $row->parent_id)->first()->name;
+            return Category::where('parent_id', $row->parent_id)->first()->name;
           }
         });
         
@@ -111,12 +122,17 @@ class CategoriesController extends Controller
       ]
     );
 
-    $category = new Category();
+    $category                    = new Category();
+    $category->name              = $request->name;
+    $category->sub_header        = $request->sub_header;
+    $category->slider_name       = $request->slider_name;
+    $category->slider_slogan     = $request->slider_slogan;
 
-    $category->name = $request->name;
-    $category->sub_header = $request->sub_header;
-    $category->slider_name = $request->slider_name;
-    $category->slider_slogan = $request->slider_slogan;
+    $category->show_homepage     = $request->show_homepage;
+    $category->show_navbar       = $request->show_navbar;
+    $category->homepage_priority = $request->homepage_priority;
+    $category->navbar_priority   = $request->navbar_priority;
+    $category->status            = $request->status;
 
     if (empty($request->slug)) {
       $category->slug = StringHelper::createSlug($request->name, 'Category', 'slug', '-');
@@ -168,11 +184,17 @@ class CategoriesController extends Controller
       ]
     );
 
-    $category->name = $request->name;
-    $category->sub_header = $request->sub_header;
-    $category->slider_name = $request->slider_name;
-    $category->slider_slogan = $request->slider_slogan;
-    $category->manage_home_slider = $request->manage_home_slider;
+    $category->name              = $request->name;
+    $category->sub_header        = $request->sub_header;
+    $category->slider_name       = $request->slider_name;
+    $category->slider_slogan     = $request->slider_slogan;
+    
+    $category->show_homepage     = $request->show_homepage;
+    $category->show_navbar       = $request->show_navbar;
+    $category->homepage_priority = $request->homepage_priority;
+    $category->navbar_priority   = $request->navbar_priority;
+    $category->status            = $request->status;
+
     if (empty($request->slug)) {
       $category->slug = StringHelper::createSlug($request->name, 'Category', 'slug', '-');
     } else {
