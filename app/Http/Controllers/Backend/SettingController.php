@@ -15,7 +15,6 @@ class SettingController extends Controller
   {
     
      $setting = Setting::find($id);
-    // return view('backend.pages.settings.edit')->with('setting', $setting);
     return view('backend.pages.settings.edit',compact('setting'));
   }
 
