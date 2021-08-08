@@ -1,7 +1,6 @@
 @extends('frontend.layouts.master')
 
 @section('stylesheets')
-<link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/app/search.css') }}{{-- ?v=1.0.2 --}}">
 <style type="text/css">
 	.titleArea {
 		text-align: center;

@@ -1,7 +1,4 @@
 @extends('frontend.layouts.master')
-@section('stylesheets')
-<link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/app/search.css') }}?v1.0.2">
-@endsection
 @section('content')
 
 <!-- Start Sidebar + Content -->

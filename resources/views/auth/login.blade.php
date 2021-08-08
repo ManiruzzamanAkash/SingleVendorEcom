@@ -10,7 +10,7 @@
 @endsection
 
 @section('content')
-<div class="container content-holder">
+<div class="container">
     @if (Session::has('checkout_error'))
         <div class="row justified-content-center">
             <div class="col-md-3"></div>

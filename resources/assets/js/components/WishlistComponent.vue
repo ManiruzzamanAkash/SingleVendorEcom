@@ -1,4 +1,4 @@
-<style scoped="">
+<style>
     .btn-wishlist {
         border: 0px!important;
         background: transparent;

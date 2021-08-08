@@ -23,7 +23,11 @@
 						  <th>#SL</th>
 						  <th>Category Name</th>
 						  <th>Category Image</th>
-						  {{-- <th>Category Link</th> --}}
+						  <th>Visible Homepage</th>
+						  <th>Homepage Priority</th>
+						  <th>Visble Navbar</th>
+						  <th>Navbar Priority</th>
+						  <th>Status</th>
 						  <th>Parent Category</th>
 						  <th>Action</th>
 						</tr>
@@ -53,7 +57,11 @@
 			{data: 'DT_RowIndex', name: 'DT_RowIndex'},
 			{data: 'name', name: 'name'},
 			{data: 'image', name: 'image'},
-			// {data: 'slug', name: 'slug'},
+			{data: 'show_homepage', name: 'show_homepage'},
+			{data: 'homepage_priority', name: 'homepage_priority'},
+			{data: 'show_navbar', name: 'show_navbar'},
+			{data: 'navbar_priority', name: 'navbar_priority'},
+			{data: 'status', name: 'status'},
 			{data: 'parent_id', name: 'parent_id'},
 			{data: 'action', name: 'action'}
 		]

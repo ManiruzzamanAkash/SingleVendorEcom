@@ -45,6 +45,9 @@
 <!-- Color CSS -->
 {{-- <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/style8.css') }}?v1.0.2"> --}}
 
+<!-- Search -->
+<link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/app/search.css') }}{{-- ?v=1.0.2 --}}">
+
 <!-- Custom CSS -->
 <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/custom.css') }}?v={{ config('constants.asset_version') }}" id="color">
 

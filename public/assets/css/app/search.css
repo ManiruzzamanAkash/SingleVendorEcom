@@ -59,10 +59,7 @@
 }
 
 .product {
-    width: 220px;
-    float: left;
-    margin: 10px;
-    padding: 5px;
+    padding: 20px;
     border-radius: 3px;
     overflow: hidden;
     position: relative;

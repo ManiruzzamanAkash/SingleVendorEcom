@@ -76,7 +76,7 @@
 /*=================================================================================*/
 
 .product {
-	max-width: 180px;
+	/* max-width: 180px; */
 	align-content: center;
 	overflow: hidden;
 }
@@ -205,6 +205,10 @@
     margin-top: 30px;
     /* border-radius: 2px; */
 	/* background-size: cover; */
+}
+
+.text-black {
+    color: #8e949e !important;
 }
 
 .home-category p{

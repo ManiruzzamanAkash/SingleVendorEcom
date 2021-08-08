@@ -2,6 +2,11 @@
 
 @section('stylesheets')
 <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/app/home.css') }}">
+<style>
+    .product {
+        padding: 40px;
+    }
+</style>
 @endsection
 
 @section('content')
@@ -14,7 +19,7 @@
         @foreach ($sliders as $slider)
         <div class="carousel-item {{ $loop->index == 0 ? 'active' : '' }}">
             <img class="d-block w-100" src="{{ asset('images/sliders/' . $slider->image) }}" height="auto" alt="{{ $slider->title }}">
-            <div class="carousel-caption d-none d-md-block ">
+            <div class="carousel-caption d-md-block ">
                 <h3 class="slider-title text-white">{{ $slider->title }}</h3>
                 <p class="slider-description">{!! $slider->description ? $slider->description : '' !!}</p>
 
@@ -45,9 +50,10 @@
     @endif
 </div>
 <!-- Slider End -->
+
 <!-- offer 50% start -->
 <section>
-    <div class="offer-section" style="background-image: url('{{ asset('images/Sale_HP__2x.jpg') }}');">
+    <div class="offer-section" style="background-image: url('{{ asset('images/Sale_HP__2x.jpg') }}');margin-top: -20px;">
         <div class="offer-body">
             <h3>Extra 50% off Sale</h3>
 
@@ -60,7 +66,6 @@
             <a href="{{ route('categories.show', 'mens') }}?offer=50" type="button" class="btn btn-outline-secondary btn-carousel">
                 Shop Men's
             </a>
-
         </div>
     </div>
 </section>
@@ -124,12 +129,13 @@
 @endif
 @endforeach
 
+<!-- Categories Section -->
 <section>
-    <div class="container mb-5">
+    <div class="container-fluid mb-5">
         <div class="row">
-            @foreach ($categories as $category)
-                <div class="col-4 ">
-                    <div onclick="location.href='{{ route('categories.show', $category->slug) }} }}'" class="category-image d-flex align-items-end" style="background-image: url('{{ asset('images/categories/' . $category->image) }}');">
+            @foreach ($homepage_categories as $category)
+                <div class="col-sm-6 col-md-4 col-lg-4">
+                    <div onclick="location.href='{{ route("categories.show", $category->slug) }}'" class="category-image d-flex align-items-end pointer" style="background-image: url('{{ asset('images/categories/' . $category->image) }}');">
                         <div class="ml-4 home-category pb-2 text-white">
                             <p>{{ $category->name }}</p>
                             <a href="{{ route('categories.show', $category->slug) }}" >Shop Now</a>
@@ -139,5 +145,13 @@
             @endforeach
         </div>
 </section>
+<!-- Categories Section -->
+
+@if ($settings->website->theme->base_theme === 'light')
+    @include('frontend.partials.category-wise-products-light')
+@else
+    @include('frontend.partials.category-wise-products')
+@endif
+
 
 @endsection
