@@ -85,7 +85,7 @@
 <!-- Categories Section -->
 
 @foreach ($categories as $catSingle)
-@if ($catSingle->manage_home_slider > 0)
+@if ($catSingle->show_homepage > 0)
 @if (count($catSingle->products) > 0)
 <div class="container content-holder">
     <div class="col-md-12 main-title">
