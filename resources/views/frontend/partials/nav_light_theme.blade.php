@@ -15,7 +15,11 @@
                     <i class="fa fa-shopping-cart"></i>
                     <cart-total-item url="{{ url('/') }}"></cart-total-item>
                 </a>
-                <a href="{{ route('login') }}" class="header-right-icon header-right-sign-in"><i class="fa fa-user"></i> SIGN IN</a>
+                @if (!Auth::check())
+                    <a href="{{ route('login') }}" class="header-right-icon header-right-sign-in"><i class="fa fa-user"></i> SIGN IN</a>
+                @else
+                    <a href="{{ route('user.dashboard') }}" class="header-right-icon header-right-sign-in"><i class="fa fa-user"></i> My Account</a>
+                @endif
                 <a href="#" class="header-right-icon pointer" id="search-input-button">
                     <i class="fa fa-search"></i> Search
                 </a>
@@ -37,7 +41,7 @@
                     <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
                         @foreach (App\Models\Category::getCategories([ 'show_navbar' => true ]) as $parent)
                             <li class="nav-item">
-                                <a href="{!! route('categories.show', $parent->slug) !!}" class="nav-link">{{ $parent->sub_header }}</a>
+                                <a href="{!! route('categories.show', $parent->slug) !!}" class="nav-link">{{ $parent->name }}</a>
                             </li>
                         @endforeach
                     </ul>
