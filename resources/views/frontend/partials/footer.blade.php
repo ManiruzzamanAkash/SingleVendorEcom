@@ -42,7 +42,8 @@
         <a href="{{ route('index') }}">
             <img src="{{ asset('images/logo.png') }}" style="height: 60px;">
         </a> 
-        <p class="text-white text-uppercase">Kingsman</p>   
+        {{-- <p class="text-white text-uppercase">Kingsman</p>    --}}
+        <p class="text-white text-uppercase">{{ strtoupper(config('app.name')) }}</p>   
     </div>
     <div class="text-center theEnd">
         Copyright &copy; DemoSite, 2018

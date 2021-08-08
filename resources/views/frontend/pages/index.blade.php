@@ -73,7 +73,7 @@
 <div class="container content-holder">
     <div class="col-md-12 main-title">
         <div class="slider-title ">
-            {{ $catSingle->slider_name }}
+            <p class="slider-title-category">{{ $catSingle->slider_name }}</p>
             <h6>{{ $catSingle->slider_slogan }}</h6>
             <a href="{{ route('categories.show', $catSingle->slug) }}" type="button" class="btn btn-outline-secondary">
                 Shop Now
