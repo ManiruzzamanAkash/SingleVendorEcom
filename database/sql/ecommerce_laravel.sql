@@ -4,7 +4,7 @@
 -- https://tableplus.com/
 --
 -- Database: ecommerce_laravel
--- Generation Time: 2021-08-08 09:57:48.6660
+-- Generation Time: 2021-08-08 20:24:31.2910
 -- -------------------------------------------------------------
 
 
@@ -61,7 +61,7 @@ CREATE TABLE `carts` (
   CONSTRAINT `carts_order_id_foreign` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE,
   CONSTRAINT `carts_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE,
   CONSTRAINT `carts_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=18 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `categories` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
@@ -152,7 +152,7 @@ CREATE TABLE `orders` (
   KEY `orders_payment_id_foreign` (`payment_id`),
   CONSTRAINT `orders_payment_id_foreign` FOREIGN KEY (`payment_id`) REFERENCES `payments` (`id`) ON DELETE CASCADE,
   CONSTRAINT `orders_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=4 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `password_resets` (
   `email` varchar(191) CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci NOT NULL,
@@ -292,7 +292,7 @@ CREATE TABLE `wishlists` (
   KEY `wishlists_product_id_foreign` (`product_id`),
   CONSTRAINT `wishlists_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE,
   CONSTRAINT `wishlists_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO `admins` (`id`, `name`, `email`, `password`, `phone_no`, `avatar`, `type`, `remember_token`, `created_at`, `updated_at`) VALUES
 (1, 'Admin', 'admin@amarmartbd.com', '$2y$10$r1c5JzBsm0z3X.9pbCEZjurrqIulaFqgKnZaoCLm3Zgbn6YAn.znC', '01951233084', NULL, 'Super Admin', 'k0pg6dbf22vBmzlvvxph92bPlpxkqxTVxVaFvDEsgodjvx5yB2TtOUFTa8s3', '2018-08-29 05:18:25', '2021-06-23 01:23:25');
@@ -314,18 +314,19 @@ INSERT INTO `carts` (`id`, `product_id`, `user_id`, `order_id`, `ip_address`, `p
 (9, 15, 20, 2, '103.112.64.13', 1, '2019-10-28 18:46:13', '2019-10-28 18:47:00'),
 (10, 14, 20, NULL, '103.138.212.30', 1, '2019-12-24 22:20:53', '2019-12-24 22:20:53'),
 (13, 20, 32, 3, NULL, 1, '2021-08-03 19:48:39', '2021-08-03 19:49:11'),
-(15, 6, NULL, NULL, NULL, 2, '2021-08-08 02:14:52', '2021-08-08 02:27:55'),
-(16, 7, NULL, NULL, NULL, 2, '2021-08-08 02:27:56', '2021-08-08 03:47:56'),
-(17, 8, NULL, NULL, NULL, 1, '2021-08-08 03:05:51', '2021-08-08 03:05:51');
+(18, 6, NULL, NULL, NULL, 1, '2021-08-08 05:33:44', '2021-08-08 05:33:44'),
+(19, 8, NULL, NULL, NULL, 1, '2021-08-08 05:33:45', '2021-08-08 05:33:45'),
+(20, 13, 32, 4, NULL, 3, '2021-08-08 08:32:18', '2021-08-08 09:30:45'),
+(23, 6, 32, NULL, NULL, 2, '2021-08-08 13:58:50', '2021-08-08 14:02:23');
 
 INSERT INTO `categories` (`id`, `name`, `show_navbar`, `show_homepage`, `navbar_priority`, `homepage_priority`, `status`, `sub_header`, `slider_name`, `slider_slogan`, `slug`, `description`, `image`, `parent_id`, `bg_color`, `created_at`, `updated_at`) VALUES
-(5, 'Women\'s Bottoms', 0, 1, 1, 1, 1, 'Jewelries', 'Jewelry & Ornaments', 'Jewelry & Ornaments', 'jewelry-&-ornaments', NULL, '1628350102.jpg', NULL, 'transparent', '2019-09-02 10:14:32', '2021-08-08 01:17:55'),
-(6, 'Women\'s Underwears', 0, 1, 1, 2, 1, 'Mens', 'Women\'\'s', 'Women\'s Underwears', 'womens-underwire', NULL, '1628350185.jpg', NULL, 'transparent', '2019-09-02 10:14:45', '2021-08-07 19:47:40'),
+(5, 'Women\'s Bottoms', 1, 1, 3, 1, 1, 'Jewelries', 'Jewelry & Ornaments', 'Jewelry & Ornaments', 'jewelry-&-ornaments', NULL, '1628350102.jpg', NULL, '#000000', '2019-09-02 10:14:32', '2021-08-08 06:38:17'),
+(6, 'Women\'s Underwears', 0, 1, 3, 2, 1, 'Mens', 'Women\'\'s', 'Women\'s Underwears', 'womens-underwire', NULL, '1628350185.jpg', NULL, '#000000', '2019-09-02 10:14:45', '2021-08-08 06:37:36'),
 (7, 'Men\'s Tops', 0, 1, 1, 3, 1, 'Women\'s', 'Men', 'Men', 'mens-tops', NULL, '1628350273.jpg', NULL, 'transparent', '2019-09-02 10:14:59', '2021-08-07 15:31:13'),
 (8, 'Men\'s Bottoms', 0, 1, 1, 4, 1, 'Mens', 'Mens', 'Men', 'mens-bottoms', 'Mens', '1628350412.jpg', NULL, 'transparent', '2019-09-02 10:15:14', '2021-08-07 19:48:08'),
 (20, 'Women\'s Top\'s', 0, 1, 1, 5, 1, 'Women\'s Top\'s', 'Women\'s Top\'s', 'Women\'s Top\'s', 'womens-tops', 'Women\'s Top\'s', '1628350007.jpg', NULL, 'transparent', '2021-08-07 15:26:48', '2021-08-07 15:35:36'),
 (21, 'Men\'s Underwears', 0, 1, 1, 6, 1, 'Men\'s Underwears', 'Men\'s Underwears', 'Men\'s Underwears', 'mens-underwears', NULL, '1628350509.jpg', NULL, 'transparent', '2021-08-07 15:35:09', '2021-08-07 15:35:09'),
-(22, 'Men\'s Fashion', 1, 0, 1, 1, 1, 'Men\'s Fashion', 'Men\'s Fashion', 'Men\'s Fashion', 'mens', NULL, '1628350509.jpg', NULL, '#e2fffa', '2021-08-07 15:35:09', '2021-08-08 02:59:22'),
+(22, 'Men\'s Fashion', 1, 0, 1, 1, 1, 'Men\'s Fashion', 'Men\'s Fashion', 'Men\'s Fashion', 'mens', NULL, '1628350509.jpg', NULL, '#f7f7f7', '2021-08-07 15:35:09', '2021-08-08 06:33:07'),
 (23, 'Women\'s Fashion', 1, 0, 2, 1, 1, 'Women\'s Fashion', 'Women\'s Fashion', 'Women\'s Fashion', 'womens', NULL, NULL, NULL, '#ffffff', '2021-08-08 01:19:14', '2021-08-08 02:59:52');
 
 INSERT INTO `coupons` (`id`, `title`, `code`, `description`, `is_order_discount`, `discount_amount`, `criteria_amount`, `direct_amount_or_percentage`, `total_quantity`, `valid_date`, `created_at`, `updated_at`) VALUES
@@ -371,7 +372,8 @@ INSERT INTO `migrations` (`id`, `migration`, `batch`) VALUES
 INSERT INTO `orders` (`id`, `user_id`, `payment_id`, `ip_address`, `name`, `phone_no`, `shipping_address`, `email`, `message`, `is_paid`, `is_completed`, `is_seen_by_admin`, `delivery_status`, `transaction_id`, `created_at`, `updated_at`, `shipping_charge`, `custom_discount`, `coupon_code`) VALUES
 (1, 20, 1, '103.108.62.13', 'Arman ahmed', '01759128544', 'old town', 'shanewaz12@gmail.com', NULL, 0, 0, 1, 0, NULL, '2019-10-01 15:00:24', '2019-10-01 15:01:07', 60, 60, 'bijoy16'),
 (2, 20, 1, '103.112.64.13', 'Arman ahmed', '01759128544', 'rthrty', 'shanewaz12@gmail.com', NULL, 0, 0, 1, 0, NULL, '2019-10-28 18:47:00', '2021-08-03 16:18:19', 60, 60, 'bijoy16'),
-(3, 32, 2, '::1', 'Maniruzzaman Akash', '01951233084', 'Patuakhali, Bangladesh', 'manirujjamanakash@gmail.com', NULL, 0, 0, 1, 0, '1902912801982', '2021-08-03 19:49:11', '2021-08-03 19:49:37', 60, 0, NULL);
+(3, 32, 2, '::1', 'Maniruzzaman Akash', '01951233084', 'Patuakhali, Bangladesh', 'manirujjamanakash@gmail.com', NULL, 0, 0, 1, 0, '1902912801982', '2021-08-03 19:49:11', '2021-08-03 19:49:37', 60, 0, NULL),
+(4, 32, 1, '::1', 'Maniruzzaman Akash', '01951233084', 'Dhaka', 'm.akash.cse@gmail.com', 'Please sent it here...', 0, 0, 0, 0, NULL, '2021-08-08 09:30:45', '2021-08-08 09:30:45', 60, 0, NULL);
 
 INSERT INTO `password_resets` (`email`, `token`, `created_at`) VALUES
 ('manirujjamanakash@gmail.com', '$2y$10$Xuf6xXHHN.mjmog0oe5Twe0IwgYcCGAX4Piy2V.OzyY1QK91SenoS', '2019-04-26 09:53:28'),
@@ -430,28 +432,28 @@ INSERT INTO `product_images` (`id`, `product_id`, `image`, `created_at`, `update
 
 INSERT INTO `products` (`id`, `category_id`, `brand_id`, `title`, `occation`, `slogan`, `delivery_time`, `description`, `slug`, `quantity`, `price`, `status`, `offer_price`, `discount`, `discount_type`, `warranty`, `admin_id`, `created_at`, `updated_at`) VALUES
 (3, 1, 3, 'Multiposition fan & LED light with USB Charger', 'Opening disount !', 'Grab it now', '2 - 5', 'Multiposition fan & LED light with USB Charger', 'multiposition-fan-led-light-with-usb-charger', 10, 250, 0, 320, NULL, 'percentage', '1', 2, '2019-09-02 13:29:44', '2019-09-02 13:29:44'),
-(6, 22, 6, 'Polo T Shirt', 'Polo', 'Polo T Shirt', '12/02/2019', 'Polo T Shirt Polo T Shirt Polo T Shirt Polo T Shirt', 'polo-t-shirt', 100, 1000, 0, 1200, 50, 'percentage', '0', 1, '2019-09-15 20:37:37', '2019-09-15 20:37:37'),
-(7, 22, 6, 'New Polo Shirt', 'New Polo Shirt', 'New Polo Shirt', '12/02/2019', 'New Polo Shirt New Polo Shirt', 'new-polo-shirt', 9, 999, 0, 1000, NULL, 'percentage', '0', 1, '2019-09-15 20:39:38', '2019-09-15 20:39:38'),
-(8, 22, 6, 'Red Polo T-Shirt for Men', 'Red Polo T-Shirt', 'Red Polo T-Shirt', '12/02/2019', 'Red Polo T-Shirt for Men.\r\nSleeve Cotton T-shirt', 'red-polo-t-shirt-for-men-gents', 10, 250, 0, 200, 50, 'percentage', '0', 1, '2019-09-29 18:13:56', '2019-09-29 18:13:56'),
+(6, 22, 6, 'Polo T Shirt', 'Polo', 'Polo T Shirt', '3600', 'Polo T Shirt Polo T Shirt Polo T Shirt Polo T Shirt', 'polo-t-shirt', 100, 1000, 0, 500, 50, 'percentage', '0', 1, '2019-09-15 20:37:37', '2021-08-08 13:52:15'),
+(7, 22, 6, 'New Polo Shirt', 'New Polo Shirt', 'New Polo Shirt', '3600', 'New Polo Shirt New Polo Shirt', 'new-polo-shirt', 9, 999, 0, 899, 10, 'percentage', '0', 1, '2019-09-15 20:39:38', '2021-08-08 13:58:32'),
+(8, 22, 6, 'Red Polo T-Shirt for Men', 'Red Polo T-Shirt', 'Red Polo T-Shirt', '3600', 'Red Polo T-Shirt for Men.\r\nSleeve Cotton T-shirt', 'red-polo-t-shirt-for-men-gents', 10, 250, 0, 125, 50, 'percentage', '0', 1, '2019-09-29 18:13:56', '2021-08-08 13:52:28'),
 (9, 22, 6, 'Formal Check Shirt For Men', 'Formal Check Shirt', 'Formal Check Shirt', '12/02/2019', 'Formal Check Shirt \r\nCotton Shirt', 'formal-check-shirt-for-men-gents', 200, 450, 0, 400, NULL, 'percentage', '0', 1, '2019-09-29 18:15:22', '2019-09-29 18:15:22'),
-(10, 22, 6, 'T-shirt Gray For Men', 'T-shirt Gray', 'T-shirt Gray', '12/02/2019', 'T-shirt Gray  For Men.\r\nCotton T-shirt.\r\nSweetable in any season', 't-shirt-gray-for-men-gents', 10, 300, 0, 350, 15, 'percentage', NULL, 1, '2019-09-29 18:17:30', '2019-09-29 18:17:30'),
-(11, 22, 6, 'Men Sleeve Cotton Formal Shirt', 'Men Sleeve Cotton Formal Shirt', 'Men Sleeve Cotton Formal Shirt', 'Men Sleeve Cotton Formal Shirt', 'Men Sleeve Cotton Formal Shirt\r\nCotton Shirt', 'men-sleeve-cotton-formal-shirt-gents', 200, 800, 0, 900, 40, 'percentage', NULL, 1, '2019-09-29 18:20:32', '2019-09-29 18:20:32'),
-(12, 22, 6, 'Polo Shirt -Any Color for Men', 'Polo Shirt -Any Color for Men', 'Polo Shirt -Any Color for Men', '12/02/2019', 'Polo Shirt -Any Color for Men', 'polo-shirt-any-color-for-men', 20, 560, 0, 590, 50, 'percentage', NULL, 1, '2019-09-29 18:22:00', '2019-09-29 18:22:00'),
+(10, 22, 6, 'T-shirt Gray For Men', 'T-shirt Gray', 'T-shirt Gray', '3600', 'T-shirt Gray  For Men.\r\nCotton T-shirt.\r\nSweetable in any season', 't-shirt-gray-for-men-gents', 10, 300, 0, 255, 15, 'percentage', NULL, 1, '2019-09-29 18:17:30', '2021-08-08 13:53:36'),
+(11, 22, 6, 'Men Sleeve Cotton Formal Shirt', 'Men Sleeve Cotton Formal Shirt', 'Men Sleeve Cotton Formal Shirt', '3600', 'Men Sleeve Cotton Formal Shirt\r\nCotton Shirt', 'men-sleeve-cotton-formal-shirt-gents', 200, 800, 0, 320, 60, 'percentage', NULL, 1, '2019-09-29 18:20:32', '2021-08-08 13:53:27'),
+(12, 22, 6, 'Polo Shirt -Any Color for Men', 'Polo Shirt -Any Color for Men', 'Polo Shirt -Any Color for Men', '3600', 'Polo Shirt -Any Color for Men', 'polo-shirt-any-color-for-men', 20, 560, 0, 532, 5, 'percentage', NULL, 1, '2019-09-29 18:22:00', '2021-08-08 13:53:13'),
 (13, 23, 8, 'Pink and Blue Mix Sharee for Women', 'Pink and Blue Mix Sharee for Women', 'Pink and Blue Mix Sharee for Women', '12/02/2019', 'Pink and Blue Mix Sharee for Women', 'pink-and-blue-mix-sharee-for-women', 10, 1600, 0, 1900, NULL, 'percentage', '0', 1, '2019-09-29 18:31:04', '2019-09-29 18:31:04'),
-(14, 23, 8, 'Blue Party Sharee', 'Blue Party Sharee', 'Blue Party Sharee', '12/02/2019', 'Blue Party Sharee', 'blue-party-sharee', 10, 2500, 0, 3000, 50, 'percentage', NULL, 1, '2019-09-29 18:32:08', '2019-09-29 18:32:08'),
+(14, 23, 8, 'Blue Party Sharee', 'Blue Party Sharee', 'Blue Party Sharee', '3600', 'Blue Party Sharee', 'blue-party-sharee', 10, 2500, 0, 2000, 20, 'percentage', NULL, 1, '2019-09-29 18:32:08', '2021-08-08 13:53:00'),
 (15, 23, 8, 'Office Sharee For Women - formal', 'Office Sharee For Women - formal', 'Office Sharee For Women - formal', '12/02/2019', 'Office Sharee For Women - formal', 'office-sharee-for-women-formal', 20, 1200, 0, 1500, NULL, 'percentage', '0', 1, '2019-09-29 18:32:49', '2019-09-29 18:32:49'),
 (16, 23, 8, 'Party Saluar Kamee for women/girls', 'Party Saluar Kamee for women/girls', 'Party Saluar Kamee for women/girls', '12/02/2019', 'Party Saluar Kamee for women/girls', 'party-saluar-kamee-for-womengirls', 2, 5000, 0, 5500, NULL, 'percentage', NULL, 1, '2019-09-29 18:36:14', '2019-09-29 18:36:14'),
 (17, 23, 8, 'Sleeve Cotton Saluar Kameez', 'Sleeve Cotton Saluar Kameez', 'Sleeve Cotton Saluar Kameez', '12/02/2019', 'Sleeve Cotton Saluar Kameez', 'sleeve-cotton-saluar-kameez', 5, 2900, 0, 3000, NULL, 'percentage', NULL, 1, '2019-09-29 18:37:01', '2019-09-29 18:37:01'),
-(18, 23, 8, 'Green Color Multi Design Saluar Kameez', 'Green Color Multi Design Saluar Kameez', 'Green Color Multi Design Saluar Kameez', '12/02/2019', 'Green Color Multi Design Saluar Kameez', 'green-color-multi-design-saluar-kameez', 10, 3000, 0, 4000, 50, 'percentage', NULL, 1, '2019-09-29 18:37:52', '2019-09-29 18:37:52'),
+(18, 23, 8, 'Green Color Multi Design Saluar Kameez', 'Green Color Multi Design Saluar Kameez', 'Green Color Multi Design Saluar Kameez', '3600', 'Green Color Multi Design Saluar Kameez', 'green-color-multi-design-saluar-kameez', 10, 3000, 0, 2700, 10, 'percentage', NULL, 1, '2019-09-29 18:37:52', '2021-08-08 13:52:50'),
 (19, 23, 8, 'Silk Saluar Kameez for women', 'Silk Saluar Kameez for women', 'Silk Saluar Kameez for women', '12/02/2019', 'Silk Saluar Kameez for women', 'silk-saluar-kameez-for-women', 2, 2900, 0, 3000, NULL, 'percentage', NULL, 1, '2019-09-29 18:39:20', '2019-09-29 18:39:20'),
 (20, 1, 3, 'Samsung J7 Promo', 'Samsung J7 Promo', 'Samsung J7 Promo', '12/02/2019', 'Samsung J7 Promo', 'samsung-j7-promo', 200, 12000, 0, 13000, NULL, 'percentage', NULL, 1, '2019-09-29 18:40:56', '2019-09-29 18:41:12'),
-(22, 23, 4, 'Fashionable Ladies Bag', 'Fashionable Ladies Bag', 'Fashionable Ladies Bag', '3600', 'Fashionable Ladies Bag', 'fashionable-ladies-bag-women', 100, 3500, 0, 3150, 50, 'percentage', '1', 1, '2021-08-03 16:05:16', '2021-08-03 16:05:16');
+(22, 23, 4, 'Fashionable Ladies Bag', 'Fashionable Ladies Bag', 'Fashionable Ladies Bag', '3600', 'Fashionable Ladies Bag', 'fashionable-ladies-bag-women', 100, 3500, 0, 2800, 20, 'percentage', '1', 1, '2021-08-03 16:05:16', '2021-08-08 13:52:38');
 
 INSERT INTO `reviews` (`id`, `product_id`, `user_id`, `title`, `description`, `point`, `is_approved`, `created_at`, `updated_at`) VALUES
 (1, 3, 19, 'Nice Software', 'sdsdsd', 4.00, 0, '2019-09-06 17:15:41', '2019-09-06 17:15:41');
 
 INSERT INTO `settings` (`id`, `website_name`, `website_logo`, `website_footer_text`, `email`, `phone`, `address`, `shipping_cost`, `notice`, `info`, `created_at`, `updated_at`) VALUES
-(1, 'The KINGSMAN', 'logo.png', '@copy; 2021 all rights reserved', 'info@kingsman.com', '01951233084', 'Dhaka', 50.00, NULL, '{\"social\":{\"facebook\":\"https:\\/\\/facebook.com\\/website\",\"twitter\":\"https:\\/\\/twitter.com\\/website\",\"instagram\":\"https:\\/\\/instagram.com\\/website\",\"linkedin\":\"https:\\/\\/linkedin.com\\/website\",\"pinterest\":\"https:\\/\\/pinterest.com\\/website\",\"youtube\":\"https:\\/\\/youtube.com\\/website\"},\"theme\":{\"base_theme\":\"light\",\"slider\":{\"single_slider\":true,\"enable_two_buttons\":false},\"header_menu\":{\"enable_all_category\":true,\"enable_single_category\":false}}}', '2021-08-06 17:04:01', '2021-08-06 17:04:01');
+(1, 'The KINGSMAN', '1628432441.png', '@copy; 2021 all rights reserved', 'info@kingsman.com', '01951233084', 'Dhaka', 50.00, NULL, '{\"order\":{\"shipping_cost\":\"50\"},\"social\":{\"facebook\":\"https:\\/\\/facebook.com\\/the-kings-man\",\"twitter\":\"https:\\/\\/twitter.com\\/website\",\"instagram\":\"https:\\/\\/instagram.com\\/website\",\"linkedin\":\"https:\\/\\/linkedin.com\\/website\",\"pinterest\":\"https:\\/\\/pinterest.com\\/website\",\"youtube\":\"https:\\/\\/youtube.com\\/website\"},\"theme\":{\"base_theme\":\"light\",\"slider\":{\"single_slider\":\"false\",\"enable_two_buttons\":\"true\"},\"header_menu\":{\"enable_all_category\":\"false\",\"enable_single_category\":\"true\"}}}', '2021-08-06 17:04:01', '2021-08-08 14:21:09');
 
 INSERT INTO `sliders` (`id`, `title`, `description`, `image`, `button_text`, `button_link`, `button_text2`, `button_link2`, `status`, `priority`, `created_at`, `updated_at`) VALUES
 (9, 'Denim Icons and Tees', '<p><b>The uniform. Forever jeans </b></p><p><b>and breathable t-shirt.</b></p>', '1628351092.jpeg', 'Shop Women\'s', 'products/category/womens', 'Shop Men\'s', 'products/category/mens', 1, 10, '2021-08-07 06:14:19', '2021-08-07 15:44:54');
@@ -468,7 +470,9 @@ INSERT INTO `wishlists` (`id`, `product_id`, `user_id`, `created_at`, `updated_a
 (2, 3, 19, '2019-09-15 16:10:05', '2019-09-15 16:10:05'),
 (3, 7, 19, '2019-09-15 20:40:05', '2019-09-15 20:40:05'),
 (4, 6, 19, '2019-09-15 20:40:07', '2019-09-15 20:40:07'),
-(5, 15, 19, '2019-10-24 16:57:52', '2019-10-24 16:57:52');
+(5, 15, 19, '2019-10-24 16:57:52', '2019-10-24 16:57:52'),
+(6, 6, 32, '2021-08-08 05:54:51', '2021-08-08 05:54:51'),
+(7, 14, 32, '2021-08-08 06:26:59', '2021-08-08 06:26:59');
 
 
 
