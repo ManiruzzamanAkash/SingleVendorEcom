@@ -1,8 +1,7 @@
 @extends('frontend.layouts.master')
 
 @section('stylesheets')
-<link rel="stylesheet" type="text/css"
-  href="{{ asset('public/assets/css/app/single-page.css') }}?v={{ config('constants.asset_version') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/app/single-page.css') }}?v={{ config('constants.asset_version') }}">
 @endsection
 
 @section('title')
@@ -14,15 +13,11 @@
 <meta property="og:url" content="{{ route('products.show', $product->slug) }}" />
 <meta property="og:type" content="Product" />
 <meta property="og:title" content="{{ $product->title }}" />
-<meta property="og:description"
-  content="{{ $product->title}} and Price - {{ $product->price}} Taka - {{ config('app.name') }}" />
-<meta property="og:image"
-  content="{{ $product->images->count() > 0 ? asset('/images/products/'. $product->images->first->image->image) : '' }}" />
+<meta property="og:description" content="{{ $product->title}} and Price - {{ $product->price}} Taka - {{ config('app.name') }}" />
+<meta property="og:image" content="{{ $product->images->count() > 0 ? asset('/images/products/'. $product->images->first->image->image) : '' }}" />
 
 <!-- Single Page product show with zoom -->
-<link rel="stylesheet" type="text/css"
-  href="{{ asset('css/flexslider.css') }}?v={{ config('constants.asset_version') }}">
-
+<link rel="stylesheet" type="text/css" href="{{ asset('css/flexslider.css') }}?v={{ config('constants.asset_version') }}">
 @endsection
 
 @section('content')
@@ -38,9 +33,7 @@
             @foreach ($product->images as $image)
             <li>
               <div class="thumb">
-                <a href="#" data-image="{{ asset('/images/products/'. $image->image) }}"
-                  data-zoom-image="{{ asset('/images/products/'. $image->image) }}"
-                  class="active galleryImg blur-up lazyload">
+                <a href="#" data-image="{{ asset('/images/products/'. $image->image) }}" data-zoom-image="{{ asset('/images/products/'. $image->image) }}" class="active galleryImg blur-up lazyload">
                   <img src="{{ asset('/images/products/'. $image->image) }}" width="70" height="70">
                 </a>
               </div>
@@ -49,9 +42,7 @@
             @else
             <li>
               <div class="thumb">
-                <a href="#" data-image="{{ asset('images/defaults/no-image.jpg') }}"
-                  data-zoom-image="{{ asset('images/defaults/no-image.jpg') }}"
-                  class="active galleryImg blur-up lazyload">
+                <a href="#" data-image="{{ asset('images/defaults/no-image.jpg') }}" data-zoom-image="{{ asset('images/defaults/no-image.jpg') }}" class="active galleryImg blur-up lazyload">
                   <img src="{{ asset('images/defaults/no-image.jpg') }}" width="70" height="70">
                 </a>
               </div>
@@ -66,8 +57,7 @@
             @foreach ($product->images as $image)
 
             @if ($i > 0)
-            <img id="zoom_02" src="{{ asset('/images/products/'. $image->image) }}"
-              data-zoom-image="{{ asset('/images/products/'. $image->image) }}" class="blur-up lazyload large">
+            <img id="zoom_02" src="{{ asset('/images/products/'. $image->image) }}" data-zoom-image="{{ asset('/images/products/'. $image->image) }}" class="blur-up lazyload large">
             @endif
 
             @php $i--; @endphp
@@ -85,8 +75,7 @@
           @if (Auth::check())
           <div class="clearfix"></div>
           <div class="wishlist-div">
-            <add-wishlist url="{{ url('/') }}" route="{{ Route::currentRouteName() }}" id="{{ $product->id }}"
-              api_token="{{ Auth::user()->api_token }}"></add-wishlist>
+            <add-wishlist url="{{ url('/') }}" route="{{ Route::currentRouteName() }}" id="{{ $product->id }}" api_token="{{ Auth::user()->api_token }}"></add-wishlist>
           </div>
           @endif
         </div>
@@ -111,11 +100,9 @@
       <div class="other-info">
         <div class="infos">
           <div class="quantity">
-            @if($product->quantity < 1) <span class="notAvailable"><i class="fa fa-exclamation"
-                aria-hidden="true"></i>Sorry
+            @if($product->quantity < 1) <span class="notAvailable"><i class="fa fa-exclamation" aria-hidden="true"></i>Sorry
               product currently not available.</span>
-              @elseif($product->quantity < 10) <span class="prodLeft"><i class="fa fa-exclamation"
-                  aria-hidden="true"></i>Hurry Only {{  $product->quantity}} products are available.</span>
+              @elseif($product->quantity < 10) <span class="prodLeft"><i class="fa fa-exclamation" aria-hidden="true"></i>Hurry Only {{ $product->quantity}} products are available.</span>
                 @else
                 <span class="available"><i class="fa fa-thumbs-o-up" aria-hidden="true"></i> Available in stock.</span>
                 @endif
@@ -177,8 +164,7 @@
         @csrf
         <input type="hidden" name="product_id" value="{{ $product->id }}">
         <span class="buy-item">
-          <button title="Buy Now" tabindex="0" class="buyNow" type="submit"><i class="fa fa-location-arrow"
-              aria-hidden="true"></i> Buy Now</button>
+          <button title="Buy Now" tabindex="0" class="buyNow" type="submit"><i class="fa fa-location-arrow" aria-hidden="true"></i> Buy Now</button>
         </span>
       </form>
       @endif
@@ -196,18 +182,15 @@
     <div class="">
       <ul class="nav nav-tabs nav-material" id="top-tab" role="tablist">
         <li class="nav-item">
-          <a class="nav-link active" id="top-home-tab" data-toggle="tab" href="#top-home" role="tab"
-            aria-selected="true">Product Details</a>
+          <a class="nav-link active" id="top-home-tab" data-toggle="tab" href="#top-home" role="tab" aria-selected="true">Product Details</a>
           <div class="material-border"></div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="review-list-tab" data-toggle="tab" href="#review-list" role="tab"
-            aria-selected="true">All Reviews</a>
+          <a class="nav-link" id="review-list-tab" data-toggle="tab" href="#review-list" role="tab" aria-selected="true">All Reviews</a>
           <div class="material-border"></div>
         </li>
         <li class="nav-item">
-          <a class="nav-link" id="review-top-tab" data-toggle="tab" href="#top-review" role="tab"
-            aria-selected="false">Write Review</a>
+          <a class="nav-link" id="review-top-tab" data-toggle="tab" href="#top-review" role="tab" aria-selected="false">Write Review</a>
           <div class="material-border"></div>
         </li>
       </ul>
@@ -269,33 +252,29 @@
       </div>
     </div>
   </div>
-
-
 </div>
 </div>
 <!-- product-tab ends -->
-
 @endsection
 
 
 @section('scripts')
-<script src="{{ asset('public/assets/js/jquery.elevatezoom.js') }}?v={{ config('constants.asset_version') }}"
-  type="text/javascript"></script>
+<script src="{{ asset('public/assets/js/jquery.elevatezoom.js') }}?v={{ config('constants.asset_version') }}" type="text/javascript"></script>
 <script type="text/javascript">
   $("#zoom_02").elevateZoom({
-  zoomWindowWidth: 450,
-  zoomWindowHeight: 502,
-  gallery:'thumb',
-  cursor: 'pointer',
-  galleryActiveClass: 'active',
-  imageCrossfade: true,
-  borderSize: 1,
-  zoomWindowOffetx: 10,
-  zoomWindowOffety: -13,
-  cursor: 'crosshair',
-  lensColour: '#dddddd',
-  lensBorder: 'red'
-});
+    zoomWindowWidth: 450,
+    zoomWindowHeight: 502,
+    gallery: 'thumb',
+    cursor: 'pointer',
+    galleryActiveClass: 'active',
+    imageCrossfade: true,
+    borderSize: 1,
+    zoomWindowOffetx: 10,
+    zoomWindowOffety: -13,
+    cursor: 'crosshair',
+    lensColour: '#dddddd',
+    lensBorder: 'red'
+  });
 </script>
 
 @endsection
