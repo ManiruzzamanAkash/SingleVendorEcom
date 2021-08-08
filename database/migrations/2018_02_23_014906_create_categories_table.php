@@ -31,6 +31,7 @@ class CreateCategoriesTable extends Migration
             $table->text('description')->nullable();
             $table->string('image')->nullable();
             $table->integer('parent_id')->nullable();
+            $table->string('bg_color', 20)->default('transparent');
             $table->timestamps();
         });
     }

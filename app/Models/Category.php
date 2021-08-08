@@ -20,6 +20,7 @@ class Category extends Model
 		'description',
 		'image',
 		'parent_id',
+		'bg_color',
 	];
 
 	public function parent()
