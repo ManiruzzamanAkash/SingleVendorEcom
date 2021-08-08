@@ -52,12 +52,14 @@ class Category extends Model
 
 	public static function getCategories($args = []) {
 		$defaults = [
-			'show_navbar'   => null,
-			'show_homepage' => null,
-			'is_single'		=> false
+			'show_navbar'       => null,
+			'show_homepage'     => null,
+			'is_single'		    => false,
+			'navbar_priority'   => 'asc',
+			'homepage_priority' => 'asc',
 		];
 
-		$data = array_merge( $args, $defaults );
+		$data = array_merge( $defaults, $args );
 
 		$query = Category::where('status', 1);
 
@@ -65,7 +67,7 @@ class Category extends Model
 			$query->where('show_navbar', (bool) $data['show_navbar']);
 			
 			if ((bool) $data['show_navbar']) {
-				$query->orderBy('navbar_priority', 1);
+				$query->orderBy('navbar_priority', $data['navbar_priority']);
 			}
 		}
 
@@ -73,7 +75,7 @@ class Category extends Model
 			$query->where('show_homepage', (bool) $data['show_homepage']);
 			
 			if ((bool) $data['show_homepage']) {
-				$query->orderBy('homepage_priority', 1);
+				$query->orderBy('homepage_priority', $data['homepage_priority']);
 			}
 		}
 
