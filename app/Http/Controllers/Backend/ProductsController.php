@@ -73,6 +73,22 @@ class ProductsController extends Controller
           ->editColumn('title', function ($row) {
               return $row->title;
           })
+
+          ->editColumn('price', function ($row) {
+              $html = '৳' . $row->price;
+              return $html;
+          })
+
+          ->editColumn('offer_price', function ($row) {
+              $html = '৳' . $row->offer_price . '<br />';
+
+              if ($row->discount) {
+                $html .= '<span class="badge badge-warning">'. $row->discount .'%</span>';
+              }
+
+              return $html;
+          })->escapeColumns([])
+
           ->editColumn('image', function ($row) {
               
                 $productImage = ProductImage::where('product_id', $row->id)->first();
