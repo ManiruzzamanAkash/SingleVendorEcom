@@ -28,9 +28,11 @@ class Setting extends Model
             'email'               => 'info@kingsman.com',
             'phone'               => '01951233084',
             'address'             => 'Dhaka',
-            'shipping_cost'       => 50,
             'notice'              => null,
             'info'                => json_encode([
+                'order' => [
+                    'shipping_cost' => 50,
+                ],
                 'social' => [
                     'facebook'  => 'https://facebook.com/website',
                     'twitter'   => 'https://twitter.com/website',
