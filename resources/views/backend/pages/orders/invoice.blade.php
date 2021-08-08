@@ -53,20 +53,21 @@ thead {
 
     <div class="invoice-header">
       <div class="float-left site-logo">
-        <img src="{{ asset('images/favicon.png') }}" alt="">
+        <!-- <img src="{{ asset('images/favicon.png') }}" alt=""> -->
+        <img src="{!! asset('images/' .$settings->website_logo) !!}" width="100">
       </div>
       <div class="float-right site-address">
-        <h4>Lara Ecommerce</h4>
-        <p>31/1, Purana Paltan, Dhaka-1200</p>
-        <p>Phone: <a href="">01951233084</a></p>
-        <p>Email: <a href="mailto:info@laraecommerce.com">info@laraecommerce.com</a></p>
+        <h4>{{ config('app.name') }}</h4>
+        <p>{{ $settings->address }}</p>
+        <p>Phone: <a href="">{{ $settings->phone }}</a></p>
+        <p>Email: <a href="mailto:{{ $settings->email }}">{{ $settings->email }}</a></p>
       </div>
       <div class="clearfix"></div>
     </div>
 
     <div class="invoice-description">
-      <div class="invoice-left-top float-left">
-        <h6>Invoice to</h6>
+      <div class="invoice-left-top float-left mt-2">
+        <h6 class="mb-2">Invoice to</h6>
          <h3>{{ $order->name }}</h3>
          <div class="address">
           <p>
@@ -86,9 +87,8 @@ thead {
       <div class="clearfix"></div>
     </div>
 
-    <div class="">
-    
-        <h3>Products</h3>
+    <div class="mt-2">
+        <h3 class="mb-2">Products</h3>
 
         @if ($order->carts->count() > 0)
         <table class="table table-bordered table-stripe">
@@ -106,6 +106,9 @@ thead {
             $total_price = 0;
             @endphp
             @foreach ($order->carts as $cart)
+            @php
+              $price = $cart->product->offer_price ? $cart->product->offer_price : $cart->product->price;
+            @endphp
             <tr>
               <td>
                 {{ $loop->index + 1 }}
@@ -117,14 +120,14 @@ thead {
                 {{ $cart->product_quantity }}
               </td>
               <td>
-                {{ $cart->product->price }} Taka
+                {{ $price }} Taka
               </td>
               <td>
                 @php
-                $total_price += $cart->product->price * $cart->product_quantity;
+                $total_price += $price * $cart->product_quantity;
                 @endphp
 
-                {{ $cart->product->price * $cart->product_quantity }} Taka
+                {{ $price * $cart->product_quantity }} Taka
               </td>
               
             </tr>
