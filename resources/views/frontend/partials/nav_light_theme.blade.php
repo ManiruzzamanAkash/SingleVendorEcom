@@ -35,7 +35,7 @@
 
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
                     <ul class="navbar-nav mx-auto mt-2 mt-lg-0">
-                        @foreach (App\Models\Category::orderBy('id', 'asc')->where('parent_id', null)->get() as $parent)
+                        @foreach (App\Models\Category::getCategories([ 'show_navbar' => true ]) as $parent)
                             <li class="nav-item">
                                 <a href="{!! route('categories.show', $parent->slug) !!}" class="nav-link">{{ $parent->sub_header }}</a>
                             </li>
