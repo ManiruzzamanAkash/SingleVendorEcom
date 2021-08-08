@@ -16,8 +16,9 @@ class PagesController extends Controller
 		$sliders 			 = Slider::where('status',1)->orderBy('priority', 'asc')->get();
 		$products 			 = Product::orderBy('id', 'desc')->paginate(9);
 		$homepage_categories = Category::getCategories([ 'show_homepage' => true ]);
+		$navbar_categories   = Category::getCategories([ 'show_navbar' => true ]);
 
-		return view('frontend.pages.index', compact('products', 'sliders', 'homepage_categories'));
+		return view('frontend.pages.index', compact('products', 'sliders', 'homepage_categories', 'navbar_categories'));
 	}
 
 	public function contact()
