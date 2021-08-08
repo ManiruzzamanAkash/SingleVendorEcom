@@ -42,6 +42,9 @@
 							</thead>
 							<tbody>
 								@foreach ($order->carts as $cart)
+									@php
+										$price = $cart->product->offer_price ?  $cart->product->offer_price : $cart->product->price;
+									@endphp
 									<tr>
 										<td>
 											@if ($cart->product->images->count() > 0)
@@ -57,14 +60,14 @@
 										</td>
 										<td>
 											<div class="item-price">
-												৳ {{ $cart->product->price }}
+												৳ {{ $price }}
 											</div>
 											<div class="old-price">
-												৳ {{ $cart->product->offer_price }}
+												{{ $cart->product->offer_price ?  '৳ ' . $cart->product->price : '' }}
 											</div>
 										</td>
 										<td>
-											৳ {{ $cart->product->price * $cart->product_quantity }}
+											৳ {{ $price * $cart->product_quantity }}
 										</td>
 										
 										<td>
@@ -99,7 +102,7 @@
 											</div>
 										</td>
 									</tr>
-									@php $total_price += $cart->product->price * $cart->product_quantity; @endphp
+									@php $total_price += $price * $cart->product_quantity; @endphp
 								@endforeach
 							</tbody>
 						</table>

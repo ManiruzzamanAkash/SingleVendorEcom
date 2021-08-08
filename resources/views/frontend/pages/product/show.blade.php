@@ -13,7 +13,7 @@
 <meta property="og:url" content="{{ route('products.show', $product->slug) }}" />
 <meta property="og:type" content="Product" />
 <meta property="og:title" content="{{ $product->title }}" />
-<meta property="og:description" content="{{ $product->title}} and Price - {{ $product->price}} Taka - {{ config('app.name') }}" />
+<meta property="og:description" content="{{ $product->title }} and Price - {{ $product->offer_price ? $product->offer_price : $product->price }} Taka - {{ config('app.name') }}" />
 <meta property="og:image" content="{{ $product->images->count() > 0 ? asset('/images/products/'. $product->images->first->image->image) : '' }}" />
 
 <!-- Single Page product show with zoom -->
@@ -86,10 +86,10 @@
 
       <div class="price-area">
         <div class="price">
-          ৳ {{ $product->price }}
+          ৳ {{ $product->offer_price ? $product->offer_price : $product->price }}
         </div>
         <div class="old-price">
-          ৳ {{ $product->offer_price }}
+          {{ $product->offer_price ? '৳ ' . $product->price : '' }}
         </div>
       </div>
 

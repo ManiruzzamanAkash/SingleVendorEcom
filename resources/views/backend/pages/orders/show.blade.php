@@ -36,9 +36,7 @@
               <th>Product Quantity</th>
               <th>Unit Price</th>
               <th>Sub total Price</th>
-              <th>
-                Delete
-              </th>
+              <th>Delete</th>
             </tr>
           </thead>
           <tbody>
@@ -46,6 +44,9 @@
             $total_price = 0;
             @endphp
             @foreach ($order->carts as $cart)
+            @php
+              $price = $cart->product->offer_price ? $cart->product->offer_price : $cart->product->price;
+            @endphp
             <tr>
               <td>
                 {{ $loop->index + 1 }}
@@ -66,14 +67,14 @@
                 </form>
               </td>
               <td>
-                {{ $cart->product->price }} Taka
+                {{ $price }} Taka
               </td>
               <td>
                 @php
-                $total_price += $cart->product->price * $cart->product_quantity;
+                $total_price += $price * $cart->product_quantity;
                 @endphp
 
-                {{ $cart->product->price * $cart->product_quantity }} Taka
+                {{ $price * $cart->product_quantity }} Taka
               </td>
               <td>
                 <form class="form-inline" action="{{ route('carts.delete', $cart->id) }}" method="post">

@@ -38,7 +38,7 @@
                             {{ $product->title }}
                         </h5>
                         <h5 class="price">
-                            ৳ {{ $product->price }}
+                            ৳ {{ $product->offer_price ? $product->offer_price : $product->price }}
                         </h5>
                         <h5 class="slogan">
                             {{ $product->slogan }}

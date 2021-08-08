@@ -101,63 +101,6 @@
         </li>
       </ul>
     </div>
-    {{-- <div class="all-status">
-        <div class="status">
-          @if ($orders->is_seen_by_admin)
-            <div class="steps">
-              <div class="step"></div>
-              <p class="">Process compleate</p>
-            </div> 
-            @else
-            <div class="steps">
-              <div class="step2"></div>
-              <p class="">On processing</p>
-            </div>
-          @endif
-      </div>
-      <i class="fa fa-arrow-right arrow" aria-hidden="true"></i>
-      <div class="status">
-            @if ($orders->is_completed)
-              <div class="steps">
-                <div class="step"></div>
-                <p class="">Verify</p>
-              </div>
-            @else
-            <div class="steps">
-              <div class="step2"></div>
-              <p class="">Waiting for process</p>
-            </div>
-          @endif
-      </div>
-      <i class="fa fa-arrow-right arrow" aria-hidden="true"></i>
-      <div class="status">
-          @if ($orders->is_paid)
-            <div class="steps">
-              <div class="step"></div>
-              <p class="">On the way</p>
-            </div>
-            @else
-            <div class="steps">
-              <div class="step2"></div>
-              <p class=""></p>
-            </div>
-          @endif
-      </div>
-      <i class="fa fa-arrow-right arrow" aria-hidden="true"></i>
-      <div class="status">
-          @if ($orders->delivery_status)
-            <div class="steps">
-              <div class="step"></div>
-              <p class="">Delivered</p>
-            </div>
-          @else
-          <div class="steps">
-              <div class="step2"></div>
-              <p class=""></p>
-            </div>
-          @endif
-      </div>
-      </div> --}}
   </div>
 
   <div class="order-area">
@@ -172,6 +115,9 @@
       $total_price = 0;
       @endphp
       @foreach ($orders->carts as $cart)
+      @php
+      $price = $cart->product->offer_price ? $cart->product->offer_price : $cart->product->price;
+      @endphp
       <div class="order-details">
         @if ($cart->product->images->count() > 0)
         <div class="itemImg">
@@ -187,17 +133,11 @@
             </div>
             <div class="order-item-price">
               <div class="item-price">
-                ৳ {{ $cart->product->price }}
+                ৳ {{ $price }}
               </div>
               <div class="old-price">
-                ৳ {{ $cart->product->offer_price }}
+                {{ $cart->product->offer_price ? '৳ ' . $cart->product->price : '' }}
               </div>
-            </div>
-            <div class="sell-by">
-              Sold by : demo
-            </div>
-            <div class="order-deli">
-              Delivery expected in {{ $cart->product->delivery_time }}
             </div>
 
           </div>
@@ -211,47 +151,20 @@
           </div>
           <div class="unit-prc">
             <span>Unit Price :</span>
-            <h6>৳ {{ $cart->product->price }}</h6>
+            <h6>৳ {{ $price }}</h6>
           </div>
           <div class="subtotal-prc">
             <span>Subtotal :</span>
             @php
-            $total_price += $cart->product->price * $cart->product_quantity;
+            $total_price += $price * $cart->product_quantity;
             @endphp
-            <h6>৳ {{ $cart->product->price * $cart->product_quantity }}</h6>
+            <h6>৳ {{ $price * $cart->product_quantity }}</h6>
           </div>
-          {{-- <div class="order-condition">
-              <div class="conditions">
-                  @if ($orders->is_seen_by_admin)
-                    <span class="text-success">Your Order currently on proceesing.</span> 
-                    @else
-                    <span class="text-danger">Your order will procees soon.</span>
-                  @endif
-              </div>
-              <div class="conditions">
-                  @if ($orders->is_completed)
-                    <span class="text-success">Your order ready for Shipping.</span>
-                    @else
-                  @endif
-              </div>
-              <div class="conditions">
-                  @if ($orders->is_paid)
-                    <span class="text-success">Your order dispatch for shipping.</span>
-                    @else
-                  @endif
-              </div>
-              <div class="conditions">
-                  @if ($orders->delivery_status)
-                    <span class="text-success">Your order successfully delivered.</span>
-                    @else
-                  @endif
-              </div>
-            </div> --}}
         </div>
       </div>
       <div>
         @php
-        $total_price += $cart->product->price * $cart->product_quantity;
+        $total_price += $price * $cart->product_quantity;
         @endphp
 
       </div>
