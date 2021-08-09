@@ -51,6 +51,19 @@
 	opacity:0.75;
   }
 
-  .social-body a:hover {
+.social-body a:hover {
 	opacity:0.9;
-  }
+}
+
+/* sticky custom nav  start*/
+.nav-sticky {         
+	position: fixed;
+	top: 0;
+	width: 100%;
+	z-index: 100;
+}
+/* .sticky + .content {
+	padding-top: 60px;
+} */
+
+/* sticky custom nav end */

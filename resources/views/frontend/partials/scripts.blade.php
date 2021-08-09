@@ -29,3 +29,18 @@
 
 <script src="{{ asset('public/assets/js/custom-scripts.js') }}?v={{ config('constants.asset_version') }}"></script>
 {{-- <script src="{{ asset('public/assets/js/timer-two.js') }}" ></script> --}}
+
+{{-- sticky navber start --}}
+<script> 
+    window.onscroll = function(){navSticky()};
+    var navbar = document.getElementById("navbarSticky");
+    var sticky = navbar.offsetTop;
+    function navSticky() {
+        if (window.pageYOffset >= sticky) {
+            navbar.classList.add("nav-sticky")
+        } else {
+            navbar.classList.remove("nav-sticky");
+        }
+    }
+</script>
+{{-- sticky navber end --}}

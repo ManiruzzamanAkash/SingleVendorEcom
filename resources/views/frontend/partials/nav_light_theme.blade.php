@@ -1,4 +1,4 @@
-<div class="sticky" id="theme-light-nav-area">
+<div  class="sticky" id="theme-light-nav-area">
     <div class="header-top">
         <div class="">
             <div class="">
@@ -28,8 +28,8 @@
         </div>
     </div>
 
-    <div class="main-menu">
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div  class="main-menu">
+        <nav id="navbarSticky" class="navbar navbar-expand-lg navbar-light bg-light">
             <div class="container">
                 <a class="navbar-brand" href="#"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
