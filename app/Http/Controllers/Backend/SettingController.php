@@ -64,6 +64,18 @@ class SettingController extends Controller
             Image::make($image)->save($location);
             $Setting->website_logo = $img;
         }
+        if ($request->favicon > 0) {
+            // Delete the old Slider
+            if (File::exists('images/'.$request->old_favicon)) {
+                File::delete('images/'.$request->old_favicon);
+              }
+
+            $image = $request->file('favicon');
+            $img = time() . '.'. $image->getClientOriginalExtension();
+            $location = ('images/' .$img);
+            Image::make($image)->save($location);
+            $Setting->favicon = $img;
+        }
         $Setting->save();
 
         session()->flash('success', 'Slider has updated successfully !!');

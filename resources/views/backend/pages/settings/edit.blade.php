@@ -90,12 +90,12 @@
 									<div class="col-md-6">
 										<label for="oldimage">Old Favicon</label> <br>
 			
-										<img src="{!! asset('images/'.$setting->website_logo) !!}" width="100">
-										<input type="hidden" value="{{ $setting->website_logo }}" name="old_logo" ><br /><br />
+										<img src="{!! asset('images/'.$setting->favicon) !!}" width="100">
+										<input type="hidden" value="{{ $setting->favicon }}" name="old_favicon" ><br /><br />
 										
 										<label for="image">Favicon</label>
 			
-										<input type="file" class="form-control" name="website_logo" id="website_logo">
+										<input type="file" class="form-control" name="favicon" id="favicon">
 									</div>
 								</div>
 							</div>
