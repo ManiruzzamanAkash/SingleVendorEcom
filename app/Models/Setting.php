@@ -24,6 +24,7 @@ class Setting extends Model
         $data = [
             'website_name'        => 'The KINGSMAN',
             'website_logo'        => 'logo.png',
+            'favicon'             => 'logo.png',
             'website_footer_text' => '@copy; 2021 all rights reserved',
             'email'               => 'info@kingsman.com',
             'phone'               => '01951233084',
@@ -51,7 +52,16 @@ class Setting extends Model
                         'enable_all_category'    => true,
                         'enable_single_category' => false
                     ]
-                ]
+                ],
+                'currency' => [
+                    'currency_code' => 'BDT',
+                    'currency_symbol' => '৳',
+                    'activeCurrency' => [
+                        'decimal'               => 2, // if 2 => 22.52, if 4 => 22.5245
+                        'decimal_separator'     => '.',
+                        'thousands_separator'     => ',',
+                    ],
+                ],
             ]),
         ];
 

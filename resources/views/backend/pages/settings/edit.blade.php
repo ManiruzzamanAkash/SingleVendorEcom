@@ -27,6 +27,9 @@
 						<li class="nav-item">
 							<a href="#social" class="nav-link" data-toggle="tab">Social</a>
 						</li>
+						<li class="nav-item">
+							<a href="#invoice" class="nav-link" data-toggle="tab">Invoice</a>
+						</li>
 					</ul>
 					<div class="tab-content">
 						<div class="tab-pane fade show active" id="general">
@@ -75,15 +78,24 @@
 							<div class="form-group">
 								<div class="row">
 									<div class="col-md-6">
+										<label for="oldimage">Old Logo</label> <br>
+			
+										<img src="{!! asset('images/'.$setting->website_logo) !!}" width="100">
+										<input type="hidden" value="{{ $setting->website_logo }}" name="old_logo" ><br /><br />
+
 										<label for="image">Website Logo</label>
 			
 										<input type="file" class="form-control" name="website_logo" id="website_logo">
 									</div>
 									<div class="col-md-6">
-										<label for="oldimage">Old Logo</label> <br>
+										<label for="oldimage">Old Favicon</label> <br>
 			
 										<img src="{!! asset('images/'.$setting->website_logo) !!}" width="100">
-										<input type="hidden" value="{{ $setting->website_logo }}" name="old_logo" >
+										<input type="hidden" value="{{ $setting->website_logo }}" name="old_logo" ><br /><br />
+										
+										<label for="image">Favicon</label>
+			
+										<input type="file" class="form-control" name="website_logo" id="website_logo">
 									</div>
 								</div>
 							</div>
@@ -96,6 +108,46 @@
 								<input type="number" class="form-control" name="info[order][shipping_cost]" id="website_footer_text"
 									aria-describedby="emailHelp" value="{{ $settings->shipping_cost }}">
 							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="website_footer_text">Currency Code</label>
+										<input type="text" class="form-control" name="info[currency][currency_code]" id="website_footer_text"
+											aria-describedby="emailHelp" value="{{ $settings->website->currency->currency_code }}">
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="website_footer_text">Currency Symbol</label>
+										<input type="text" class="form-control" name="info[currency][currency_symbol]" id="website_footer_text"
+											aria-describedby="emailHelp" value="{{ $settings->website->currency->currency_symbol }}">
+									</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="col-md-4">
+									<div class="form-group">
+										<label for="website_footer_text">Decimal</label>
+										<input type="text" class="form-control" name="info[currency][activeCurrency][decimal]" id="website_footer_text"
+											aria-describedby="emailHelp" value="{{ $settings->website->currency->activeCurrency->decimal }}">
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label for="website_footer_text">Decimal separator Symbol</label>
+										<input type="text" class="form-control" name="info[currency][activeCurrency][decimal_separator]" id="website_footer_text"
+											aria-describedby="emailHelp" value="{{ $settings->website->currency->activeCurrency->decimal_separator }}">
+									</div>
+								</div>
+								<div class="col-md-4">
+									<div class="form-group">
+										<label for="website_footer_text">Thousands separator Symbol</label>
+										<input type="text" class="form-control" name="info[currency][activeCurrency][thousands_separator]" id="website_footer_text"
+											aria-describedby="emailHelp" value="{{ $settings->website->currency->activeCurrency->thousands_separator }}">
+									</div>
+								</div>
+							</div>
+							
 						</div>
 						<div class="tab-pane fade" id="social">
 
@@ -197,6 +249,13 @@
 										</select>
 									</div>
 								</div>
+							</div>
+						</div>
+						<div class="tab-pane fade" id="invoice">
+							<div class="form-group">
+								<label for="website_footer_text">Invoice background color</label>
+								<input type="color" class="form-control" name="" id="website_footer_text"
+									aria-describedby="emailHelp">
 							</div>
 						</div>
 
