@@ -142,6 +142,7 @@
               </li>
               <li>
                 Please use coupon if you have.
+                {{ $product->category_id }}
               </li>
               
             </ul>
@@ -152,6 +153,15 @@
       </div>
     </div>
 </div>
+
+  @php 
+   
+  $products = $product->recommended();
+  @endphp
+
+  @if ($products->count() > 0)
+      @include('frontend.pages.product.partials.all_products')
+	@endif
 
 </div> 
 <!-- product-tab ends -->

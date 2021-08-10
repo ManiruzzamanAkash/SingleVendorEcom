@@ -19,7 +19,9 @@
                         <div class="flip-box">    
                             <div class="flip-box-inner">
                                 <div class="flip-box-front">
+                                    @if ($product->images->first())
                                     <img style="width:160px;height:178px" src="{{ asset('images/products/' . $product->images->first()->image) }}" alt="{{ $product->title }}">
+                                    @endif
                                 </div>
                                 <div class="flip-box-back">
                                     @if ($product->images->get(1))

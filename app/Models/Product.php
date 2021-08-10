@@ -30,4 +30,9 @@ class Product extends Model
   {
     return $this->hasMany(Cart::class);
   }
+
+  public function recommended()
+  {
+    return $this->category->products()->where('id', '!=', $this->id)->paginate(8);
+  }
 }
