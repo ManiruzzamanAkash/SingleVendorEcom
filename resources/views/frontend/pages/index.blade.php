@@ -5,7 +5,7 @@
 <style>
     .product {
         padding: 40px;
-    }
+    }    
 </style>
 @endsection
 

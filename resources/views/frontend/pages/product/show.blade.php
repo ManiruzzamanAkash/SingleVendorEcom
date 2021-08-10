@@ -35,11 +35,18 @@
       <div class="col-md-6">
         <div id="carouselExampleControls" class="carousel slide" data-interval="false">
           <div  class="carousel-inner">
-            @foreach ($product->images as $key=>$image)
-              <div class="carousel-item {{ $key==0 ? "active" : ''}}"  >
-                <img class="d-block w-100" src="{{ asset('/images/products/'. $image->image) }}" alt="First slide" >
+            @if ($product->images->count() > 0)
+              @foreach ($product->images as $key=>$image)
+                <div class="carousel-item {{ $key==0 ? "active" : ''}}"  >
+                  <img  class="d-block w-100" src="{{ asset('/images/products/'. $image->image) }}" alt="First slide" >
+                </div>
+              @endforeach
+            @else
+              <div class="carousel-item "  >
+                <img id="zoom_02" class="d-block w-100" src="{{ asset('images/defaults/no-image.jpg') }}"  alt="First slide" >
               </div>
-            @endforeach
+            @endif
+
           </div>
           <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
             <span class="carousel-control-prev-icon" aria-hidden="true"></span>

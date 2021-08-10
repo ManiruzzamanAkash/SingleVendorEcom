@@ -16,8 +16,22 @@
 
                 <div class="product-image">
                     <a href="{!! route('products.show', $product->slug) !!}" class="thumbnail">
-                        <img src="{{ asset('images/products/' . $product->images->first()->image) }}"
-                            alt="{{ $product->title }}" class="img-fluid blur-up lazyload product-image">
+                        <div class="flip-box">    
+                            <div class="flip-box-inner">
+                                <div class="flip-box-front">
+                                    <img style="width:160px;height:178px" src="{{ asset('images/products/' . $product->images->first()->image) }}" alt="{{ $product->title }}">
+                                </div>
+                                <div class="flip-box-back">
+                                    @if ($product->images->get(1))
+                                    <img style="width:160px;height:178px" src="{{ asset('images/products/' .$product->images->get(1)->image) }}" alt="{{ $product->title }}">
+                                    @else
+                                    <img style="width:160px;height:178px" src="{{ asset('images/logo-old.png') }}" alt="logo">
+                                    @endif
+                                </div>
+                            </div>  
+                        </div>
+                        {{-- <img src="{{ asset('images/products/' . $product->images->first()->image) }}"
+                            alt="{{ $product->title }}" class="img-fluid blur-up lazyload product-image"> --}}
                     </a>
                 </div>
 
