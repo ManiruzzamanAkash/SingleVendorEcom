@@ -51,15 +51,19 @@ class Setting extends Model
                     'header_menu' => [
                         'enable_all_category'    => true,
                         'enable_single_category' => false
+                    ],
+                    'color'       => [
+                        'cartbtn' => 'black',
+                        'footer'  => 'black',
                     ]
                 ],
-                'currency' => [
-                    'currency_code' => 'BDT',
-                    'currency_symbol' => '৳',
-                    'activeCurrency' => [
-                        'decimal'               => 2, // if 2 => 22.52, if 4 => 22.5245
-                        'decimal_separator'     => '.',
-                        'thousands_separator'     => ',',
+                'currency'                    => [
+                    'currency_code'           => 'BDT',
+                    'currency_symbol'         => '৳',
+                    'activeCurrency'          => [
+                        'decimal'             => 2, // if 2 => 22.52, if 4 => 22.5245
+                        'decimal_separator'   => '.',
+                        'thousands_separator' => ',',
                     ],
                 ],
             ]),

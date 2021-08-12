@@ -250,6 +250,22 @@
 									</div>
 								</div>
 							</div>
+							<div class="row">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="status">Button Color </label>
+										<input type="color" class="form-control" name="info[theme][color][cartbtn]" id="website_name"
+											aria-describedby="emailHelp" value="{{ $settings->website->theme->color->cartbtn }}" >
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="status">Footer Color </label>
+										<input type="color" class="form-control" name="info[theme][color][footer]" id="info_color"
+											aria-describedby="emailHelp" value="{{ $settings->website->theme->color->footer }}" >
+									</div>
+								</div>
+							</div>
 						</div>
 						<div class="tab-pane fade" id="invoice">
 							<div class="form-group">

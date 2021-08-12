@@ -724,7 +724,7 @@ li.nav-item {
 }
 
 #theme-light-nav-area .main-menu .navbar {
-    background: #fff!important;
+    /* background: #fff!important; */
     padding: 0px;
 }
 

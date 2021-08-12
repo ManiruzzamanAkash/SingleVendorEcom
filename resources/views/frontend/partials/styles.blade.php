@@ -58,4 +58,16 @@
 
 <!-- Fontawesome CSS -->
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<style>
+    .addToCart{
+        background-color: {{ $settings->website->theme->color->cartbtn }} !important;
+    }
+    #footer, .copyright {
+        background-color: {{ $settings->website->theme->color->footer }} !important;
+    }
+    .btn-primary {
+        background-color: {{ $settings->website->theme->color->cartbtn }} !important;
+        border-color    : {{ $settings->website->theme->color->cartbtn }} !important;
+    }
+</style>
 
