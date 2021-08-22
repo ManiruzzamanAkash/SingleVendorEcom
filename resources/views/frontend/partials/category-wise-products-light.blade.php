@@ -6,7 +6,7 @@
             <div class="container-fluid">
                 <h2 class="mb-3 mt-2 pull-left">{{ $catSingle->name }}</h2>
                 <h2 class="mb-3 mt-2 pull-right">
-                    <a href="{{ route('categories.show', $catSingle->slug) }}" class="btn btn-info btn-sm">
+                    <a href="{{ route('categories.show', $catSingle->slug) }}" class="btn btn-info btn-sm btn-theme">
                         View More <i class="fa fa-arrow-right"></i>
                     </a>
                 </h2>

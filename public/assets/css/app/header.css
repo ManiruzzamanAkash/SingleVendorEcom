@@ -1,5 +1,5 @@
 #app {
-    overflow: hidden;
+	overflow: hidden;
 }
 
 .ctgry a,
@@ -185,9 +185,9 @@ header,
 }
 
 .search-button-light-theme {
-    width: 200px;
-    margin-left: 2px;
-    margin-top: 60px!important;
+	width: 200px;
+	margin-left: 2px;
+	margin-top: 60px !important;
 }
 
 .icon {
@@ -454,9 +454,9 @@ header,
 }
 
 .footer-links a {
-	font-size: 13px;
-	display: inline-block;
-	color: #fff;
+    font-size: 12px;
+    display: inline-block;
+    color: #ccc;
 }
 
 #footer h4 {
@@ -679,88 +679,88 @@ li.nav-item {
 }
 
 #theme-light-nav-area .header-top {
-    height: 120px;
-    background: #ffffff8a;
+	height: 120px;
+	background: #ffffff8a;
 }
 
 #theme-light-nav-area .logo-area {
-    position: absolute;
-    top: 5px;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 190px;
-    z-index: 10;
+	position: absolute;
+	top: 5px;
+	left: 50%;
+	transform: translateX(-50%);
+	width: 190px;
+	z-index: 10;
 }
 
-#theme-light-nav-area .logo-area img{
-    width: 110px;
+#theme-light-nav-area .logo-area img {
+	width: 110px;
 	margin-left: 25%;
 }
 
 #theme-light-nav-area .logo-area h2 {
-    font-size: 1.2rem;
-    font-weight: bold;
-    color: #565653;
+	font-size: 1.2rem;
+	font-weight: bold;
+	color: #565653;
 	margin-left: 35px;
 }
 
 #theme-light-nav-area .header-right-icons .header-right-icon {
-    position: relative;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: transparent;
-    color: #464646;
-    cursor: pointer;
-    font-size: 1rem;
-    float: right;
-    margin-top: 60px;
-    padding-right: 20px;
-    font-weight: 200;
+	position: relative;
+	top: 50%;
+	transform: translateY(-50%);
+	background-color: transparent;
+	color: #464646;
+	cursor: pointer;
+	font-size: 1rem;
+	float: right;
+	margin-top: 60px;
+	padding-right: 20px;
+	font-weight: 200;
 }
 
 #theme-light-nav-area .header-right-icons .header-right-icon i {
-    color: #464646;
-    font-weight: 200;
+	color: #464646;
+	font-weight: 200;
 }
 
 #theme-light-nav-area .main-menu .navbar {
-    /* background: #fff!important; */
-    padding: 0px;
+	background: black !important;
+	padding: 0px;
 }
 
 #theme-light-nav-area .navbar-nav .nav-link {
-    cursor: pointer;
-    font-size: 0.9rem;
-    height: 100%;
-    transition: 0.5s;
-    color: #464646;
-    border-bottom: 2px solid transparent;
+	cursor: pointer;
+	font-size: 0.9rem;
+	height: 100%;
+	transition: 0.5s;
+	color: #fff;
+	border-bottom: 2px solid transparent;
+	padding: 20px;
 }
 
 #theme-light-nav-area .navbar-nav .nav-link:hover {
-    border-bottom: 2px solid #000;
-    color: #0d1112;
+	color: #c4a56c;
 }
 
 #theme-light-nav-area #search-input {
-    border: 0px solid gray;
-    background: transparent;
-    padding: 10px;
+	border: 0px solid gray;
+	background: transparent;
+	padding: 10px;
 }
 
 #theme-light-nav-area .sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    right: 0;
-    background-color: #fbfbfb;
-    overflow-x: hidden;
-    padding-top: 60px;
-    transition: 0.5s;
-    border-left: 1px solid #000;
-    z-index: 1000;
+	height: 100%;
+	width: 0;
+	position: fixed;
+	z-index: 1;
+	top: 0;
+	right: 0;
+	background-color: #fbfbfb;
+	overflow-x: hidden;
+	padding-top: 60px;
+	transition: 0.5s;
+	border-left: 1px solid #000;
+	z-index: 1000;
 	display: none;
 	padding-top: 10%;
 }
@@ -770,12 +770,12 @@ li.nav-item {
 }
 
 #theme-light-nav-area .sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 17px;
-    font-size: 36px;
-    margin-left: 50px;
-    color: #7f7f7f8c;
+	position: absolute;
+	top: 0;
+	right: 17px;
+	font-size: 36px;
+	margin-left: 50px;
+	color: #7f7f7f8c;
 }
 
 @media only screen and (min-width: 10px) and (max-width: 310px) {
@@ -786,21 +786,21 @@ li.nav-item {
 
 @media only screen and (min-width: 10px) and (max-width: 750px) {
 	#theme-light-nav-area #search-input-button {
-		right: 0px!important;
-		top: 35px!important;
+		right: 0px !important;
+		top: 35px !important;
 		position: absolute;
 	}
 	#theme-light-nav-area .header-right-sign-in {
-		right: 0px!important;
-		top: -35px!important;
-		position: absolute!important;
+		right: 0px !important;
+		top: -35px !important;
+		position: absolute !important;
 	}
 }
 
 @media only screen and (min-width: 10px) and (max-width: 992px) {
 	#theme-light-nav-area .main-menu .navbar-toggler {
 		position: absolute;
-		left: 0px!important;
+		left: 0px !important;
 		top: -90px;
 	}
 
@@ -811,3 +811,15 @@ li.nav-item {
 	}
 }
 /* Navigation Bar Light End*/
+
+.btn-theme {
+	background: black !important;
+	border: black !important;
+	padding: 7px;
+}
+
+.footer-section-title {
+    font-weight: 500;
+    font-size: 18px;
+    color: #fff!important;
+}

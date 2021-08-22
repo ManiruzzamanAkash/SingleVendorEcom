@@ -70,13 +70,14 @@ body{
 	border-radius: 5px;
 }
 .login-btn{
-	background: #f58509;
+	background: black;
 	padding: 7px;
 	border: none;
 	cursor: pointer;
 }
+
 .login-btn:hover{
-	background: #ff8600;
+	background: black;
 }
 .notice{
 	padding: 10px 0;

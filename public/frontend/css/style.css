@@ -1643,6 +1643,12 @@ p {
 #main-wrapper .mission-section .breadcrumb {
   background: transparent;
 }
+.breadcrumb.product-breadcrumb{
+  background: transparent;
+}
+.card.custom-card {
+  box-shadow: 1px 1px 10px #e6e6e6;
+}
 #main-wrapper .mission-section .breadcrumb .breadcrumb-item a {
   font-size: 1.2rem;
   color: #2B2B2B;
@@ -2496,7 +2502,7 @@ p {
 }
 #main-wrapper p, #main-wrapper h2, #main-wrapper h4, #main-wrapper h6 {
   font-family: "Poppins";
-  font-size: 16px;
+  font-size: 21px;
 }
 #main-wrapper img {
   width: 100%;
@@ -3866,9 +3872,7 @@ p {
   top: -6px;
   width: 1rem;
 }
-#main-wrapper .product-image img {
-  border: 1px solid #3E42C2;
-}
+
 #main-wrapper .cart-dropdown .btn-remove:hover, #main-wrapper .cart-dropdown .btn-remove:focus {
   box-shadow: 0 3px 7px rgba(0, 0, 0, 0.3);
   color: #fa4a4a;
@@ -4393,4 +4397,8 @@ p {
   #main-wrapper .footer-section .single-footer h2 {
     margin-bottom: 10px;
   }
+}
+
+.text-black {
+  color: black !important;
 }

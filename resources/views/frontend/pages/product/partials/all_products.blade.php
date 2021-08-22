@@ -37,7 +37,7 @@
                     </a>
                 </div>
 
-                <div class="prod-content" onclick="location.href='{!! route('products.show', $product->slug) !!}'">
+                <div class="prod-content pl-3 py-4" onclick="location.href='{!! route('products.show', $product->slug) !!}'">
                     <div class="prod-name">
                         <a href="{!! route('products.show', $product->slug) !!}">{{ $product->title }}</a>
                     </div>
@@ -48,9 +48,6 @@
                         <div class="prodOld-price">
                             {{ $product->offer_price ? '৳ ' . $product->price : '' }}
                         </div>
-                    </div>
-                    <div class="prod-slogan text-success">
-                        {{ $product->slogan }}
                     </div>
                 </div>
                 <div class="cart-info">

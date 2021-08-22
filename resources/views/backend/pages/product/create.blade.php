@@ -25,8 +25,8 @@
 						</div>
 						<div class="col-md-4">
 							<div class="form-group">
-								<label for="slogan">Slogan</label>
-								<input type="text" class="form-control" name="slogan" value="{{ old('slogan') }}" id="slogan" aria-describedby="emailHelp" placeholder="Enter product Slogan">
+								<label for="slogan">Code</label>
+								<input type="text" class="form-control" name="slogan" value="{{ old('slogan') }}" id="slogan" aria-describedby="emailHelp" placeholder="Enter product Code">
 							</div>
 						</div>
 						<div class="col-md-4">

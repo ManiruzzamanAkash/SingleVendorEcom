@@ -31,8 +31,8 @@ class Product extends Model
     return $this->hasMany(Cart::class);
   }
 
-  public function recommended()
+  public function recommended($limit = 8)
   {
-    return $this->category->products()->where('id', '!=', $this->id)->paginate(8);
+    return $this->category->products()->where('id', '!=', $this->id)->paginate($limit);
   }
 }

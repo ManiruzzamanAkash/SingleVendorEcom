@@ -28,29 +28,28 @@
 @endsection
 
 @section('content')
-    <nav aria-label="breadcrumb ">
-        <ol class="breadcrumb bg-white">
-            <li class="breadcrumb-item"><a href="#">Home</a></li>
-            <li class="breadcrumb-item"><a href="#">{{ $product->title }}</a></li>
-            {{-- <li class="breadcrumb-item active" aria-current="page">Data</li> --}}
-        </ol>
-    </nav>
-    <div id='main-wrapper' class="container-fluid">
+   
+    <div id='main-wrapper' class="container">
         <div class="row">
-            <div class="col-7">
+            <div class="container p-3 pl-0">
+                <a href="{{ route('index') }}" class="text-black">Home</a>
+                |
+                <a href="{{ route('categories.show', $product->category->slug) }}" class="text-black">{{ $product->category->name }}</a>
+                |
+                <a href="{{ route('products.show', $product->slug) }}" class="text-black">{{ $product->title }}</a>
+            </div>
+        </div>
+        <div class="row mt-4">
+            <div class="col-md-5 col-12">
 
                 <div class="small-img-t">
-
-                    
-
                 </div>
+
                 <div class="show-me card" href="1.jpg">
                     <img src="{{ asset('public/frontend') }}/assets/potty-car-left.png" id="show-img">
                 </div>
 
                 <div class="small-img-t">
-
-                   
                 </div>
 
                 <div class="small-img p-0 ml-0 mr-0">
@@ -75,10 +74,13 @@
                 </div>
 
             </div>
+            <div class="col-md-2"></div>
 
-
-            <div class="col-md-5 text-center">
+            <div class="col-md-5 col-12 text-center mt-5">
                 <h4>{{ $product->title }}</h4>
+                <p style=" font-size: 14px; font-weight: 100; color: gray; margin-bottom: 45px!important;">
+                    Code: {{ $product->slogan }}
+                </p>
                 <div>
                     <span>Brand :</span> {{ $product->brand->name }}
                 </div>
@@ -86,13 +88,8 @@
                 </h5>
                 <h5 class="text-danger"><strong><del>{{ $product->offer_price ? '৳ ' . $product->price : '' }}</del>
                     </strong> </h5>
-                <div class="border-bottom border-dark">
-                    <p>Color</p>
-                </div>
-                <div class="border-bottom border-dark">
-                    <p>Select Size</p>
-                </div>
-                <div class="product-buy-cart-box">
+
+                <div class="product-buy-cart-box mt-3">
                     <div class="product-buy-cart">
                         <div class="add-cart">
                             @if ($product->quantity < 1)
@@ -119,34 +116,26 @@
                 </div>
             </div>
             <div class="container pt-5 pb-5">
-                <div class="card">
+                <div class="card custom-card">
                     <div class="row p-4">
-                        <div class="col-6 p-5">
-                            <h4>Description</h4>
+                        <div class="col-12 p-5">
                             <p>{!! $product->description !!}</p>
                         </div>
-                        <div class="col-4 p-5">
-                            <h4>Details</h4>
-                            <ul>
-                                <li>Regular Fit</li>
-                                <li>Full Sleeves</li>
-                                <li>Contrast Sleeves Piping & Collar</li>
-                            </ul>
-                        </div>
-
                     </div>
                 </div>
             </div>
         </div>
 
         @php
-            
-            $products = $product->recommended();
+            $products = $product->recommended(4);
         @endphp
 
+       <div class="mb-5">
         @if ($products->count() > 0)
+            <h2 class="mb-3 pl-4 pr-4">Recommended Products</h2>
             @include('frontend.pages.product.partials.all_products')
         @endif
+       </div>
 
     </div>
     <!-- product-tab ends -->

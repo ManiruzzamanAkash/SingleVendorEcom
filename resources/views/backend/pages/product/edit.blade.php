@@ -25,8 +25,8 @@
               </div>
               <div class="col-md-4">
                 <div class="form-group">
-                  <label for="slogan">Slogan</label>
-                  <input type="text" class="form-control" name="slogan" value="{{ $product->slogan }}" id="slogan" aria-describedby="emailHelp" placeholder="Enter product Slogan">
+                  <label for="slogan">Code</label>
+                  <input type="text" class="form-control" name="slogan" value="{{ $product->slogan }}" id="slogan" aria-describedby="emailHelp" placeholder="Enter product Code">
                 </div>
               </div>
               <div class="col-md-4">
@@ -78,11 +78,11 @@
                   <select class="form-control" name="category_id">
                     <option value="">Please select a category for the product</option>
                     @foreach (App\Models\Category::orderBy('name', 'asc')->where('parent_id', NULL)->get() as $parent)
-                      <option value="{{ $parent->id }}"{{ $parent->id == $product->category->id ? 'selected': '' }}>{{ $parent->name }}</option>
+                      @php $parent_category_id = $product->category ? $product->category->id : null; @endphp
+                      <option value="{{ $parent->id }}"{{ $parent->id == $parent_category_id ? 'selected': '' }}>{{ $parent->name }}</option>
   
                       @foreach (App\Models\Category::orderBy('name', 'asc')->where('parent_id', $parent->id)->get() as $child)
-                      <option value="{{ $child->id }}" {{ $child->id == $product->category->id ? 'selected': '' }} > ------> {{ $child->name }}</option>
-  
+                        <option value="{{ $child->id }}" {{ $child->id == $parent_category_id ? 'selected': '' }} > ------> {{ $child->name }}</option>
                       @endforeach
                     @endforeach
                   </select>
@@ -100,9 +100,6 @@
                 </div>
               </div>
             </div>
-  
-  
-  
   
             <div class="form-group">
               <label for="product_image">Product Image <span class="text-muted">(400X533) is recommended</span></label>
