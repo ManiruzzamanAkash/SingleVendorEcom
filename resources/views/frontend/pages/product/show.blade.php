@@ -3,7 +3,7 @@
 @section('stylesheets')
     <link rel="stylesheet" type="text/css"
         href="{{ asset('public/assets/css/app/single-page.css') }}?v={{ config('constants.asset_version') }}">
-    <link href="{{ asset('public/frontend')}}/css/style.css" rel="stylesheet" />
+    <link href="{{ asset('public/frontend') }}/css/style.css" rel="stylesheet" />
 @endsection
 
 @section('title')
@@ -40,37 +40,38 @@
             <div class="col-7">
 
                 <div class="small-img-t">
-                    <!-- <img src="../design/assets/next-icon.png" class="icon-left" alt="" id="prev-img"> -->
-                    <i class="fas fa-angle-left icon-left" id="prev-img"></i>
+
+                    
 
                 </div>
                 <div class="show-me card" href="1.jpg">
-                    <img src="{{ asset('public/frontend')}}/assets/potty-car-left.png" id="show-img">
+                    <img src="{{ asset('public/frontend') }}/assets/potty-car-left.png" id="show-img">
                 </div>
 
                 <div class="small-img-t">
-                    <!-- <img src="../design/assets/next-icon.png" class="icon-right" alt=""  >  -->
-                    <i class="fas fa-angle-right icon-right" id="next-img"></i>
+
+                   
                 </div>
 
                 <div class="small-img p-0 ml-0 mr-0">
-                    <!-- <img src="../design/assets/next-icon.png" class="icon-left" alt="" id="prev-img"> -->
+
                     <div class="small-container">
                         <div id="small-img-roll">
-                        @if ($product->images->count() > 0)
-                            @foreach ($product->images as $key => $image)
-                            <img src="{{ asset('/images/products/' . $image->image) }}" class="show-small-img" alt="">
-                          @endforeach
-                        @else
-                            <div class="carousel-item ">
-                                <img id="zoom_02" class="d-block w-100" src="{{ asset('images/defaults/no-image.jpg') }}"
-                                    alt="First slide">
-                            </div>
-                        @endif
-                            
+                            @if ($product->images->count() > 0)
+                                @foreach ($product->images as $key => $image)
+                                    <img src="{{ asset('/images/products/' . $image->image) }}" class="show-small-img"
+                                        alt="">
+                                @endforeach
+                            @else
+                                <div class="carousel-item ">
+                                    <img id="zoom_02" class="d-block w-100"
+                                        src="{{ asset('images/defaults/no-image.jpg') }}" alt="First slide">
+                                </div>
+                            @endif
+
                         </div>
                     </div>
-                    <!-- <img src="../design/assets/next-icon.png" class="icon-right" alt="" id="next-img"> -->
+
                 </div>
 
             </div>
@@ -81,7 +82,8 @@
                 <div>
                     <span>Brand :</span> {{ $product->brand->name }}
                 </div>
-                <h5><strong>{{ $product->offer_price ? '৳ ' . $product->offer_price : '৳ ' . $product->price }}</strong></h5>
+                <h5><strong>{{ $product->offer_price ? '৳ ' . $product->offer_price : '৳ ' . $product->price }}</strong>
+                </h5>
                 <h5 class="text-danger"><strong><del>{{ $product->offer_price ? '৳ ' . $product->price : '' }}</del>
                     </strong> </h5>
                 <div class="border-bottom border-dark">
@@ -119,17 +121,17 @@
             <div class="container pt-5 pb-5">
                 <div class="card">
                     <div class="row p-4">
-                        <div class="col-6 p-5" >
-                          <h4>Description</h4>
-                          <p>The PLATINUM Collection comprises sophisticated designs that reflect a refinement of taste and culture.</p>
+                        <div class="col-6 p-5">
+                            <h4>Description</h4>
+                            <p>{!! $product->description !!}</p>
                         </div>
-                        <div class="col-4 p-5" >
-                          <h4>Details</h4>
-                          <ul>
-                            <li>Regular Fit</li>
-                            <li>Full Sleeves</li>
-                            <li>Contrast Sleeves Piping & Collar</li>
-                          </ul>
+                        <div class="col-4 p-5">
+                            <h4>Details</h4>
+                            <ul>
+                                <li>Regular Fit</li>
+                                <li>Full Sleeves</li>
+                                <li>Contrast Sleeves Piping & Collar</li>
+                            </ul>
                         </div>
 
                     </div>
@@ -153,62 +155,32 @@
 
 @section('scripts')
 
-    <script src="{{ asset('public/frontend')}}/js/jquery-3.4.1.min.js"></script>
-    <script src="{{ asset('public/frontend')}}/js/zoom-image.js"></script>
-    <script src="{{ asset('public/frontend')}}/js/copy-main.js"></script>
+    <script src="{{ asset('public/frontend') }}/js/jquery-3.4.1.min.js"></script>
+    <script src="{{ asset('public/frontend') }}/js/zoom-image.js"></script>
+    <script src="{{ asset('public/frontend') }}/js/copy-main.js"></script>
 
     <script>
-    $('.owl-carousel').owlCarousel({
-      loop: true,
-      margin: 10,
-      nav: true,
-      dots: false,
-      navText: [
-        '<span><img  class="prev__car" src="assets/car-rgt.png" style="height:17px; width:17px; position:absolute; top:-43px; right:45px;" /></span>',
-        '<span><img class="next__car" src="assets/car-lft.png" style="height:17px; width:17px; position:absolute; top:-43px; right:69px" /></span>',
-      ],
-      responsive: {
-        0: {
-          items: 1
-        },
-        600: {
-          items: 1
-        },
-        1000: {
-          items: 1
-        }
-      }
-    })
-  </script>
+        $('.owl-carousel').owlCarousel({
+            loop: true,
+            margin: 10,
+            nav: true,
+            dots: false,
+            navText: [
+                '<span><img  class="prev__car" src="assets/car-rgt.png" style="height:17px; width:17px; position:absolute; top:-43px; right:45px;" /></span>',
+                '<span><img class="next__car" src="assets/car-lft.png" style="height:17px; width:17px; position:absolute; top:-43px; right:69px" /></span>',
+            ],
+            responsive: {
+                0: {
+                    items: 1
+                },
+                600: {
+                    items: 1
+                },
+                1000: {
+                    items: 1
+                }
+            }
+        })
+    </script>
 
 @endsection
-
-
-          {{--  <div class="col-md-6">
-                <div id="carouselExampleControls" class="carousel slide" data-interval="false">
-                    <div class="carousel-inner">
-                        @if ($product->images->count() > 0)
-                            @foreach ($product->images as $key => $image)
-                                <div class="carousel-item {{ $key == 0 ? 'active' : '' }}">
-                                    <img class="d-block w-100" src="{{ asset('/images/products/' . $image->image) }}"
-                                        alt="First slide">
-                                </div>
-                            @endforeach
-                        @else
-                            <div class="carousel-item ">
-                                <img id="zoom_02" class="d-block w-100" src="{{ asset('images/defaults/no-image.jpg') }}"
-                                    alt="First slide">
-                            </div>
-                        @endif
-
-                    </div>
-                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
-                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Previous</span>
-                    </a>
-                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
-                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                        <span class="sr-only">Next</span>
-                    </a>
-                </div>
-            </div> --}}
