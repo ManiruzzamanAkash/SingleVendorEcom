@@ -10,8 +10,10 @@
     <meta name="description" content="Multimart | Best Ecommerce Mega Store Html Template">
     <meta name="keywords" content="Multimart | Best Ecommerce Mega Store Html Template">
     <meta name="author" content="Multimart | Best Ecommerce Mega Store Html Template">
-    <link rel="icon" href="public/assets/images/favicon/favicon.png" type="image/x-icon" />
-    <link rel="shortcut icon" href="public/assets/images/favicon/favicon.png" type="image/x-icon" />
+
+    <link rel="icon" href="{{ asset('images/' . $settings->website_favicon) }}" type="image/x-icon" />
+    <link rel="shortcut icon" href="{{ asset('images/' . $settings->website_favicon) }}" type="image/x-icon" />
+
     <title>
         @yield('title', config('app.name'))
     </title>
