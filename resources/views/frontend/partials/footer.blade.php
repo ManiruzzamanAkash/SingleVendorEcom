@@ -40,11 +40,11 @@
         <a href="{{ route('index') }}">
             <img src="{{ asset('images/' . $settings->website_logo) }}" style="height: 60px;">
         </a> 
-        <p class="text-white text-uppercase">
+        {{-- <p class="text-white text-uppercase">
             {{ config('app.name') }}
-        </p>   
+        </p>    --}}
     </div>
-    <div class="text-center text-white">
+    <div class="text-center text-white copy-right-text pt-2">
         {{ $settings->website_footer_text }}
     </div>
 </div>

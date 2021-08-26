@@ -1,12 +1,12 @@
 <div  class="sticky" id="theme-light-nav-area">
-    <div class="header-top">
+    <div class="header-top ">
         <div class="">
             <div class="">
-                <div class="logo-area">
+                <div class="logo-area pt-2">
                     <a href="{{ route('index') }}">
                         <img src="{{ asset('images/' . $settings->website_logo) }}" class="logo-main">
-                        <br>
-                        <h2>{{ strtoupper(config('app.name')) }}</h2>
+                       
+                        {{-- <h2>{{ strtoupper(config('app.name')) }}</h2> --}}
                     </a>
                 </div>
             </div>

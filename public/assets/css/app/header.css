@@ -472,12 +472,14 @@ header,
 
 .copyright {
 	background-color: #151533;
-	border-top: 1px solid #454d5e;
+	
 	padding: 8px 0;
 	margin: 0;
 	bottom: 0;
 }
-
+.copy-right-text {
+    font-size: 12px;
+}
 .footer-links {
 	margin-bottom: 10px;
 }
@@ -679,7 +681,7 @@ li.nav-item {
 }
 
 #theme-light-nav-area .header-top {
-    height: 150px;
+    height: 84px;
     background: #ffffff8a;
 }
 
@@ -693,15 +695,19 @@ li.nav-item {
 }
 
 #theme-light-nav-area .logo-area img {
-	width: 110px;
-	margin-left: 25%;
+	width: 76px;
+	/* width: 110px; */
+	/* margin-left: 25%; */
+	margin: auto;
+    display: block;
 }
 
 #theme-light-nav-area .logo-area h2 {
 	font-size: 1.2rem;
 	font-weight: bold;
 	color: #565653;
-	margin-left: 35px;
+	/* margin-left: 35px; */
+	text-align: center;
 }
 
 #theme-light-nav-area .header-right-icons .header-right-icon {
@@ -713,9 +719,10 @@ li.nav-item {
 	cursor: pointer;
 	font-size: 1rem;
 	float: right;
-	margin-top: 60px;
+	margin-top: 41px;
 	padding-right: 20px;
 	font-weight: 200;
+	line-height: 41px;
 }
 
 #theme-light-nav-area .header-right-icons .header-right-icon i {
