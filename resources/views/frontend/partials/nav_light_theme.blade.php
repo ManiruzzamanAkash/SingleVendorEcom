@@ -11,17 +11,17 @@
                 </div>
             </div>
             <div class="header-right-icons">
+                <a href="#" class="header-right-icon pointer" id="search-input-button">
+                    <i class="fa fa-search"></i> <span class="sign-in-text">Search</span>
+                </a>
+                @if (!Auth::check())
+                    <a href="{{ route('login') }}" class="header-right-icon header-right-sign-in"><i class="fa fa-user"></i> <span class="sign-in-text">SIGN IN</span></a>
+                @else
+                    <a href="{{ route('user.dashboard') }}" class="header-right-icon header-right-sign-in"><i class="fa fa-user"></i> <span class="sign-in-text">Account</span> </a>
+                @endif
                 <a href="{{ route('carts') }}" class="header-right-icon">
                     <i class="fa fa-shopping-cart"></i>
                     <cart-total-item url="{{ url('/') }}"></cart-total-item>
-                </a>
-                @if (!Auth::check())
-                    <a href="{{ route('login') }}" class="header-right-icon header-right-sign-in"><i class="fa fa-user"></i> SIGN IN</a>
-                @else
-                    <a href="{{ route('user.dashboard') }}" class="header-right-icon header-right-sign-in"><i class="fa fa-user"></i> My Account</a>
-                @endif
-                <a href="#" class="header-right-icon pointer" id="search-input-button">
-                    <i class="fa fa-search"></i> Search
                 </a>
             </div>
             <div class="clearfix"></div>
@@ -34,7 +34,10 @@
                 <a class="navbar-brand" href="#"></a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02"
                     aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
+                    <span class="navbar-toggler-icon fg">
+                        {{-- <i class="icon-menu-wide"></i> --}}
+                        <i class="fas fa-bars"></i>
+                    </span>
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarTogglerDemo02">

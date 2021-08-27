@@ -4402,3 +4402,49 @@ p {
 .text-black {
   color: black !important;
 }
+/* product detilas */
+.description-grid h5 {
+  margin: 0 0 1rem 0;
+  text-align: left;
+  
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+.description-grid p{
+  color: rgb(10, 10, 10);
+    font-family: Arial, sans-serif;
+    font-size: 16px!important;
+}
+.product-menu a{
+  font-size: 14px!important;
+}
+.product-menu a:last-child{
+ font-weight: 600;
+}
+.single-product-title{
+
+  font-size: 1rem!important;
+  font-weight: 500!important;
+  text-align: center;
+}
+/* menu */
+.navbar-light .navbar-toggler-icon {
+  background-image: none!important;
+}
+.navbar-light .navbar-toggler {
+
+  border:none!important;
+  background: transparent!important;
+}
+.navbar-toggler {
+  border: 0px!important;
+}
+button:focus {
+  outline: 0px!important;
+  border: 0px!important;
+}
+@media (max-width:767px){
+  span.sign-in-text{
+    display: none;
+  }
+}
