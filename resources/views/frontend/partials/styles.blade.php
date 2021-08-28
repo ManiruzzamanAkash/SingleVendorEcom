@@ -53,6 +53,10 @@
 
 <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/app/header.css') }}?v={{ config('constants.asset_version') }}">
 
+<!-- Owl Carousel CSS -->
+<link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/owl.carousel.min.css') }}">
+<link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/owl.theme.default.min.css') }}">
+
 <!-- Responsive CSS -->
 <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/responsive.css') }}?v={{ config('constants.asset_version') }}">
 
