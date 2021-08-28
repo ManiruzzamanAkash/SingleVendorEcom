@@ -13,7 +13,7 @@
                                 src="{{ asset('images/products/' . $product->images->first()->image) }}" />
                         </div>
                         <p class="mb-0 mt-3">{{ $product->title }}</p>
-                        <p class="product-code mb-0">{{ $product->slogan }}</p>
+                        <p class="product-code ">{{ $product->slogan }}</p>
                         <h6>BDT {{ $product->offer_price ? $product->offer_price : $product->price }}</h6>
                     </div>
                 </a>

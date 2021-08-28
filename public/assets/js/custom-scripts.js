@@ -1069,7 +1069,7 @@ $(".recommended-product-carousel").owlCarousel({
     margin: 60,
     nav: true,
     dots: true,
-    autoplay: true,
+    autoplay: false,
     navText: [
         '<span class="nav-icon">&#10094</span>',
         '<span class="nav-icon">&#10095</span>',

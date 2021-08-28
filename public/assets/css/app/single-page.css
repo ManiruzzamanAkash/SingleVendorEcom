@@ -552,16 +552,15 @@ img {
 /** Recommended Product Carousel Design **/
 #main-wrapper .recommended-product-carousel button.owl-prev {
     position: absolute;
-    top: 82px;
+    top:34%;
     left: -35px;
 }
 
 #main-wrapper .recommended-product-carousel button.owl-next {
     position: absolute;
     right: -35px;
-    top: 82px;
+    top:34%
 }
-
 #main-wrapper .recommended-product-carousel .single-product-slider {
     padding: 10px;
 }
@@ -612,8 +611,30 @@ img {
 #main-wrapper .recommended-product-carousel .single-product-slider p,
 #main-wrapper .recommended-product-carousel h6 {
     color: black;
+    font-size: 1rem;
 }
 
 #main-wrapper .recommended-product-carousel p.product-code {
     color: #A0A0A0;
+    margin-bottom: 10px!important;
+}
+.similar-products-title {
+    margin-bottom: 25px;
+}
+.recommended-product-carousel .owl-item {
+    background: transparent;
+}
+.imgbox.card__img {
+    height: 390px;
+   
+}
+.imgbox.card__img img{
+    height: 100%;
+}
+.recommended-product-carousel.owl-theme .owl-dots .owl-dot span {
+    width: 53px!important;
+    height: 2px!important;
+}
+.recommended-product-carousel button.owl-dot.active span{
+    /* background-color: #fff!important; */
 }
