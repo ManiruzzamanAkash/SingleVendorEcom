@@ -34,6 +34,9 @@ class Setting extends Model
                 'order' => [
                     'shipping_cost' => 50,
                 ],
+                'product' => [
+                    'product_detail' => 'this is product details',
+                ],
                 'social' => [
                     'facebook'  => 'https://facebook.com/website',
                     'twitter'   => 'https://twitter.com/website',
@@ -74,11 +77,13 @@ class Setting extends Model
 
     protected $appends = ['website'];
 
-    public function getWebsiteAttribute() {
+    public function getWebsiteAttribute()
+    {
         return json_decode($this->info);
     }
 
-    public static function getSettings() {
+    public static function getSettings()
+    {
         return Setting::first();
     }
 }

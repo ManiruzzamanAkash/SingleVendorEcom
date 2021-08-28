@@ -30,6 +30,9 @@
 						<li class="nav-item">
 							<a href="#invoice" class="nav-link" data-toggle="tab">Invoice</a>
 						</li>
+						<li class="nav-item">
+							<a href="#product" class="nav-link" data-toggle="tab">Product</a>
+						</li>
 					</ul>
 					<div class="tab-content">
 						<div class="tab-pane fade show active" id="general">
@@ -271,6 +274,13 @@
 							<div class="form-group">
 								<label for="website_footer_text">Invoice background color</label>
 								<input type="color" class="form-control" name="" id="website_footer_text"
+									aria-describedby="emailHelp">
+							</div>
+						</div>
+						<div class="tab-pane fade" id="product">
+							<div class="form-group">
+								<label for="website_footer_text">Product Details </label>
+								<input type="text" class="form-control" name="info[product][product_detail]" value="{{ $settings->product_detail }}" id="website_footer_text"
 									aria-describedby="emailHelp">
 							</div>
 						</div>
