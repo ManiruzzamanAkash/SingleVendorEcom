@@ -2,11 +2,6 @@
 
 @section('stylesheets')
 <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/app/home.css') }}">
-<style>
-    .product {
-        padding: 40px;
-    }    
-</style>
 @endsection
 
 @section('content')

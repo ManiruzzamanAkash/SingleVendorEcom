@@ -37,8 +37,6 @@
 /*=================================================================================*/
 
 .product-image {
-    max-width: 160px;
-    max-height: 170px;
     margin: 0 auto;
 }
 
@@ -54,12 +52,12 @@
 }
 
 .thumbnail img {
-    /*max-height: 220px;*/
+    height: 250px;
     margin: 0 auto;
+    width: 100%;
 }
 
 .product {
-    padding: 20px;
     border-radius: 3px;
     overflow: hidden;
     position: relative;
@@ -83,6 +81,11 @@
 
 .prod-content {
     cursor: pointer;
+    height: 130px;
+    padding: 2rem;
+    padding-top: 3rem;
+    margin-top: 2rem;
+    padding-bottom: 1rem;
 }
 
 .prod-name {
@@ -172,9 +175,9 @@
 
 .addToCart {
     width: 100%;
-    padding: 4px;
+    padding: 10px;
     border: none;
-    border-radius: 3px;
+    border-radius: 0px;
     background: #f58509;
     color: #fff;
     cursor: pointer;

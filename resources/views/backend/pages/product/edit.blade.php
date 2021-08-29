@@ -100,10 +100,10 @@
                 </div>
               </div>
             </div>
-  
+
             <div class="form-group">
-              <label for="product_image">Product Image <span class="text-muted">(400X533) is recommended</span></label>
-  
+              <label for="product_image">Product Image <span class="text-muted">(400X250) is recommended</span></label>
+
               <div class="row">
                 <div class="col-md-4">
                   <input type="file" class="form-control" name="product_image[]" id="product_image">

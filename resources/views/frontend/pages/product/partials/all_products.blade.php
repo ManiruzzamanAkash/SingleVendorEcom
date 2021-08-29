@@ -4,7 +4,7 @@
         @if (Route::is('wishlists'))
             @php $product = $product->product; @endphp
         @endif
-        <div class="col-sm-6 col-md-3 col-lg-3">
+        <div class="col-sm-6 col-md-4 col-lg-4">
             <div class="product">
 
                 @if (Auth::check())
@@ -16,28 +16,30 @@
 
                 <div class="product-image">
                     <a href="{!! route('products.show', $product->slug) !!}" class="thumbnail">
-                        <div class="flip-box">    
+                        <div class="flip-box">
                             <div class="flip-box-inner">
                                 <div class="flip-box-front">
                                     @if ($product->images->first())
-                                    <img style="width:160px;height:178px" src="{{ asset('images/products/' . $product->images->first()->image) }}" alt="{{ $product->title }}">
+                                        <img src="{{ asset('images/products/' . $product->images->first()->image) }}"
+                                            alt="{{ $product->title }}">
                                     @endif
                                 </div>
                                 <div class="flip-box-back">
                                     @if ($product->images->get(1))
-                                    <img style="width:160px;height:178px" src="{{ asset('images/products/' .$product->images->get(1)->image) }}" alt="{{ $product->title }}">
+                                        <img src="{{ asset('images/products/' . $product->images->get(1)->image) }}"
+                                            alt="{{ $product->title }}">
                                     @else
-                                    <img style="width:160px;height:178px" src="{{ asset('images/logo-old.png') }}" alt="logo">
+                                        <img src="{{ asset('images/logo-old.png') }}" alt="logo">
                                     @endif
                                 </div>
-                            </div>  
+                            </div>
                         </div>
                         {{-- <img src="{{ asset('images/products/' . $product->images->first()->image) }}"
                             alt="{{ $product->title }}" class="img-fluid blur-up lazyload product-image"> --}}
                     </a>
                 </div>
 
-                <div class="prod-content pl-3 py-4" onclick="location.href='{!! route('products.show', $product->slug) !!}'">
+                <div class="prod-content" onclick="location.href='{!! route('products.show', $product->slug) !!}'">
                     <div class="prod-name">
                         <a href="{!! route('products.show', $product->slug) !!}">{{ $product->title }}</a>
                     </div>
