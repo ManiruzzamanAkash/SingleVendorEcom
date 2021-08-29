@@ -125,6 +125,8 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::post('/product/edit/{id}', 'Backend\ProductsController@update')->name('admin.product.update');
     Route::post('/product/delete/{id}', 'Backend\ProductsController@delete')->name('admin.product.delete');
+    Route::get('/product-images/get/{id}', 'Backend\ProductsController@getProductImages')->name('admin.product.image.get');
+    Route::post('/product-image/delete/{id}', 'Backend\ProductsController@deleteImage')->name('admin.product.image.delete');
   });
 
 

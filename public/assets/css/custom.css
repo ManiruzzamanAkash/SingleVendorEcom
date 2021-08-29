@@ -13,6 +13,7 @@
 	left: 50%;
 	position: absolute;
 }
+
 /** Bootstrap Overrides */
 
 
@@ -21,47 +22,48 @@
 	height: 450px;
 	margin-bottom: 15px;
 	background-size: cover;
-    background-repeat: no-repeat;
+	background-repeat: no-repeat;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	
+
 }
 
 .offer-body {
 	color: white;
-	text-align: center;	
+	text-align: center;
 }
 
-.footer-logo{
+.footer-logo {
 	text-align: center;
 }
 
 .social-body a {
-	font-size:20px;
-	width:36px;
-	height:36px;
-	line-height:36px;
-	display:inline-block;
-	text-align:center;
-	border-radius:50%;
-	box-shadow:0 0 0 1px rgba(255,255,255,0.4);
-	margin:0 8px;
-	color:#fff;
-	opacity:0.75;
-  }
+	font-size: 20px;
+	width: 36px;
+	height: 36px;
+	line-height: 36px;
+	display: inline-block;
+	text-align: center;
+	border-radius: 50%;
+	box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.4);
+	margin: 0 8px;
+	color: #fff;
+	opacity: 0.75;
+}
 
 .social-body a:hover {
-	opacity:0.9;
+	opacity: 0.9;
 }
 
 /* sticky custom nav  start*/
-.nav-sticky {         
+.nav-sticky {
 	position: fixed;
 	top: 0;
 	width: 100%;
 	z-index: 100;
 }
+
 /* .sticky + .content {
 	padding-top: 60px;
 } */
@@ -74,41 +76,154 @@
 	width: 100%;
 	height: 100%;
 	/* border: 1px solid #f1f1f1; */
-	perspective: 1000px; 
-  }
-	  .flip-box-inner {
+	perspective: 1000px;
+}
+
+.flip-box-inner {
 	position: relative;
 	width: 100%;
 	height: 100%;
 	text-align: center;
 	transition: transform 0.8s;
 	transform-style: preserve-3d;
-  }
-  
+}
 
-  .flip-box:hover .flip-box-inner {
+
+.flip-box:hover .flip-box-inner {
 	transform: rotateY(180deg);
-  }
-  
+}
 
-  .flip-box-front, .flip-box-back {
+
+.flip-box-front,
+.flip-box-back {
 	position: absolute;
 	width: 100%;
 	height: 100%;
-	-webkit-backface-visibility: hidden; /* Safari */
+	-webkit-backface-visibility: hidden;
+	/* Safari */
 	backface-visibility: hidden;
-  }
-  
-  
-  .flip-box-front {
+}
+
+
+.flip-box-front {
 	/* background-color: #bbb; */
 	color: black;
-  }
-  
-  .flip-box-back {
+}
+
+.flip-box-back {
 	/* background-color: dodgerblue; */
 	color: white;
 	transform: rotateY(180deg);
-  }
+}
 
-  /* Product Hover end */
+/* Product Hover end */
+
+
+.single-product-slider img {
+	width: 100%;
+	border: none !important;
+	height: auto !important;
+	max-height: 275px;
+}
+
+.owl-theme .owl-nav {
+	margin-top: -10%;
+}
+
+
+/** Recommended Product Carousel Design **/
+.recommended-product-carousel button.owl-prev {
+	position: absolute;
+	top: 34%;
+	left: -35px;
+}
+
+.recommended-product-carousel button.owl-next {
+	position: absolute;
+	right: -35px;
+	top: 34%
+}
+
+.recommended-product-carousel .single-product-slider {
+	padding: 10px;
+	padding-bottom: 8rem;
+}
+
+.recommended-product-carousel .owl-theme .owl-dots .owl-dot span {
+	width: 66px;
+	height: 1px;
+}
+
+.recommended-product-carousel span {
+	color: white;
+	background: black;
+	padding: 1px;
+}
+
+.recommended-product-carousel span.nav-icon {
+	color: white;
+	background: black;
+	padding: 10px;
+}
+
+.recommended-product-carousel button:focus {
+	outline: 0px;
+}
+
+.similar-products-title h6 {
+	position: relative;
+	font-size: 1.2rem !important;
+	padding-bottom: 10px;
+	font-weight: 400 !important;
+}
+
+.similar-products-title h6:after {
+	position: absolute;
+	content: "";
+	height: 1px;
+	width: 205px;
+	background-color: #ddd;
+	left: 42%;
+	top: 30px;
+}
+
+.recommended-product-carousel a,
+.recommended-product-carousel a:hover {
+	text-decoration: none;
+}
+
+.recommended-product-carousel .single-product-slider p,
+.recommended-product-carousel h6 {
+	color: black;
+	font-size: 1rem;
+}
+
+.recommended-product-carousel p.product-code {
+	color: #A0A0A0;
+	margin-bottom: 10px !important;
+}
+
+.similar-products-title {
+	margin-bottom: 25px;
+}
+
+.recommended-product-carousel .owl-item {
+	background: transparent;
+}
+
+.recommended-product-carousel.owl-theme .owl-dots .owl-dot span {
+	width: 53px !important;
+	height: 2px !important;
+}
+
+.recommended-product-carousel button.owl-dot.active span {
+	/* background-color: #fff!important; */
+}
+
+.owl-theme .owl-nav {
+	margin-top: -8% !important;
+}
+
+.single-product-slider img {
+	border: none !important;
+}

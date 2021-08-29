@@ -1,9 +1,5 @@
 <div class="container-fluid">
     <div class="col-12 mt-lg-3">
-        <div class="similar-products-title">
-            <h6 class="text-center product-like-text">YOU MAY ALSO LIKE</h6>
-        </div>
-
         <div class="owl-carousel recommended-product-carousel owl-theme custom__owl">
             @foreach ($products as $product)
                 <a href="{!! route('products.show', $product->slug) !!}">

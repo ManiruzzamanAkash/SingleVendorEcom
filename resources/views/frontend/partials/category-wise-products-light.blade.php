@@ -11,8 +11,12 @@
                     </a>
                 </h2>
                 <div class="clearfix"></div>
-                @php $data = ['disable_pagination' => true]; @endphp
-                @include('frontend.pages.product.partials.all_products', $data)
+                {{-- @php $data = ['disable_pagination' => true]; @endphp
+                @include('frontend.pages.product.partials.all_products', $data) --}}
+                @php
+                    $products = $catSingle->products;
+                @endphp
+                @include('frontend.pages.product.partials.recommended-products')
                 <div class="mt-5"></div>
             </div>
         @endif

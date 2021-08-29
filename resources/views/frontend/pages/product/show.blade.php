@@ -1,8 +1,7 @@
 @extends('frontend.layouts.master')
 
 @section('stylesheets')
-    <link rel="stylesheet" type="text/css"
-        href="{{ asset('public/assets/css/app/single-page.css') }}?v={{ config('constants.asset_version') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/app/single-page.css') }}?v={{ config('constants.asset_version') }}">
     <link href="{{ asset('public/frontend') }}/css/style.css" rel="stylesheet" />
 @endsection
 
@@ -166,6 +165,9 @@
 
         <div class="mb-5">
             @if ($products->count() > 0)
+                <div class="similar-products-title">
+                    <h6 class="text-center product-like-text">YOU MAY ALSO LIKE</h6>
+                </div>
                 @include('frontend.pages.product.partials.recommended-products')
             @endif
         </div>
