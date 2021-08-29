@@ -4,7 +4,7 @@
 -- https://tableplus.com/
 --
 -- Database: laravel_ecommerce
--- Generation Time: 2021-08-29 21:33:17.5400
+-- Generation Time: 2021-08-29 22:42:02.6180
 -- -------------------------------------------------------------
 
 
@@ -61,7 +61,7 @@ CREATE TABLE `carts` (
   CONSTRAINT `carts_order_id_foreign` FOREIGN KEY (`order_id`) REFERENCES `orders` (`id`) ON DELETE CASCADE,
   CONSTRAINT `carts_product_id_foreign` FOREIGN KEY (`product_id`) REFERENCES `products` (`id`) ON DELETE CASCADE,
   CONSTRAINT `carts_user_id_foreign` FOREIGN KEY (`user_id`) REFERENCES `users` (`id`) ON DELETE CASCADE
-) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 CREATE TABLE `categories` (
   `id` int unsigned NOT NULL AUTO_INCREMENT,
@@ -317,10 +317,11 @@ INSERT INTO `carts` (`id`, `product_id`, `user_id`, `order_id`, `ip_address`, `p
 (13, 20, 32, 3, NULL, 1, '2021-08-03 07:48:39', '2021-08-03 07:49:11'),
 (18, 7, 30, 4, NULL, 1, '2021-08-08 16:43:49', '2021-08-08 16:44:15'),
 (19, 8, 30, 4, NULL, 1, '2021-08-08 16:43:51', '2021-08-08 16:44:15'),
-(20, 8, NULL, NULL, NULL, 2, '2021-08-22 06:21:43', '2021-08-22 06:21:45'),
+(20, 8, NULL, NULL, NULL, 24, '2021-08-22 06:21:43', '2021-08-29 10:34:59'),
 (21, 7, NULL, NULL, NULL, 3, '2021-08-22 11:56:46', '2021-08-27 11:26:18'),
 (22, 6, NULL, NULL, NULL, 4, '2021-08-22 11:57:03', '2021-08-27 11:26:20'),
-(23, 23, NULL, NULL, NULL, 1, '2021-08-29 06:17:50', '2021-08-29 06:17:50');
+(23, 23, NULL, NULL, NULL, 1, '2021-08-29 06:17:50', '2021-08-29 06:17:50'),
+(24, 6, 32, NULL, NULL, 1, '2021-08-29 10:41:01', '2021-08-29 10:41:01');
 
 INSERT INTO `categories` (`id`, `name`, `show_navbar`, `show_homepage`, `navbar_priority`, `homepage_priority`, `status`, `sub_header`, `slider_name`, `slider_slogan`, `slug`, `description`, `image`, `parent_id`, `bg_color`, `created_at`, `updated_at`) VALUES
 (5, 'Women\'s Bottoms', 0, 1, 1, 4, 1, 'Jewelries', 'Jewelry & Ornaments', 'Jewelry & Ornaments', 'jewelry-&-ornaments', NULL, '1628350102.jpg', NULL, '#000000', '2019-09-01 22:14:32', '2021-08-27 11:30:14'),
