@@ -30,12 +30,15 @@
         methods: {
             addToCart(){
               var app = this;
+              var lastProductSize = localStorage.getItem('lastProductSize') || '';
+
               axios.post(app.url+'/api/carts/store', {
-                product_id: app.id
+                product_id: app.id,
+                size: lastProductSize
               })
               .then((response) => {
 
-                $.notifyClose();
+                // $.notifyClose();
 
                 $.notify({
                     icon: 'fa fa-shopping-cart',
