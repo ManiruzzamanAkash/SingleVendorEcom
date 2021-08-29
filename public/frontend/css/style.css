@@ -2947,6 +2947,7 @@ p {
 
 #main-wrapper img {
   width: 100%;
+  border: none!important;
 }
 
 #main-wrapper p {
