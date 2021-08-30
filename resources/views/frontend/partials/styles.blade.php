@@ -49,7 +49,7 @@
 <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/app/search.css') }}?v={{ config('constants.asset_version') }}">
 
 <!-- Custom CSS -->
-<link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/custom.css') }}?v={{ config('constants.asset_version') }}" id="color">
+<link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/custom.css') }}?v={{ config('constants.asset_version') }}">
 
 <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/app/header.css') }}?v={{ config('constants.asset_version') }}">
 
@@ -72,6 +72,26 @@
     .btn-primary {
         background-color: {{ $settings->website->theme->color->cartbtn }} !important;
         border-color    : {{ $settings->website->theme->color->cartbtn }} !important;
+    }
+</style>
+
+<style>
+    media only screen and (min-width:0px) and (max-width:767px){
+    	span.sign-in-text {
+    		display: none;
+    	}
+    	.logo-area img {
+    		width: 57px!important;
+    	}
+    }
+
+    @media only screen  and (min-width:0px) and (max-width: 767px){
+    	span.sign-in-text {
+    		display: none!important;
+    	}
+    	.logo-area img {
+    		width: 57px!important;
+    	}
     }
 </style>
 
