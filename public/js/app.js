@@ -1871,12 +1871,13 @@ __webpack_require__.r(__webpack_exports__);
   methods: {
     addToCart: function addToCart() {
       var app = this;
-      var lastProductSize = localStorage.getItem('lastProductSize') || '';
+      var lastProductSize = localStorage.getItem('lastProductSize');
       axios.post(app.url + '/api/carts/store', {
         product_id: app.id,
         size: lastProductSize
       }).then(function (response) {
-        // $.notifyClose();
+        $.notifyClose();
+        console.log(response);
         $.notify({
           icon: 'fa fa-shopping-cart',
           title: '',
@@ -1929,6 +1930,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "default": () => (__WEBPACK_DEFAULT_EXPORT__)
 /* harmony export */ });
 /* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ../app */ "./resources/assets/js/app.js");
+//
+//
+//
 //
 //
 //
@@ -8302,7 +8306,7 @@ __webpack_require__.r(__webpack_exports__);
 
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_0___default()(function(i){return i[1]});
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "\n.required-icon[data-v-f88ac34c]{\n    font-size: 16px;\n    color: #f30a0a;\n}\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "\n.required-icon[data-v-f88ac34c]{\r\n    font-size: 16px;\r\n    color: #f30a0a;\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -41546,6 +41550,16 @@ var render = function() {
                             }),
                             _vm._v(" "),
                             _c("span", [_vm._v("Change your product Quantity")])
+                          ]),
+                          _vm._v(" "),
+                          _c("div", [
+                            _vm._v(
+                              "\n\t\t\t\t\t\t\t\t\tSize :  " +
+                                _vm._s(
+                                  cart.product_size ? cart.product_size : "M"
+                                ) +
+                                "\n\t\t\t\t\t\t\t\t"
+                            )
                           ])
                         ])
                       ]
