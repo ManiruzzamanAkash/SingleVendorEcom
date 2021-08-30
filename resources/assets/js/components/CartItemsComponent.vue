@@ -62,6 +62,9 @@
 									/>
 									<span>Change your product Quantity</span>
 								</div>
+								<div>
+									Size :  {{ cart.product_size ? cart.product_size : 'M' }}
+								</div>
 							</div>
 						</div>
 

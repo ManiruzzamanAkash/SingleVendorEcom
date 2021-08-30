@@ -22,7 +22,7 @@ class OrdersController extends Controller
     
     if (request()->ajax()) {
       
-      $orders = Order::orderBy('id', 'desc')->get();
+      $orders = Order::with('carts')->orderBy('id', 'desc')->get();
       
       $datatable = DataTables::of($orders)
           ->addIndexColumn()

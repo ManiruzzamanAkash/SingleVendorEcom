@@ -19,6 +19,7 @@ class CreateCartsTable extends Migration
           $table->unsignedInteger('product_id');
           $table->unsignedInteger('user_id')->nullable();
           $table->unsignedInteger('order_id')->nullable();
+          $table->string('product_size')->nullable();
           $table->string('ip_address')->nullable();
           $table->integer('product_quantity')->default(1);
 

@@ -30,7 +30,8 @@
         methods: {
             addToCart(){
               var app = this;
-              var lastProductSize = localStorage.getItem('lastProductSize') || '';
+              var lastProductSize = localStorage.getItem('lastProductSize');
+              
 
               axios.post(app.url+'/api/carts/store', {
                 product_id: app.id,
@@ -38,7 +39,9 @@
               })
               .then((response) => {
 
-                // $.notifyClose();
+                $.notifyClose();
+                console.log(response);
+
 
                 $.notify({
                     icon: 'fa fa-shopping-cart',

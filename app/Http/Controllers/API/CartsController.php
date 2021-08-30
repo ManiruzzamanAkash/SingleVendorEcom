@@ -60,6 +60,7 @@ class CartsController extends Controller
       }
       $cart->ip_address = Cart::getIp();
       $cart->product_id = $request->product_id;
+      $cart->product_size = $request->size;
       $cart->save();
     }
 

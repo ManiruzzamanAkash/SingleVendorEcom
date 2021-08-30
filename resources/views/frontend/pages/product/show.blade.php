@@ -112,12 +112,13 @@
                 <div class="product-selection mt-3 mb-5 pb-3">
                     <h6 class="text-left">Select Size</h6>
                     <div class="d-flex size-variation">
-                        <p>XS </p>
-                        <p>S </p>
-                        <p>M </p>
-                        <p>XL </p>
-                        <p>2XL </p>
-                        <p>3XL </p>
+                        <p><input name="size" onclick="myFunction('XS')" type="radio" > XS</p>
+                        <p><input name="size" onclick="myFunction('S')" type="radio" > S</p>
+                        <p><input name="size" onclick="myFunction('M')" type="radio" > M</p>
+                        <p><input name="size" onclick="myFunction('XL')" type="radio" > XL</p>
+                        <p><input name="size" onclick="myFunction('2XL')" type="radio" > 2XL</p>
+                        <p><input name="size" onclick="myFunction('3XL')" type="radio" > 3XL</p>
+                        
                     </div>
 
                 </div>
@@ -233,6 +234,14 @@
             }
             slides[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " active";
+        }
+    </script>
+
+    <script>
+        function myFunction(size){
+            localStorage.setItem('lastProductSize',size);
+            //console.log('hello');
+            //console.log(localStorage.getItem("lastProductSize"));
         }
     </script>
 @endsection
