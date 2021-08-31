@@ -5,7 +5,6 @@
                 <div class="logo-area pt-2">
                     <a href="{{ route('index') }}">
                         <img src="{{ asset('images/' . $settings->website_logo) }}" class="logo-main">
-                       
                         {{-- <h2>{{ strtoupper(config('app.name')) }}</h2> --}}
                     </a>
                 </div>
@@ -20,7 +19,7 @@
                     <a href="{{ route('user.dashboard') }}" class="header-right-icon header-right-sign-in"><i class="fa fa-user"></i> <span class="sign-in-text">Account</span> </a>
                 @endif
                 <a href="{{ route('carts') }}" class="header-right-icon">
-                    <i class="fa fa-shopping-cart"></i>
+                    <i class="fa fa-cart-arrow-down" aria-hidden="true"></i>
                     <cart-total-item url="{{ url('/') }}"></cart-total-item>
                 </a>
             </div>
