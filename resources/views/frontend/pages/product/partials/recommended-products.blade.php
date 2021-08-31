@@ -5,8 +5,9 @@
                 <a href="{!! route('products.show', $product->slug) !!}">
                     <div class="single-product-slider">
                         <div class="imgbox card__img">
-                            <img class="img-fluid"
-                                src="{{ asset('images/products/' . $product->images->first()->image) }}" />
+                            @if(!empty($product->images->first()))
+                            <img class="img-fluid" src="{{ asset('images/products/' . $product->images->first()->image) }}" />
+                            @endif
                         </div>
                         <p class="mb-0 mt-3">{{ $product->title }}</p>
                         <p class="product-code ">{{ $product->slogan }}</p>
