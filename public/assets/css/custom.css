@@ -195,7 +195,7 @@
 .recommended-product-carousel .single-product-slider p,
 .recommended-product-carousel h6 {
 	color: black;
-	font-size: 1rem;
+	font-size: 1rem!important;
 }
 
 .recommended-product-carousel p.product-code {
