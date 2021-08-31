@@ -16,7 +16,6 @@
                                 <tr>
                                     <th>#SL</th>
                                     <th>Orderer Name</th>
-                                    <th>Size</th>
                                     <th>Contact No</th>
                                     <th>Date</th>
                                     <th>Total Amount</th>
@@ -64,10 +63,6 @@
                 {
                     data: 'name',
                     name: 'name'
-                },
-                {
-                    data: 'carts->product_size',
-                    name: 'carts->product_size'
                 },
                 {
                     data: 'phone_no',

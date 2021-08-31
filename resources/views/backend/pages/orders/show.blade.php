@@ -31,9 +31,10 @@
           <thead>
             <tr>
               <th>No.</th>
-              <th>Product Title</th>
-              <th>Product Image</th>
-              <th>Product Quantity</th>
+              <th>Product Name</th>
+              <th>Image</th>
+              <th>Quantity</th>
+              <th>Size</th>
               <th>Unit Price</th>
               <th>Sub total Price</th>
               <th>Delete</th>
@@ -67,6 +68,9 @@
                 </form>
               </td>
               <td>
+                {{ $cart->product_size }}
+              </td>
+              <td>
                 {{ $price }} Taka
               </td>
               <td>
@@ -86,7 +90,7 @@
             </tr>
             @endforeach
             <tr>
-              <td colspan="4"></td>
+              <td colspan="5"></td>
               <td>
                 Total Amount:
               </td>
