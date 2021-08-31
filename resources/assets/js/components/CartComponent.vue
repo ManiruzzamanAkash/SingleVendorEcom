@@ -19,29 +19,22 @@
               required: true
             }
           },
-        mounted() {
-            
-        },
         data(){
             return {
-              
+
             }
           },
         methods: {
             addToCart(){
               var app = this;
               var lastProductSize = localStorage.getItem('lastProductSize');
-              
 
               axios.post(app.url+'/api/carts/store', {
                 product_id: app.id,
                 size: lastProductSize
               })
               .then((response) => {
-
                 $.notifyClose();
-                console.log(response);
-
 
                 $.notify({
                     icon: 'fa fa-shopping-cart',
@@ -81,7 +74,6 @@
                 // this.$dispatch('total_items', response.data.totalItems);
                 // app.$emit("total-items", response.data.totalItems);
                 bus.$emit("totalItemChanged", response.data.totalItems);
-            
               })
               .catch((e) => {
                 console.log(e);

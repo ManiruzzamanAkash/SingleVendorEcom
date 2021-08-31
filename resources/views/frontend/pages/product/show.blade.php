@@ -134,6 +134,7 @@
                                     <form action="{{ route('carts.buy') }}" method="POST">
                                         @csrf
                                         <input type="hidden" name="product_id" value="{{ $product->id }}">
+                                        <input type="hidden" name="product_size" id="product_size" />
                                         <span class="buy-item">
                                             <button title="Buy Now" tabindex="0" class="buyNow" type="submit"><i
                                                     class="fa fa-location-arrow" aria-hidden="true"></i> Buy Now</button>
@@ -232,11 +233,13 @@
             slides[slideIndex - 1].style.display = "block";
             dots[slideIndex - 1].className += " active";
         }
-    </script>
 
-    <script>
         function selectProductSize(size){
             localStorage.setItem('lastProductSize', size);
         }
+
+        var lastProductSize = localStorage.getItem('lastProductSize');
+        $("#product_size").val(lastProductSize);
+
     </script>
 @endsection

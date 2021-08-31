@@ -1864,7 +1864,6 @@ __webpack_require__.r(__webpack_exports__);
       required: true
     }
   },
-  mounted: function mounted() {},
   data: function data() {
     return {};
   },
@@ -1877,7 +1876,6 @@ __webpack_require__.r(__webpack_exports__);
         size: lastProductSize
       }).then(function (response) {
         $.notifyClose();
-        console.log(response);
         $.notify({
           icon: 'fa fa-shopping-cart',
           title: '',
