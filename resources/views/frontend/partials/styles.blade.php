@@ -60,8 +60,8 @@
 <!-- Responsive CSS -->
 <link rel="stylesheet" type="text/css" href="{{ asset('public/assets/css/responsive.css') }}?v={{ config('constants.asset_version') }}">
 
-<!-- Fontawesome CSS -->
-<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+{{-- Font Awesome CSS --}}
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" rel="stylesheet">
 <style>
     .addToCart{
         background-color: {{ $settings->website->theme->color->cartbtn }} !important;

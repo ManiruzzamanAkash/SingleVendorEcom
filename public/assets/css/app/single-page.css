@@ -404,7 +404,7 @@
     border: none;
 }
 
-.size-variation p {
+.size-variation label {
     padding: 5px;
     font-size: 16px !important;
     font-weight: 500;
@@ -412,7 +412,7 @@
     cursor: pointer;
 }
 
-.size-variation p:hover {
+.size-variation label:hover {
     background: #000;
     color: white;
     padding: 5px 10px;
