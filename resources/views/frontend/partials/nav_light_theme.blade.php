@@ -35,7 +35,7 @@
                     aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon fg">
                         {{-- <i class="icon-menu-wide"></i> --}}
-                        <i class="fas fa-bars"></i>
+                        <i class="fa fa-bars"></i>
                     </span>
                 </button>
 
