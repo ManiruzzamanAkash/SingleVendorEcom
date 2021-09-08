@@ -138,24 +138,3 @@
 </div>
 <!-- main-panel ends -->
 @endsection
-
-@section('scripts')
-
-<script>
-	$('#summernote').summernote({
-	  placeholder: 'Write a short description',
-	  tabsize: 2,
-	  height: 120,
-	  toolbar: [
-		['style', ['style']],
-		['font', ['bold', 'underline', 'clear']],
-		['color', ['color']],
-		['para', ['ul', 'ol', 'paragraph']],
-		['table', ['table']],
-		['insert', ['link', 'picture', 'video']],
-		['view', ['fullscreen', 'codeview', 'help']]
-	  ]
-	});
-  </script>
-
-@endsection
