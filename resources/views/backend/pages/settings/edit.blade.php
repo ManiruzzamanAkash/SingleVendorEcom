@@ -73,8 +73,7 @@
 
 							<div class="form-group">
 								<label for="website_footer_text">Website Footer Text</label>
-								<input type="text" class="form-control" name="website_footer_text" id="website_footer_text"
-									aria-describedby="emailHelp" value="{{ $setting->website_footer_text }}">
+								<input type="text" class="form-control" name="website_footer_text" id="website_footer_text" value="{{ $setting->website_footer_text }}">
 							</div>
 
 							<div class="form-group">
@@ -105,8 +104,7 @@
 						<div class="tab-pane fade" id="order">
 							<div class="form-group">
 								<label for="website_footer_text">Shipping Cost</label>
-								<input type="number" class="form-control" name="info[order][shipping_cost]" id="website_footer_text"
-									aria-describedby="emailHelp" value="{{ $settings->shipping_cost }}">
+								<input type="number" class="form-control" name="info[order][shipping_cost]" id="website_footer_text" value="{{ $settings->shipping_cost }}">
 							</div>
 							<div class="row">
 								<div class="col-md-6">
@@ -269,15 +267,13 @@
 						<div class="tab-pane fade" id="invoice">
 							<div class="form-group">
 								<label for="website_footer_text">Invoice background color</label>
-								<input type="color" class="form-control" name="" id="website_footer_text"
-									aria-describedby="emailHelp">
+								<input type="color" class="form-control" name="" id="website_footer_text">
 							</div>
 						</div>
 						<div class="tab-pane fade" id="product">
 							<div class="form-group">
-								<label for="website_footer_text">Product Details </label>
-								<input type="text" class="form-control" name="info[product][product_detail]" value="{{ $settings->product_detail }}" id="website_footer_text"
-									aria-describedby="emailHelp">
+								<label for="website_product_detail">Product Details </label>
+								<textarea rows="5" class="form-control" name="info[product][product_detail]">{!! $settings->website->product->product_detail !!}</textarea>
 							</div>
 						</div>
 
