@@ -10,7 +10,7 @@
 				&nbsp;&nbsp;
 				<a href="{{ route('admin.index') }}" class="btn btn-secondary"><i class="fa fa-arrow-left"></i> Back</a>
 			</div>
-			<div class="card-body">		
+			<div class="card-body">
 				<form action="{{ route('admin.setting.update',1) }}" method="post" enctype="multipart/form-data">
 					@csrf
                     @include('backend.partials.messages')
@@ -69,7 +69,6 @@
 											aria-describedby="emailHelp" value="{{ $setting->address }}">
 									</div>
 								</div>
-								
 							</div>
 
 							<div class="form-group">
@@ -82,29 +81,27 @@
 								<div class="row">
 									<div class="col-md-6">
 										<label for="oldimage">Old Logo</label> <br>
-			
+
 										<img src="{!! asset('images/'.$setting->website_logo) !!}" width="100">
 										<input type="hidden" value="{{ $setting->website_logo }}" name="old_logo" ><br /><br />
 
 										<label for="image">Website Logo</label>
-			
+
 										<input type="file" class="form-control" name="website_logo" id="website_logo">
 									</div>
 									<div class="col-md-6">
 										<label for="oldimage">Old Favicon</label> <br>
-			
+
 										<img src="{!! asset('images/'.$setting->favicon) !!}" width="100">
 										<input type="hidden" value="{{ $setting->favicon }}" name="old_favicon" ><br /><br />
-										
+
 										<label for="image">Favicon</label>
-			
+
 										<input type="file" class="form-control" name="favicon" id="favicon">
 									</div>
 								</div>
 							</div>
-	
 						</div>
-						
 						<div class="tab-pane fade" id="order">
 							<div class="form-group">
 								<label for="website_footer_text">Shipping Cost</label>
@@ -150,7 +147,6 @@
 									</div>
 								</div>
 							</div>
-							
 						</div>
 						<div class="tab-pane fade" id="social">
 
@@ -168,7 +164,7 @@
 										<input type="url" class="form-control" name="info[social][twitter]" id="website_footer_text"
 											aria-describedby="emailHelp" value="{{ $settings->website->social->twitter }}">
 									</div>
-								</div>	
+								</div>
 							</div>
 							<div class="row">
 								<div class="col-md-6">
@@ -184,7 +180,7 @@
 										<input type="url" class="form-control" name="info[social][linkedin]" id="website_footer_text"
 											aria-describedby="emailHelp" value="{{ $settings->website->social->linkedin }}">
 									</div>
-								</div>	
+								</div>
 							</div>
 							<div class="row">
 								<div class="col-md-6">
@@ -200,7 +196,7 @@
 										<input type="url" class="form-control" name="info[social][youtube]" id="website_footer_text"
 											aria-describedby="emailHelp" value="{{ $settings->website->social->youtube }}">
 									</div>
-								</div>	
+								</div>
 							</div>
 						</div>
 
@@ -212,7 +208,7 @@
 									<option value="light" {{  $settings->website->theme->base_theme=='light' ? 'selected' : '' }}>Light</option>
 								</select>
 							</div>
-							
+
 							<div class="row">
 								<div class="col-md-6">
 									<div class="form-group">
