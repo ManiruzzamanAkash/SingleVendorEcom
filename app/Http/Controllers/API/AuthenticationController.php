@@ -5,10 +5,8 @@ namespace App\Http\Controllers\API;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Str;
 use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
-use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Foundation\Auth\AuthenticatesUsers;
 
 use App\Helpers\StringHelper;
 use App\Models\User;
@@ -60,7 +58,7 @@ class AuthenticationController extends Controller
     $this->validate($request, [
       'first_name'     => 'required|string|max:30',
       'last_name'      => 'nullable|string|max:15',
-      'email'          => 'required|string|email|max:100|unique: users',
+      'email'          => 'required|string|email|max:100|unique:users',
       'password'       => 'required|string|min:6|confirmed',
       'division_id'    => 'required|numeric',
       'district_id'    => 'required|numeric',
@@ -80,7 +78,7 @@ class AuthenticationController extends Controller
       'email'          => $request->email,
       'password'       => Hash::make($request->password),
       'api_token'      => bin2hex(openssl_random_pseudo_bytes(30)),
-      'remember_token' => str_random(50),
+      'remember_token' => Str::random(50),
       'status'         => 1,
     ]);
 
