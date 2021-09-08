@@ -42,8 +42,7 @@
 
 					<div class="form-group">
 						<label for="exampleInputPassword1">Description</label>
-						<textarea  name="description" id="summernote" ></textarea>
-						
+						<textarea  name="description" id="summernote">{!! $settings->website->product->product_detail !!}</textarea>
 					</div>
 					<div class="row">
 						<div class="col-md-3">
@@ -129,7 +128,7 @@
 						</div>
 					</div>
 
-					<button type="submit" class="btn btn-primary">Ad Product</button>
+					<button type="submit" class="btn btn-primary">Add Product</button>
 				</form>
 			</div>
 		</div>
