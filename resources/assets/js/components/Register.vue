@@ -15,19 +15,8 @@
                     <div class="text-center titleArea">
                         You are successfully registered
                     </div>
-                    <div class="startNote">
-                        You are now a customer of us. You can now search your favorite products and buy with some very easy steps !!
-                    </div>
-                    <div class="text-success information">
-                        <i class="fa fa-info-circle"></i> An email has sent to you. Please check and verify your email address.
-                    </div>
-                    <div class="goToMail">
-                        <div class="mailServices">
-                            <a :href="'https://www.gmail.com'">
-                                <i class="fa fa-google icons" aria-hidden="true"></i>
-                                <div class="service-name">Gmail</div>
-                            </a>
-                        </div>
+                    <div>
+                        <a class="btn btn-primary" :href="url+'/login'">Please Login</a>
                     </div>
                 </div>
 

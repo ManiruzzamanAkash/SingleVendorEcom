@@ -3002,17 +3002,6 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = ({
   props: {
@@ -42370,27 +42359,15 @@ var render = function() {
                 )
               ]),
               _vm._v(" "),
-              _c("div", { staticClass: "startNote" }, [
-                _vm._v(
-                  "\n                        You are now a customer of us. You can now search your favorite products and buy with some very easy steps !!\n                    "
+              _c("div", [
+                _c(
+                  "a",
+                  {
+                    staticClass: "btn btn-primary",
+                    attrs: { href: _vm.url + "/login" }
+                  },
+                  [_vm._v("Please Login")]
                 )
-              ]),
-              _vm._v(" "),
-              _vm._m(0),
-              _vm._v(" "),
-              _c("div", { staticClass: "goToMail" }, [
-                _c("div", { staticClass: "mailServices" }, [
-                  _c("a", { attrs: { href: "https://www.gmail.com" } }, [
-                    _c("i", {
-                      staticClass: "fa fa-google icons",
-                      attrs: { "aria-hidden": "true" }
-                    }),
-                    _vm._v(" "),
-                    _c("div", { staticClass: "service-name" }, [
-                      _vm._v("Gmail")
-                    ])
-                  ])
-                ])
               ])
             ])
           : _vm._e(),
@@ -42437,7 +42414,7 @@ var render = function() {
               _vm._v(" "),
               _c("div", { staticClass: "form-group row" }, [
                 _c("div", { staticClass: "col-md-6 form-field" }, [
-                  _vm._m(1),
+                  _vm._m(0),
                   _vm._v(" "),
                   _c("input", {
                     directives: [
@@ -42478,7 +42455,7 @@ var render = function() {
                   _vm._v(" "),
                   _vm.$v.first_name.$error
                     ? _c("div", { staticClass: "text-danger" }, [
-                        _vm._m(2),
+                        _vm._m(1),
                         _vm._v(" "),
                         !_vm.$v.first_name.required
                           ? _c("span", [
@@ -42515,7 +42492,7 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-md-6 form-field" }, [
-                  _vm._m(3),
+                  _vm._m(2),
                   _vm._v(" "),
                   _c("input", {
                     directives: [
@@ -42555,7 +42532,7 @@ var render = function() {
                   _vm._v(" "),
                   _vm.$v.last_name.$error
                     ? _c("div", { staticClass: "text-danger" }, [
-                        _vm._m(4),
+                        _vm._m(3),
                         _vm._v(" "),
                         !_vm.$v.last_name.minLength
                           ? _c("span", [
@@ -42583,7 +42560,7 @@ var render = function() {
               _vm._v(" "),
               _c("div", { staticClass: "form-group row" }, [
                 _c("div", { staticClass: "col-md-6 form-field" }, [
-                  _vm._m(5),
+                  _vm._m(4),
                   _vm._v(" "),
                   _c("input", {
                     directives: [
@@ -42626,7 +42603,7 @@ var render = function() {
                   _vm._v(" "),
                   _vm.$v.email.$error
                     ? _c("div", { staticClass: "text-danger" }, [
-                        _vm._m(6),
+                        _vm._m(5),
                         _vm._v(" "),
                         !_vm.$v.email.required
                           ? _c("span", [
@@ -42650,7 +42627,7 @@ var render = function() {
                             ])
                           : _vm.emailStatus === "error"
                           ? _c("div", { staticClass: "text-danger" }, [
-                              _vm._m(7),
+                              _vm._m(6),
                               _vm._v(
                                 "\n                        email already exists"
                               )
@@ -42666,7 +42643,7 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-md-6 form-field" }, [
-                  _vm._m(8),
+                  _vm._m(7),
                   _vm._v(" "),
                   _c("input", {
                     directives: [
@@ -42709,7 +42686,7 @@ var render = function() {
                   _vm._v(" "),
                   _vm.$v.phone_no.$error
                     ? _c("div", { staticClass: "text-danger" }, [
-                        _vm._m(9),
+                        _vm._m(8),
                         _vm._v(" "),
                         !_vm.$v.phone_no.required
                           ? _c("span", [_vm._v(" Please give your phone no")])
@@ -42731,7 +42708,7 @@ var render = function() {
                             ])
                           : _vm.phoneStatus === "error"
                           ? _c("div", { staticClass: "text-danger" }, [
-                              _vm._m(10),
+                              _vm._m(9),
                               _vm._v(
                                 "\n                    Phone no already exists"
                               )
@@ -42749,7 +42726,7 @@ var render = function() {
               _vm._v(" "),
               _c("div", { staticClass: "form-group row" }, [
                 _c("div", { staticClass: "col-md-4" }, [
-                  _vm._m(11),
+                  _vm._m(10),
                   _vm._v(" "),
                   _c(
                     "select",
@@ -42809,7 +42786,7 @@ var render = function() {
                   _vm._v(" "),
                   _vm.$v.division_id.$error
                     ? _c("div", { staticClass: "text-danger" }, [
-                        _vm._m(12),
+                        _vm._m(11),
                         _vm._v(" "),
                         !_vm.$v.division_id.required
                           ? _c("span", [
@@ -42830,7 +42807,7 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-md-4" }, [
-                  _vm._m(13),
+                  _vm._m(12),
                   _vm._v(" "),
                   _c(
                     "select",
@@ -42885,7 +42862,7 @@ var render = function() {
                   _vm._v(" "),
                   _vm.$v.district_id.$error
                     ? _c("div", { staticClass: "text-danger" }, [
-                        _vm._m(14),
+                        _vm._m(13),
                         _vm._v(" "),
                         !_vm.$v.district_id.required
                           ? _c("span", [
@@ -42906,7 +42883,7 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-md-4" }, [
-                  _vm._m(15),
+                  _vm._m(14),
                   _vm._v(" "),
                   _c("input", {
                     directives: [
@@ -42946,7 +42923,7 @@ var render = function() {
                   _vm._v(" "),
                   _vm.$v.street_address.$error
                     ? _c("div", { staticClass: "text-danger" }, [
-                        _vm._m(16),
+                        _vm._m(15),
                         _vm._v(" "),
                         !_vm.$v.street_address.required
                           ? _c("span", [
@@ -42964,7 +42941,7 @@ var render = function() {
               _vm._v(" "),
               _c("div", { staticClass: "form-group row" }, [
                 _c("div", { staticClass: "col-md-6 form-field" }, [
-                  _vm._m(17),
+                  _vm._m(16),
                   _vm._v(" "),
                   _c("input", {
                     directives: [
@@ -43004,7 +42981,7 @@ var render = function() {
                   _vm._v(" "),
                   _vm.$v.password.$error
                     ? _c("div", { staticClass: "text-danger" }, [
-                        _vm._m(18),
+                        _vm._m(17),
                         _vm._v(" "),
                         !_vm.$v.password.required
                           ? _c("span", [
@@ -43030,7 +43007,7 @@ var render = function() {
                 ]),
                 _vm._v(" "),
                 _c("div", { staticClass: "col-md-6 form-field" }, [
-                  _vm._m(19),
+                  _vm._m(18),
                   _vm._v(" "),
                   _c("input", {
                     directives: [
@@ -43070,7 +43047,7 @@ var render = function() {
                   _vm._v(" "),
                   _vm.$v.confirm_password.$error
                     ? _c("div", { staticClass: "text-danger" }, [
-                        _vm._m(20),
+                        _vm._m(19),
                         _vm._v(" "),
                         !_vm.$v.confirm_password.required
                           ? _c("span", [
@@ -43144,7 +43121,7 @@ var render = function() {
                     ])
                   ]),
                   _vm._v(" "),
-                  _vm._m(21)
+                  _vm._m(20)
                 ])
               ])
             ])
@@ -43154,17 +43131,6 @@ var render = function() {
   ])
 }
 var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "text-success information" }, [
-      _c("i", { staticClass: "fa fa-info-circle" }),
-      _vm._v(
-        " An email has sent to you. Please check and verify your email address.\n                    "
-      )
-    ])
-  },
   function() {
     var _vm = this
     var _h = _vm.$createElement
